@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ApplyButton } from "@/components/ApplyButton";
 import { Section, SectionHeading } from "@/components/Section";
 import { formattedAddress, site } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { ORG_ID, breadcrumbNode, graph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -11,8 +13,30 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const pageGraph = graph({
+    path: "/contact",
+    name: "Contact Us",
+    description:
+      "Talk to a title bond expert. Call (800) 737-4880 or email info@a1suretybonds.com.",
+    nodes: [
+      {
+        "@type": "ContactPage",
+        "@id": `${site.url}/contact#contactpage`,
+        mainEntity: { "@id": ORG_ID },
+      },
+      breadcrumbNode(
+        [
+          { name: "Home", path: "" },
+          { name: "Contact", path: "/contact" },
+        ],
+        "/contact",
+      ),
+    ],
+  });
+
   return (
     <Section>
+      <JsonLd data={pageGraph} />
       <SectionHeading
         eyebrow="Contact us"
         title="Talk to a title bond expert"

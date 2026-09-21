@@ -10,6 +10,8 @@ import { getRecentPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 import { getAllStates } from "@/lib/states";
 import { homepageFaqs } from "@/content/faqs";
+import { JsonLd } from "@/components/JsonLd";
+import { faqNode, graph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: `${site.name} | Lost, Stolen & Damaged Title Bonds`,
@@ -21,18 +23,12 @@ export default function HomePage() {
   const states = getAllStates();
   const posts = getRecentPosts(3);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: homepageFaqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.a.flat().join(" "),
-      },
-    })),
-  };
+  const pageGraph = graph({
+    path: "",
+    name: `${site.name} | Lost, Stolen & Damaged Title Bonds`,
+    description: site.description,
+    nodes: [faqNode(homepageFaqs, "")],
+  });
 
   return (
     <>
@@ -159,10 +155,7 @@ export default function HomePage() {
         </div>
       )}
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={pageGraph} />
     </>
   );
 }

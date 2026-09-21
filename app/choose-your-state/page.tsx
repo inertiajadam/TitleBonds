@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Section, SectionHeading } from "@/components/Section";
 import { StateSelect } from "@/components/StateSelect";
 import { getAllStates } from "@/lib/states";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbNode, collectionNode, graph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Choose Your State",
@@ -14,8 +16,33 @@ export const metadata: Metadata = {
 export default function ChooseYourStatePage() {
   const states = getAllStates();
 
+  const pageGraph = graph({
+    path: "/choose-your-state",
+    name: "Choose Your State",
+    description:
+      "Title bond rates, bond amounts and DMV requirements for every state we write certificate of title bonds in.",
+    nodes: [
+      collectionNode({
+        path: "/choose-your-state",
+        items: states.map((state) => ({
+          name: `${state.name} title bonds`,
+          path: `/state/${state.slug}`,
+          description: state.metaDescription,
+        })),
+      }),
+      breadcrumbNode(
+        [
+          { name: "Home", path: "" },
+          { name: "Choose Your State", path: "/choose-your-state" },
+        ],
+        "/choose-your-state",
+      ),
+    ],
+  });
+
   return (
     <Section>
+      <JsonLd data={pageGraph} />
       <SectionHeading
         eyebrow="Choose your state"
         title="Title bond rates & requirements by state"

@@ -2,6 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Section, SectionHeading } from "@/components/Section";
 import { getAllPosts } from "@/lib/posts";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbNode, collectionNode, graph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Title Bond News & Guides",
@@ -13,8 +15,33 @@ export const metadata: Metadata = {
 export default function BlogIndexPage() {
   const posts = getAllPosts();
 
+  const pageGraph = graph({
+    path: "/blog",
+    name: "Title Bond News & Guides",
+    description:
+      "Guides and industry news on certificate of title bonds, bonded titles, and replacing a lost, stolen or defective vehicle title.",
+    nodes: [
+      collectionNode({
+        path: "/blog",
+        items: posts.map((post) => ({
+          name: post.title,
+          path: `/${post.slug}`,
+          description: post.excerpt,
+        })),
+      }),
+      breadcrumbNode(
+        [
+          { name: "Home", path: "" },
+          { name: "Blog", path: "/blog" },
+        ],
+        "/blog",
+      ),
+    ],
+  });
+
   return (
     <Section>
+      <JsonLd data={pageGraph} />
       <SectionHeading
         eyebrow="Industry news"
         title="Title bond news & guides"

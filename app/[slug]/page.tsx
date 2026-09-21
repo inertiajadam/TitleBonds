@@ -5,6 +5,8 @@ import { ApplyButton } from "@/components/ApplyButton";
 import { Section } from "@/components/Section";
 import { getAllPosts, getPost } from "@/lib/posts";
 import { site } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { articleNode, breadcrumbNode, graph } from "@/lib/schema";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -38,16 +40,24 @@ export default async function BlogPostPage({ params }: Params) {
   const post = getPost(slug);
   if (!post) notFound();
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
+  const path = `/${post.slug}`;
+  const pageGraph = graph({
+    path,
+    name: post.title,
     description: post.metaDescription,
-    datePublished: post.date,
     dateModified: post.date,
-    mainEntityOfPage: `${site.url}/${post.slug}`,
-    publisher: { "@type": "Organization", name: site.name, url: site.url },
-  };
+    nodes: [
+      articleNode(post),
+      breadcrumbNode(
+        [
+          { name: "Home", path: "" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path },
+        ],
+        path,
+      ),
+    ],
+  });
 
   return (
     <Section width="prose">
@@ -161,10 +171,7 @@ export default async function BlogPostPage({ params }: Params) {
         </div>
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <JsonLd data={pageGraph} />
     </Section>
   );
 }

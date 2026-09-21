@@ -3,6 +3,8 @@ import { ApplyButton } from "@/components/ApplyButton";
 import { FaqItem } from "@/components/Faq";
 import { Section, SectionHeading } from "@/components/Section";
 import { bondComparison, fullFaqs } from "@/content/faqs";
+import { JsonLd } from "@/components/JsonLd";
+import { definedTermsNode, faqNode, graph } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Title Bonds for Lost, Damaged, Stolen & Defective Titles - FAQs",
@@ -11,15 +13,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/frequently-asked-questions" },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: fullFaqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.q,
-    acceptedAnswer: { "@type": "Answer", text: faq.a.flat().join(" ") },
-  })),
-};
+const PATH = "/frequently-asked-questions";
+
+const pageGraph = graph({
+  path: PATH,
+  name: "Title Bonds for Lost, Damaged, Stolen & Defective Titles - FAQs",
+  description:
+    "Answers to the most common questions about title bonds: how they work, who needs one, how much they cost, how long they last and how to apply.",
+  nodes: [faqNode(fullFaqs, PATH), definedTermsNode()],
+});
 
 export default function FaqPage() {
   return (
@@ -89,10 +91,7 @@ export default function FaqPage() {
         </div>
       </Section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={pageGraph} />
     </>
   );
 }

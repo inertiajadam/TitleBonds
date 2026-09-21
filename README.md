@@ -111,9 +111,69 @@ Phone, email, address and partner links live in `lib/site.ts`. Change them there
 — the header, footer, contact page and the `InsuranceAgency` structured data all
 read from it.
 
-## SEO
+## Search, answer engines and LLMs
 
-- Per-page `title`/`description`/`canonical` via the Metadata API
-- `FAQPage` schema on the homepage, FAQ page and every state page
-- `BreadcrumbList` on state pages, `Article` on posts, `InsuranceAgency` sitewide
-- `app/sitemap.ts` generates `/sitemap.xml` from the content files
+The site is built to be quoted, not just ranked. Three things follow from that.
+
+**Answer first.** Every state page opens with one self-contained paragraph that
+answers "what does a title bond cost here and how does it work" outright — price,
+bond formula, issuing agency, statute, credit-check threshold. It is generated
+from the same structured rates the page renders (`components/StateAnswer.tsx`),
+so the prose, the rates card and the `Service` schema can never disagree. Each
+clause is dropped when its field is missing rather than guessing.
+
+**One linked entity graph.** `lib/schema.ts` emits a single `@graph` per page
+with `@id`-linked nodes. Answer engines resolve entities by `@id` far more
+reliably than they infer them from repeated inline blobs. The organization and
+website nodes are emitted once in the root layout and referenced everywhere else.
+
+| Page | Nodes |
+| --- | --- |
+| Sitewide | `InsuranceAgency`/`Organization`, `WebSite` |
+| State | `WebPage`, `Service` + `Offer` (priced, `areaServed` the state), `HowTo`, `FAQPage`, `BreadcrumbList` |
+| FAQ | `WebPage`, `FAQPage`, `DefinedTermSet` |
+| Blog / Choose Your State | `WebPage`, `ItemList`, `BreadcrumbList` |
+| Post | `WebPage`, `Article`, `BreadcrumbList` |
+| Contact | `WebPage`, `ContactPage`, `BreadcrumbList` |
+
+Prices in `Offer` are parsed conservatively — a value carrying qualifiers we
+can't express numerically is omitted, because wrong structured pricing is worse
+than none.
+
+**Machine-readable index.** `/llms.txt` is a markdown map of the site for LLM
+crawlers, generated from the content files so it cannot go stale. `robots.ts`
+names the answer-engine crawlers explicitly (GPTBot, ClaudeBot, PerplexityBot,
+Google-Extended, and others) — the wildcard already allows them, but naming them
+records that being cited is intended, so a later robots edit doesn't quietly cut
+it off.
+
+Also: per-page titles, descriptions and canonicals; `sitemap.xml` generated from
+content; and build-time OG images (`lib/og.tsx`) so every one of the 52 pages has
+a real preview card.
+
+### Things deliberately not done
+
+- **No `aggregateRating`.** There are no collected reviews. Marking up ratings
+  without them is a manual-action risk.
+- **No `dateModified` on state pages.** The statutes were last verified in 2023.
+  A fresh timestamp would tell search engines the content was reviewed when it
+  wasn't.
+- **No hosted webfont.** The site uses a system font stack: no render-blocking
+  third-party request, no layout shift. Core Web Vitals are a ranking input and
+  this site's whole value is organic search. See below before changing it.
+
+## Typography
+
+The site ships with a system font stack. Adobe Fonts candidates were reviewed —
+[Attribute Text](https://fonts.adobe.com/fonts/ff-attribute-text) by Viktor Nubel
+(FontFont) and [Nexa Text](https://fonts.adobe.com/fonts/nexa) by Plamen Motev and
+Nikolay Petroussenko (Fontfabric) are both text-optimized families with weights
+through Black; [Akzidenz-Grotesk Next](https://fonts.adobe.com/fonts/akzidenz-grotesk-next)
+by Bernd Möllenstädt and Dieter Hofrichter (Monotype) is the other candidate. All
+are premium and need an active Adobe Fonts entitlement.
+
+If one is adopted, self-host the woff2 and `preload` it rather than using a
+Typekit kit — a kit puts a render-blocking request to a third-party origin on the
+critical path of every page.
+
+## Business details

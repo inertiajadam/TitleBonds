@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { formattedAddress, isCanonicalHost, site } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { organizationNode, websiteNode } from "@/lib/schema";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -26,23 +28,9 @@ export const metadata: Metadata = {
     : { index: false, follow: false },
 };
 
-const organizationSchema = {
+const siteGraph = {
   "@context": "https://schema.org",
-  "@type": "InsuranceAgency",
-  name: site.name,
-  url: site.url,
-  telephone: site.phone,
-  email: site.email,
-  description: site.description,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.address.street,
-    addressLocality: site.address.city,
-    addressRegion: site.address.region,
-    postalCode: site.address.postalCode,
-    addressCountry: site.address.country,
-  },
-  areaServed: "US",
+  "@graph": [organizationNode(), websiteNode()],
 };
 
 export default function RootLayout({
@@ -60,11 +48,7 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
-        <script
-          type="application/ld+json"
-          // Static, build-time constant — no user input reaches this string.
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
+        <JsonLd data={siteGraph} />
         <span className="sr-only">{formattedAddress}</span>
       </body>
     </html>

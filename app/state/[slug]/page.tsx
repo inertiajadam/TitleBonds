@@ -5,8 +5,17 @@ import { ApplyButton } from "@/components/ApplyButton";
 import { FaqItem } from "@/components/Faq";
 import { Section, SectionHeading } from "@/components/Section";
 import { Steps } from "@/components/Steps";
+import { StateAnswer, stateAnswerText } from "@/components/StateAnswer";
 import { site } from "@/lib/site";
 import { getAllStates, getState, getStateSlugs } from "@/lib/states";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbNode,
+  faqNode,
+  graph,
+  howToNode,
+  stateServiceNode,
+} from "@/lib/schema";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -49,35 +58,25 @@ export default async function StatePage({ params }: Params) {
   const others = getAllStates().filter((item) => item.slug !== state.slug);
   const rateRows = rateLabels.filter(([key]) => state.rates[key]);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: state.faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.q,
-      acceptedAnswer: { "@type": "Answer", text: faq.a.flat().join(" ") },
-    })),
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Choose Your State",
-        item: `${site.url}/choose-your-state`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: state.name,
-        item: `${site.url}/state/${state.slug}`,
-      },
+  const path = `/state/${state.slug}`;
+  const pageGraph = graph({
+    path,
+    name: state.seoTitle,
+    description: state.metaDescription,
+    nodes: [
+      stateServiceNode(state),
+      howToNode(state),
+      faqNode(state.faqs, path),
+      breadcrumbNode(
+        [
+          { name: "Home", path: "" },
+          { name: "Choose Your State", path: "/choose-your-state" },
+          { name: state.name, path },
+        ],
+        path,
+      ),
     ],
-  };
+  });
 
   return (
     <>
@@ -100,6 +99,7 @@ export default async function StatePage({ params }: Params) {
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
                 Get your {state.name} title bond today
               </h1>
+              <StateAnswer state={state} />
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-200">
                 {state.intro.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -256,14 +256,7 @@ export default async function StatePage({ params }: Params) {
         </ul>
       </Section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <JsonLd data={pageGraph} />
     </>
   );
 }

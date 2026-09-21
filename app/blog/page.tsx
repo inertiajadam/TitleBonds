@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Section, SectionHeading } from "@/components/Section";
 import { getAllPosts } from "@/lib/posts";
+import { getPhoto } from "@/lib/photos";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbNode, collectionNode, graph } from "@/lib/schema";
 
@@ -52,29 +54,39 @@ export default function BlogIndexPage() {
         {posts.map((post) => (
           <li
             key={post.slug}
-            className="flex h-full flex-col rounded-card border border-navy-100 p-7 transition-colors hover:border-navy-300"
+            className="flex h-full flex-col overflow-hidden rounded-card border border-navy-100 transition-colors hover:border-navy-300"
           >
-            <time dateTime={post.date} className="text-sm text-navy-400">
-              {new Date(post.date).toLocaleDateString("en-US", {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}
-            </time>
-            <h2 className="mt-3 text-xl font-bold text-navy-950">
-              <Link href={`/${post.slug}`} className="hover:underline">
-                {post.title}
-              </Link>
-            </h2>
-            <p className="mt-3 flex-1 leading-relaxed text-navy-600">{post.excerpt}</p>
-            <p className="mt-5">
-              <Link
-                href={`/${post.slug}`}
-                className="font-semibold text-navy-700 hover:underline"
-              >
-                Read more &rarr;
-              </Link>
-            </p>
+            {/* Decorative: the heading below is the link and already names the
+                article, so a description here would only repeat it. */}
+            <Image
+              src={getPhoto(post.image).src}
+              alt=""
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="aspect-[2/1] w-full object-cover"
+            />
+            <div className="flex flex-1 flex-col p-7">
+              <time dateTime={post.date} className="text-sm text-navy-400">
+                {new Date(post.date).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </time>
+              <h2 className="mt-3 text-xl font-bold text-navy-950">
+                <Link href={`/${post.slug}`} className="hover:underline">
+                  {post.title}
+                </Link>
+              </h2>
+              <p className="mt-3 flex-1 leading-relaxed text-navy-600">{post.excerpt}</p>
+              <p className="mt-5">
+                <Link
+                  href={`/${post.slug}`}
+                  className="font-semibold text-navy-700 hover:underline"
+                >
+                  Read more &rarr;
+                </Link>
+              </p>
+            </div>
           </li>
         ))}
       </ul>

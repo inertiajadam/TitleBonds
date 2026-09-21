@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ApplyButton } from "@/components/ApplyButton";
 import { Section } from "@/components/Section";
 import { getAllPosts, getPost } from "@/lib/posts";
+import { getPhoto } from "@/lib/photos";
 import { site } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { articleNode, breadcrumbNode, graph } from "@/lib/schema";
@@ -40,6 +42,7 @@ export default async function BlogPostPage({ params }: Params) {
   const post = getPost(slug);
   if (!post) notFound();
 
+  const photo = getPhoto(post.image);
   const path = `/${post.slug}`;
   const pageGraph = graph({
     path,
@@ -80,6 +83,18 @@ export default async function BlogPostPage({ params }: Params) {
         <h1 className="mt-3 text-4xl font-bold tracking-tight text-navy-950">
           {post.title}
         </h1>
+
+        {/* Sized to the prose column rather than bled full-width: the article
+            is the thing being read, and a full-bleed image would push the
+            opening paragraph below the fold on a laptop. */}
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          priority
+          placeholder="blur"
+          sizes="(min-width: 768px) 768px, 100vw"
+          className="mt-8 aspect-[16/9] w-full rounded-card object-cover"
+        />
 
         <div className="mt-10 space-y-5">
           {post.body.map((block, index) => {

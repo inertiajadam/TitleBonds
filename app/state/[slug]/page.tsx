@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -8,6 +9,7 @@ import { Steps } from "@/components/Steps";
 import { StateAnswer, stateAnswerText } from "@/components/StateAnswer";
 import { site } from "@/lib/site";
 import { getAllStates, getState, getStateSlugs } from "@/lib/states";
+import { statePhoto } from "@/lib/photos";
 import { JsonLd } from "@/components/JsonLd";
 import {
   breadcrumbNode,
@@ -55,6 +57,7 @@ export default async function StatePage({ params }: Params) {
   const state = getState(slug);
   if (!state) notFound();
 
+  const photo = statePhoto(state.slug);
   const others = getAllStates().filter((item) => item.slug !== state.slug);
   const rateRows = rateLabels.filter(([key]) => state.rates[key]);
 
@@ -80,8 +83,25 @@ export default async function StatePage({ params }: Params) {
 
   return (
     <>
-      <div className="bg-navy-950 text-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+      <div className="relative isolate overflow-hidden bg-navy-950 text-white">
+        {/* Backdrop only — the alt is empty because the heading beside it
+            already says what the page is about, and the scrims below drop the
+            photo far enough that describing it would be noise. */}
+        <Image
+          src={photo.src}
+          alt=""
+          priority
+          placeholder="blur"
+          sizes="100vw"
+          className="absolute inset-0 size-full object-cover object-center"
+        />
+        {/* The lighten-to-the-right only makes sense once the rate card is
+            beside the copy and covering that side. Below lg the text runs the
+            full width, so the scrim stays close to flat. */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/95 to-navy-950/85 lg:via-navy-950/88 lg:to-navy-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/45" />
+
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-20">
           <nav aria-label="Breadcrumb" className="text-sm text-navy-300">
             <Link href="/" className="hover:text-white">
               Home

@@ -1,7 +1,22 @@
+import fs from "node:fs";
+import path from "node:path";
 import { ImageResponse } from "next/og";
+import { getPhoto, type PhotoKey } from "@/lib/photos";
 
 export const OG_SIZE = { width: 1200, height: 630 };
 export const OG_CONTENT_TYPE = "image/png";
+
+/**
+ * The renderer has no filesystem or network access, so a backdrop has to be
+ * handed to it as bytes. These are the pre-cut 1200x630 crops, read once per
+ * build and inlined.
+ */
+function backdrop(key: PhotoKey): string {
+  const file = path.join(process.cwd(), "public", getPhoto(key).og);
+  return `data:image/jpeg;base64,${fs.readFileSync(file).toString("base64")}`;
+}
+
+const FILL = { position: "absolute", top: 0, left: 0, width: 1200, height: 630 } as const;
 
 /**
  * Shared card for every page's opengraph-image. Rendered at build time, so
@@ -11,10 +26,13 @@ export function renderOgImage({
   eyebrow,
   title,
   facts,
+  photo,
 }: {
   eyebrow: string;
   title: string;
   facts?: string[];
+  /** Photograph to sit behind the card; omit for flat navy. */
+  photo?: PhotoKey;
 }) {
   return new ImageResponse(
     (
@@ -23,13 +41,40 @@ export function renderOgImage({
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
+          position: "relative",
           background: "#0d1e3c",
-          padding: 72,
           fontFamily: "sans-serif",
         }}
       >
+        {photo && (
+          <img src={backdrop(photo)} width={1200} height={630} style={FILL} />
+        )}
+        {/* Same two-scrim treatment as the page mastheads: one across, to hold
+            the headline, and one up, to seat the footer rule. */}
+        <div
+          style={{
+            ...FILL,
+            background:
+              "linear-gradient(90deg, rgba(13,30,60,0.97) 0%, rgba(13,30,60,0.9) 50%, rgba(13,30,60,0.52) 100%)",
+          }}
+        />
+        <div
+          style={{
+            ...FILL,
+            background:
+              "linear-gradient(0deg, rgba(13,30,60,0.95) 0%, rgba(13,30,60,0.3) 55%, rgba(13,30,60,0.6) 100%)",
+          }}
+        />
+
+        <div
+          style={{
+            ...FILL,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: 72,
+          }}
+        >
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
@@ -92,6 +137,7 @@ export function renderOgImage({
               (800) 737-4880
             </div>
           </div>
+        </div>
         </div>
       </div>
     ),

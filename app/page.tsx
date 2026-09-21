@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ApplyButton } from "@/components/ApplyButton";
@@ -7,6 +8,7 @@ import { Hero } from "@/components/Hero";
 import { Steps } from "@/components/Steps";
 import { TrustBar } from "@/components/TrustBar";
 import { getRecentPosts } from "@/lib/posts";
+import { getPhoto } from "@/lib/photos";
 import { site } from "@/lib/site";
 import { getAllStates } from "@/lib/states";
 import { homepageFaqs } from "@/content/faqs";
@@ -105,21 +107,31 @@ export default function HomePage() {
               {posts.map((post) => (
                 <li
                   key={post.slug}
-                  className="rounded-card border border-navy-100 bg-white p-7 shadow-sm"
+                  className="overflow-hidden rounded-card border border-navy-100 bg-white shadow-sm"
                 >
-                  <p className="text-sm text-navy-400">
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
-                  </p>
-                  <h3 className="mt-3 text-lg font-bold text-navy-950">
-                    <Link href={`/${post.slug}`} className="hover:underline">
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="mt-3 leading-relaxed text-navy-600">{post.excerpt}</p>
+                  {/* Decorative: the heading below is the link and already names the
+                      article, so a description here would only repeat it. */}
+                  <Image
+                    src={getPhoto(post.image).src}
+                    alt=""
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                    className="aspect-[2/1] w-full object-cover"
+                  />
+                  <div className="p-7">
+                    <p className="text-sm text-navy-400">
+                      {new Date(post.date).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </p>
+                    <h3 className="mt-3 text-lg font-bold text-navy-950">
+                      <Link href={`/${post.slug}`} className="hover:underline">
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="mt-3 leading-relaxed text-navy-600">{post.excerpt}</p>
+                  </div>
                 </li>
               ))}
             </ul>

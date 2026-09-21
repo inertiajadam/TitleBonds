@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { isPhotoKey, type PhotoKey } from "@/lib/photos";
 
 export type PostBlock =
   | { type: "p"; text: string }
@@ -16,6 +17,8 @@ export type Post = {
   date: string;
   excerpt: string;
   metaDescription: string;
+  /** Key into the photo registry; the featured image and the og:image. */
+  image: PhotoKey;
   body: PostBlock[];
 };
 
@@ -34,6 +37,11 @@ function readPosts(): Post[] {
     if (post.slug !== expected) {
       throw new Error(
         `Post content ${file} declares slug "${post.slug}"; expected "${expected}".`,
+      );
+    }
+    if (!isPhotoKey(post.image)) {
+      throw new Error(
+        `Post content ${file} names image "${post.image}", which is not in the photo registry.`,
       );
     }
     return post;

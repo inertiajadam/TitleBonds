@@ -20,5 +20,6 @@ export default async function Image({
   return renderOgImage({
     eyebrow: "Title bond guide",
     title: post?.title ?? "Title bonds",
+    photo: post?.image,
   });
 }

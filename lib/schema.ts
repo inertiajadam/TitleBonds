@@ -1,6 +1,7 @@
 import type { AnswerBlock, StateFaq, TitleBondState } from "@/lib/states";
 import type { Post } from "@/lib/posts";
 import { site } from "@/lib/site";
+import { getPhoto } from "@/lib/photos";
 import { stateAnswerText } from "@/components/StateAnswer";
 
 /**
@@ -257,11 +258,21 @@ export function definedTermsNode() {
 
 export function articleNode(post: Post) {
   const path = `/${post.slug}`;
+  const photo = getPhoto(post.image);
   return {
     "@type": "Article",
     "@id": `${site.url}${path}#article`,
     headline: post.title,
     description: post.metaDescription,
+    // Article rich results are withheld without an image, so this is required
+    // rather than decorative.
+    image: {
+      "@type": "ImageObject",
+      url: `${site.url}${photo.og}`,
+      width: 1200,
+      height: 630,
+      caption: photo.alt,
+    },
     datePublished: post.date,
     dateModified: post.date,
     author: { "@id": ORG_ID },

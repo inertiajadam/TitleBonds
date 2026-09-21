@@ -1,5 +1,6 @@
 import { OG_CONTENT_TYPE, OG_SIZE, renderOgImage } from "@/lib/og";
 import { getState, getStateSlugs } from "@/lib/states";
+import { statePhotoKey } from "@/lib/photos";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
@@ -20,12 +21,14 @@ export default async function Image({
   const facts = [
     state?.rates.rate && `Rate ${state.rates.rate.replace(/ \(.*\)$/, "")}`,
     state?.rates.minPremium && `From ${state.rates.minPremium}`,
-    state?.rates.noCreditCheckUpTo && `No credit check under ${state.rates.noCreditCheckUpTo}`,
+    state?.rates.noCreditCheckUpTo &&
+      `No credit check under ${state.rates.noCreditCheckUpTo}`,
   ].filter((fact): fact is string => Boolean(fact));
 
   return renderOgImage({
     eyebrow: `${state?.name ?? ""} title bonds`,
     title: `Get your ${state?.name ?? ""} title bond today`,
     facts,
+    photo: statePhotoKey(slug),
   });
 }

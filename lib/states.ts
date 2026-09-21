@@ -23,6 +23,14 @@ export type StateRates = {
   amountRequired?: string;
 };
 
+/** Some states publish bond minimums as a grid (vehicle type x age). */
+export type BondAmountTable = {
+  caption?: string;
+  columns: string[];
+  rows: string[][];
+  notes?: string[];
+};
+
 export type TitleBondState = {
   slug: string;
   name: string;
@@ -34,6 +42,7 @@ export type TitleBondState = {
   metaDescription: string;
   intro: string[];
   rates: StateRates;
+  bondAmountTable?: BondAmountTable;
   faqs: StateFaq[];
 };
 

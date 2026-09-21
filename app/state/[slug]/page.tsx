@@ -141,7 +141,56 @@ export default async function StatePage({ params }: Params) {
         </div>
       </div>
 
-      <Section>
+      {state.bondAmountTable && (
+        <Section>
+          <SectionHeading
+            title={
+              state.bondAmountTable.caption ??
+              `Bond amount required for a title bond in ${state.name}`
+            }
+          />
+          <div className="mt-8 overflow-x-auto">
+            <table className="w-full min-w-xl border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b border-navy-200">
+                  {state.bondAmountTable.columns.map((column) => (
+                    <th key={column} className="py-3 pr-4 font-semibold text-navy-950">
+                      {column}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {state.bondAmountTable.rows.map((row) => (
+                  <tr key={row[0]} className="border-b border-navy-100">
+                    {row.map((cell, index) => (
+                      <td
+                        key={index}
+                        className={
+                          index === 0
+                            ? "py-3 pr-4 font-medium text-navy-900"
+                            : "py-3 pr-4 text-navy-600"
+                        }
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {state.bondAmountTable.notes && (
+            <div className="mt-5 space-y-2 text-sm text-navy-500">
+              {state.bondAmountTable.notes.map((note, index) => (
+                <p key={index}>{note}</p>
+              ))}
+            </div>
+          )}
+        </Section>
+      )}
+
+      <Section className={state.bondAmountTable ? "!pt-0" : ""}>
         <SectionHeading
           eyebrow="How it works"
           title={`Getting bonded in ${state.name}`}

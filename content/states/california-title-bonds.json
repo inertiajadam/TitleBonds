@@ -1,0 +1,129 @@
+{
+  "slug": "california-title-bonds",
+  "name": "California",
+  "abbr": "CA",
+  "agency": "California Department of Motor Vehicles",
+  "statute": "California Vehicle Code § 4157",
+  "seoTitle": "California Title Bond Rates & Requirements",
+  "metaDescription": "Rates & requirements for California title bonds. No credit check required for amounts up to $30,000. Don't overpay — apply today and get your title bond in 3 simple steps.",
+  "intro": [
+    "According to California Code (VEH § 4157), a motor vehicle ownership bond may be used in lieu of the original proof of ownership. This bond is required to transfer a title in California if you do not have proper evidence of ownership.",
+    "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
+  ],
+  "rates": {
+    "noCreditCheckUpTo": "$30,000",
+    "minPremium": "$100",
+    "rate": "1.5%",
+    "instantIssueUpTo": "$30,000",
+    "amountRequired": "Appraised (fair market) value of the vehicle"
+  },
+  "faqs": [
+    {
+      "q": "What is a California title bond?",
+      "a": [
+        "The California Department of Motor Vehicles accepts a bonded title as an alternative to the vehicle's original title when proof of ownership is not available. A bonded title isn't necessary if your title was lost or stolen as long as the title is in the owner's name.",
+        "Getting a bonded title is the best solution if you can't otherwise provide proof of ownership for your vehicle, as it establishes proof of ownership on the basis of a surety bond.",
+        "California statute 23.020 requires residents who never received or have lost their vehicle title to purchase a surety bond prior to obtaining their duplicate title. The California legislature enacted the bonding requirement to ensure that the rightful vehicle owner will receive compensation if the title applicant does not actually own the vehicle. The bond amount must be equal to the fair market value of the vehicle."
+      ]
+    },
+    {
+      "q": "How do I get a bonded title in California?",
+      "a": [
+        "Fill out a title application and the corresponding forms. To get a bonded title in California, you'll first need to fill out a few required forms and applications:",
+        [
+          "Application for Title or Registration form",
+          "Statement of Facts form",
+          "Information about your vehicle's odometer, cost, and you as the vehicle owner",
+          "Odometer statement (if your vehicle is less than 10 years old)",
+          "Certificate of Non-Operation (if your vehicle won't be operated on any California road or freeway)",
+          "Weight Certificate (if your vehicle weighs 10,000 pounds or less empty) or a Declaration of Gross Vehicle Weight/Combined Gross Vehicle Weight (if your vehicle weighs over 10,000 pounds)",
+          "Proof of vehicle insurance"
+        ],
+        "Have your vehicle inspected by a DMV representative. Your vehicle will need to undergo an inspection by an authorized DMV representative to ensure that it meets the standards set in place by the California DMV. The DMV representative will fill out a Verification of Vehicle form after the inspection that certifies your vehicle passes CHP inspection, smog, brake, and light check standards requirements.",
+        "Get your vehicle appraised. To determine the value of your vehicle, you'll need to get your vehicle appraised by a California or other state-licensed dealer or motor vehicle insurance representative. Your vehicle's fair market value can also be determined by using a website like Kelley Blue Book or NADA. If your vehicle has multiple appraisal amounts, the average between them will be used to determine the value of your vehicle.",
+        "Purchase your California defective title bond. After determining the fair market value of the vehicle, you'll need to purchase and submit a Motor Vehicle Ownership Surety Bond (Form 5047) to the California Department of Motor Vehicles. Also known as the \"California defective title bond,\" you need this bond if your vehicle meets any of the following conditions:",
+        [
+          "The value of your vehicle is over $5,000.",
+          "The value of your vessel is under $2,000.",
+          "Your vehicle is nontransferable.",
+          "A release from the legal owner/lien holder can't be obtained."
+        ],
+        "You can buy your California defective title bond online 24/7 with 3-year premiums that start at $100 based on your vehicle value.",
+        "Submit your application materials and bond to the California DMV. Once you've gathered all your application materials, appraised your vehicle, and purchased your surety bond, you can submit your materials to your local California DMV and get your bonded title. Your surety bond is valid for 3 years, after which it'll become null. Your bonded title will remain effective and doesn't need renewing."
+      ]
+    },
+    {
+      "q": "Who regulates lost title bonds in California?",
+      "a": ["The California Department of Motor Vehicles (DMV) regulates title bonds in California."]
+    },
+    {
+      "q": "What is the purpose of the California Lost Title Bond?",
+      "a": [
+        "California requires residents to purchase a surety bond as part of the application process to obtain a duplicate title. The bond ensures that the rightful vehicle owner will not suffer a financial loss if the title applicant is seeking to obtain the title fraudulently.",
+        "If the title applicant is engaging in fraud, then the rightful vehicle owner can file a claim against the bond and receive compensation up to the full amount of the bond. In short, the bond acts as a safeguard against people attempting to obtain ownership of a vehicle through unethical means."
+      ]
+    },
+    {
+      "q": "How is the bond amount determined?",
+      "a": [
+        "California statute 23.020 dictates that the limit on the lost title bond must equal the vehicle's fair market value. To determine the vehicle's fair market value, title applicants should have their vehicle appraised by a licensed auto dealer, auto insurance representative, or yacht and shipbroker.",
+        "Alternatively, title applicants can determine the vehicle's fair market value by utilizing information provided in a recognized industry auto valuation and pricing handbook, such as the Kelley Blue Book. If using this method, the fair market value should be calculated by adding the lowest and highest price valuations for the vehicle and dividing them by two."
+      ]
+    },
+    {
+      "q": "Is a credit check required for the California Lost Title Bond?",
+      "a": [
+        "We do not conduct a credit check for bonds that are less than $25,000. For bonds over $25,000, we have bad credit bonding programs that can get your bond approved and issued with the same fast and easy service."
+      ]
+    },
+    {
+      "q": "How much does the California Lost Title Bond cost?",
+      "a": [
+        "The California Lost Title Bond costs either $100 or 1.5% of the bond amount, whichever is greater (rates may vary for bonds greater than $25,000)."
+      ]
+    },
+    {
+      "q": "Who is required to purchase a bond?",
+      "a": [
+        "The California Division of Motor Vehicles will require a title applicant to purchase a surety bond if they cannot determine with certainty that the applicant actually owns the vehicle and at least one of the following conditions are met:",
+        [
+          "The value of the vehicle is $5,000 or more ($2,000 or more for vessels)",
+          "The vehicle is nontransferable (goldenrod)",
+          "A release from the vehicle owner/lienholder cannot be obtained"
+        ]
+      ]
+    },
+    {
+      "q": "How do California bonded title applicants file their bond?",
+      "a": [
+        "In California, bonded title applicants should mail the completed bond form, including the power of attorney, to: State of California Department of Motor Vehicles, Registration Operations, PO Box 942869, Sacramento, CA 94269.",
+        "The California Lost Title Surety Bond requires signatures from both the surety company that issues the bond and the title applicant. The surety company should include the following information on the bond form:",
+        [
+          "The legal name and address of entity/individual(s) buying the bond",
+          "Surety company's name and address",
+          "Bond amount",
+          "Vehicle information",
+          "Date the bond is signed"
+        ]
+      ]
+    },
+    {
+      "q": "What are the insurance requirements for bonded title applicants in California?",
+      "a": [
+        "California requires all motor vehicle owners to purchase auto insurance with the following limits:",
+        [
+          "$15,000 bodily injury per person",
+          "$30,000 bodily injury per accident",
+          "$5,000 property damage"
+        ],
+        "Bonded title applicants must purchase and maintain a surety bond in an amount equal to the vehicle's fair market value."
+      ]
+    },
+    {
+      "q": "How can California residents avoid claims against their Lost Title Bond?",
+      "a": [
+        "To avoid claims against their bond, bonded title applicants in California must ensure that they are the rightful owners of the motor vehicle."
+      ]
+    }
+  ]
+}

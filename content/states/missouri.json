@@ -1,0 +1,151 @@
+{
+  "slug": "missouri",
+  "name": "Missouri",
+  "abbr": "MO",
+  "agency": "Missouri Department of Revenue Motor Vehicle Bureau",
+  "statute": "Title XIX Section 301.192 of the Missouri Revised Statutes",
+  "seoTitle": "Missouri Title Bond Rates & Requirements",
+  "metaDescription": "Missouri certificate of title bond costs start at $100. The bond amount must be twice the appraisal value of your vehicle and cannot be less than $100.",
+  "intro": [
+    "Follow the links below to find and apply for your Missouri surety bond and let our expert staff get the bond you need at the lowest possible price."
+  ],
+  "rates": {
+    "noCreditCheckUpTo": "$25,000",
+    "minPremium": "$100",
+    "rate": "1.5%",
+    "amountRequired": "2x the appraised value of the vehicle (minimum $100)"
+  },
+  "faqs": [
+    {
+      "q": "What is a certificate of title bond in Missouri?",
+      "a": [
+        "Title XIX Section 301.192 of the Missouri Revised Statutes requires individuals to file a certificate of title bond when proof of vehicle ownership cannot be provided. A bonded title gives the vehicle owner the same ownership rights as a regular title. The bond must be filed within 30 days of issuance.",
+        "Missouri title surety bonds protect previous vehicle owners or lien holders as well as future owners against expenses, losses, or damages. A claim can be filed against the bond if the original title is found. The surety company would pay valid claims up to the full bond amount, which the vehicle owner would be required to reimburse."
+      ]
+    },
+    {
+      "q": "How much does a Missouri certificate of title bond cost?",
+      "a": [
+        "Missouri certificate of title bond costs start at $100. The exact costs depend on the bond amount required by the Missouri Department of Revenue Motor Vehicle Bureau.",
+        [
+          "Bonds up to $10,000 cost $100.",
+          "Bonds between $10,001 and $25,000 cost $10 for every $1,000 of coverage, starting at $100.",
+          "Bonds between $25,001 and $50,000 cost $15 for every $1,000 of coverage, starting at $375."
+        ],
+        "The Missouri Lost Title Bond costs either $100 or 1.5% of the bond amount, whichever is greater (rates may vary for bonds greater than $25,000)."
+      ]
+    },
+    {
+      "q": "How do you get a Missouri bond title?",
+      "a": [
+        "You can buy your Missouri title bond online 24/7. You'll need to provide the following information for the Missouri Motor Vehicle Bureau's approval:",
+        ["name", "vehicle identification number (VIN)", "vehicle year, make, and model"],
+        "You'll receive your bond by email once your order has been processed."
+      ]
+    },
+    {
+      "q": "What is the purpose of the Missouri Lost Title Bond?",
+      "a": [
+        "Missouri requires residents to purchase a surety bond as part of the application process to obtain a bonded title. The bond ensures that the rightful vehicle owner will not suffer a financial loss if the title applicant is seeking to obtain the title fraudulently.",
+        "If the title applicant is engaging in fraud, then the rightful vehicle owner can file a claim against the bond and receive compensation up to the full amount of the bond. In short, the bond acts as a safeguard against people attempting to obtain ownership of a vehicle through unethical means."
+      ]
+    },
+    {
+      "q": "Who regulates registration for vehicle title bonds in Missouri?",
+      "a": [
+        "The Missouri Department of Revenue Motor Vehicle Bureau enforces registration requirements for vehicles with lost, stolen, or missing titles."
+      ]
+    },
+    {
+      "q": "Who is required to purchase a bond?",
+      "a": [
+        "The Missouri Department of Revenue requires title applicants to purchase a surety bond if the applicant cannot present the department with tangible proof that they own the vehicle and are unable to contact the vehicle's previous owner. To be eligible for a bonded title, the vehicle must:",
+        [
+          "Be at least 7 years old or older",
+          "Have a value that does not exceed $3,000",
+          "Have no record of any prior title application, or records that exist but contain conflicting ownership documentation"
+        ],
+        "Bonded titles will not be issued for vehicles with incomplete or conflicting ownership documentation or vehicles previously titled with the Motor Vehicle Bureau. Vehicles with liens cannot get a surety bond. If you're planning to become a licensed motor vehicle dealer, a separate Missouri motor vehicle dealer bond is required.",
+        "Lost title bonds are typically required for the following reasons:",
+        [
+          "The vehicle has never been titled",
+          "The applicant never received the title",
+          "The previous owner never titled the vehicle",
+          "The applicant has the title but there is an error in the title transfer",
+          "The applicant purchased an unclaimed/abandoned vehicle and is not a bonded agent"
+        ],
+        "The bond amount must be a minimum of $100."
+      ]
+    },
+    {
+      "q": "How is the bond amount determined?",
+      "a": [
+        "The bond amount must be twice the appraisal value of your vehicle and cannot be less than $100. The bond amount can be calculated by using Kelley Blue Book or by finding the average of 2 appraisals from licensed Missouri motor vehicle dealers. Contact your local DMV if you have questions about your required bond amount before purchasing your bond."
+      ]
+    },
+    {
+      "q": "Is a credit check required for the Missouri Lost Title Bond?",
+      "a": [
+        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+      ]
+    },
+    {
+      "q": "How do I update or change my lost title bond form?",
+      "a": [
+        "If the Missouri Department of Revenue Motor Vehicle Bureau requires your surety bond documentation to be updated for any reason, contact your surety provider. The most common changes for these bonds include the owner's name or vehicle information."
+      ]
+    },
+    {
+      "q": "Do I need to renew my missing title surety bond in Missouri?",
+      "a": [
+        "Missouri certificate of title bonds expire at the end of a 3-year term, at which point they will be returned. Owners will receive an original car title for their vehicle at the end of the term."
+      ]
+    },
+    {
+      "q": "How do I get a Missouri bonded title?",
+      "a": [
+        "To apply for a bonded title, complete the following steps.",
+        "Consult the DOR. Bonded title applicants in Missouri should consult the Department of Revenue prior to purchasing a surety bond. Missouri does not require all title applicants to obtain a bonded title, and usually only does so as an absolute last resort. Title applicants should ensure that they actually need a bond before purchasing one.",
+        "Purchase a surety bond. After receiving confirmation from the Department of Revenue, bonded title applicants must purchase and maintain a surety bond in an amount equal to twice the vehicle's value.",
+        "Have the vehicle inspected. Bonded title applicants must have their vehicle inspected by the Missouri State Highway Patrol or the applicant's county auto theft unit. The inspecting officer must complete an examination certificate and return it to the applicant.",
+        "Complete the application. All Missouri bonded title applications can be submitted to the applicant's local license office. Bonded title applicants must complete the application in its entirety, and submit the following items:",
+        [
+          "Statement detailing how the bonded title was acquired and why a valid ownership certificate cannot be obtained",
+          "Proof of ownership (bill of sale, invoices, etc.)",
+          "Title verification of the state the vehicle was previously titled in (if applicable)",
+          "Notarized lien release(s) (if applicable)",
+          "Vehicle examination certificate",
+          "Odometer disclosure statement",
+          "Surety bond"
+        ]
+      ]
+    },
+    {
+      "q": "How do Missouri bonded title applicants file their bond?",
+      "a": [
+        "In Missouri, bonded title applicants should submit the completed bond form, including the power of attorney, to their local license office. The Missouri Lost Title Surety Bond requires signatures from both the surety company that issues the bond and the bonded title applicant.",
+        "The surety company should include the following information on the bond form:",
+        [
+          "The legal name of the entity/individual(s) buying the bond",
+          "Surety company's name and address",
+          "Bond term",
+          "Date the bond is signed"
+        ]
+      ]
+    },
+    {
+      "q": "What are the insurance requirements for bonded title applicants in Missouri?",
+      "a": [
+        "Missouri requires all motor vehicle owners to purchase auto insurance with the following minimum limits:",
+        ["$25,000 per person", "$50,000 per accident", "$25,000 property damage per accident"],
+        "Bonded title applicants must purchase and maintain a surety bond in an amount equal to twice the vehicle's value."
+      ]
+    },
+    {
+      "q": "How can Missouri residents avoid claims against their Lost Title Bond?",
+      "a": [
+        "To avoid claims against their bond, bonded title applicants in Missouri must ensure that they are the rightful owners of the motor vehicle."
+      ]
+    }
+  ]
+}

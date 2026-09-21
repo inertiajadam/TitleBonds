@@ -1,0 +1,165 @@
+{
+  "slug": "colorado-title-bonds",
+  "name": "Colorado",
+  "abbr": "CO",
+  "agency": "Colorado Department of Revenue Division of Motor Vehicles",
+  "statute": "Colorado statute 42-6-115",
+  "seoTitle": "Colorado Title Bond Rates & Requirements",
+  "metaDescription": "Colorado certificate of title bond costs start at $100. Bond amount is 2x the vehicle's reasonable value. No credit check up to $30,000.",
+  "intro": [
+    "Don't overpay, apply today and get your title bond instantly. Have questions? Contact us and talk to a title bond expert today."
+  ],
+  "rates": {
+    "noCreditCheckUpTo": "$30,000",
+    "minPremium": "$100",
+    "rate": "1.5%",
+    "instantIssueUpTo": "$30,000",
+    "amountRequired": "2x the appraised value of the vehicle"
+  },
+  "faqs": [
+    {
+      "q": "What is a Colorado certificate of title bond?",
+      "a": [
+        "Colorado code 42-6-104 requires individuals who own a vehicle with a lost or stolen title to file a surety bond to verify ownership as part of the vehicle registration process. By filing this bond, individuals verify their vehicle was not stolen or acquired under fraudulent circumstances.",
+        "Colorado statute 42-6-115 requires residents who never received or have lost their vehicle title to purchase a surety bond prior to obtaining their duplicate title. The Colorado legislature enacted the bonding requirement to ensure that the rightful vehicle owner will receive compensation if the title applicant does not actually own the vehicle. The bond amount must be equal to twice the vehicle's value."
+      ]
+    },
+    {
+      "q": "How much does a certificate of title bond cost in Colorado?",
+      "a": [
+        "Colorado certificate of title bond costs start at $100. The exact cost will vary depending on the surety bond amount required by the Colorado Department of Revenue.",
+        [
+          "Bond amounts up to $6,000 cost $100.",
+          "Bond amounts from $6,001 to $25,000 cost $10 per $1,000 of coverage, starting at $100.",
+          "Bond amounts from $25,001 to $50,000 cost $15 per every $1,000 of coverage, starting at $375.",
+          "Bond amounts for more than $50,000 must be reviewed by an underwriter for pricing, starting at $750."
+        ],
+        "The Colorado Lost Title Bond costs either $100 or 1.5% of the bond amount, whichever is greater (rates may vary for bonds greater than $25,000)."
+      ]
+    },
+    {
+      "q": "Where can you get a Colorado certificate of title bond?",
+      "a": [
+        "You can purchase a Colorado title bond online 24/7. You must provide the following information for the Division of Motor Vehicles approval:",
+        [
+          "name",
+          "address",
+          "current vehicle retail value",
+          "vehicle identification number (VIN)",
+          "vehicle year, make, model, and body type"
+        ],
+        "Once your payment has been processed, you'll receive your official surety bond by email."
+      ]
+    },
+    {
+      "q": "What is the purpose of the Colorado Lost Title Bond?",
+      "a": [
+        "Colorado requires residents to purchase a surety bond as part of the application process to obtain a duplicate title. The bond ensures that the rightful vehicle owner will not suffer a financial loss if the title applicant is seeking to obtain the title fraudulently.",
+        "If the title applicant is engaging in fraud, then the rightful vehicle owner can file a claim against the bond and receive compensation up to the full amount of the bond. In short, the bond acts as a safeguard against people attempting to obtain ownership of a vehicle through unethical means."
+      ]
+    },
+    {
+      "q": "Why do you need a bond for a certificate of title in Colorado?",
+      "a": [
+        "If you're unable to provide the required documents to prove vehicle ownership, filing a surety bond allows you to get a bonded title. The Colorado title bond protects prior owners, lien holders, and future owners from losses or damages resulting from a certificate of title issuance.",
+        "If the original vehicle title is found, the surety company will pay valid claims up to the full bond amount, which the bonded vehicle owner must reimburse. A lost title bond is required for a vehicle title to be issued. If you plan to sell vehicles, a separate Colorado motor vehicle dealer bond is required."
+      ]
+    },
+    {
+      "q": "Is a credit check required for the Colorado Lost Title Bond?",
+      "a": [
+        "We do not conduct a credit check for bonds that are less than $25,000. For bonds over $25,000, we have bad credit bonding programs that can get your bond approved and issued with the same fast and easy service."
+      ]
+    },
+    {
+      "q": "Who registers vehicles in Colorado?",
+      "a": [
+        "Colorado Department of Revenue Division of Motor Vehicles enforces registration requirements for vehicles missing titles. Title bonds must be filed with the Colorado Division of Motor Vehicles within 30 days."
+      ]
+    },
+    {
+      "q": "Who is required to purchase a bond?",
+      "a": [
+        "The Colorado Department of Revenue will require a title applicant to purchase a surety bond if they cannot determine with certainty that the applicant actually owns the vehicle. Typically, lost title bonds are required for the following reasons:",
+        [
+          "The vehicle has never been titled",
+          "The applicant never received the title",
+          "The previous owner never titled the vehicle",
+          "The applicant has the title but there is an error in the title transfer",
+          "The applicant purchased an unclaimed/abandoned vehicle and is not a bonded agent"
+        ]
+      ]
+    },
+    {
+      "q": "How do I determine my bond amount?",
+      "a": [
+        "Colorado statute 42-6-115 dictates that the bond amount be equal to twice the vehicle's reasonable value, which is determined by a licensed Colorado auto dealer, price guidebook, or computerized valuation service. The minimum appraisal amount accepted is $350 with a $700 minimum bond amount.",
+        "If you need help determining your required bond amount, contact the Colorado Division of Motor Vehicles before purchasing your bond. Title applicants may determine the vehicle's value through the following means:",
+        [
+          "Price guidebooks — vehicle must not be older than 7 years",
+          "Computerized valuation services",
+          "Licensed Colorado auto dealer — the valuation must be done on the company's letterhead or be signed and notarized, must include the dealer's license number, and must be signed and dated. A dealership may perform its own appraisal when bonding for the title in their name.",
+          "Certified appraisal"
+        ],
+        "All appraisals must be done for the current condition of the vehicle at the time of titling."
+      ]
+    },
+    {
+      "q": "How do I update or change my title surety bond form?",
+      "a": [
+        "If the Colorado DOR requires your vehicle title bond documentation to be updated for any reason, contact your surety provider. The most common changes for these bonds include the vehicle owner's name or specific vehicle information."
+      ]
+    },
+    {
+      "q": "Does your Colorado bonded title expire?",
+      "a": [
+        "Your lost title bond will expire 3 years from its effective date and won't need to be renewed."
+      ]
+    },
+    {
+      "q": "How do you get a bonded title in Colorado?",
+      "a": [
+        "Vehicles with open liens are not eligible for bonded titles. Complete the following steps to apply for your Colorado bonded title.",
+        "Have a certified P.O.S.T. inspector complete an inspection using the Certified VIN Inspection form (DR 2407). The inspector should complete the required form and return it to the title applicant (the inspector will supply the applicant with the form). The inspection fee is $50.",
+        "Complete the Motor Vehicle Requestor Release Affidavit of Intended Use form (DR 2489A). Colorado requires all bonded title applicants to complete an affidavit certifying that they do own the vehicle. If there is an active lien on the vehicle or if another individual is listed as an owner, then the title applicant must obtain authorization from the lienholder/owner.",
+        "Request a Colorado Title Record Search form, and if a prior title holder is found, attempt to contact them via mail and submit proof through PS Form 3811-A. This search will also reveal if there are active liens on the vehicle, which must be released before completing the bonded title application.",
+        "Appraise your vehicle with a licensed Colorado auto dealer, price guidebook, or computerized valuation service.",
+        "Purchase a title bond.",
+        "Complete the Bond Statement Guide and In Lieu of Bond Affidavit form (DR 2394).",
+        "Submit all paperwork for required documents to your local DMV to issue your new title."
+      ]
+    },
+    {
+      "q": "How do Colorado bonded title applicants file their bond?",
+      "a": [
+        "In Colorado, bonded title applicants should submit the completed bond form, including the power of attorney, to their local motor vehicle office. The Colorado Lost Title Surety Bond requires signatures from both the surety company that issues the bond and the bonded title applicant.",
+        "The surety company should include the following information on the bond form:",
+        [
+          "The legal name and address of the entity/individual(s) buying the bond",
+          "Surety company's name and state of incorporation",
+          "Bond amount",
+          "Vehicle information",
+          "Date the bond is signed"
+        ]
+      ]
+    },
+    {
+      "q": "What are the insurance requirements for bonded title applicants in Colorado?",
+      "a": [
+        "Colorado requires all motor vehicle owners to purchase auto insurance with the following limits:",
+        [
+          "$25,000 bodily injury per person",
+          "$50,000 bodily injury per accident",
+          "$15,000 property damage"
+        ],
+        "Bonded title applicants must purchase and maintain a surety bond equal to twice the vehicle's reasonable value."
+      ]
+    },
+    {
+      "q": "How can Colorado residents avoid claims against their Lost Title Bond?",
+      "a": [
+        "To avoid claims against their bond, bonded title applicants in Colorado must ensure that they are the rightful owners of the motor vehicle."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "arizona-title-bonds",
+  "name": "Arizona",
+  "abbr": "AZ",
+  "agency": "Arizona Motor Vehicle Division",
+  "statute": "Arizona Revised Statutes Title 28 Section 2057",
+  "seoTitle": "Arizona Title Bond Rates & Requirements",
+  "metaDescription": "Arizona title bonds are typically $100 or 1.5% of the required bond amount. No credit check up to $30,000 and instant issue available.",
+  "intro": [
+    "If you do not have acceptable evidence of ownership for your motor vehicle, boat, motor home, mobile home, motorcycle or other titled property, you can provide the State of Arizona with a Certificate of Title Surety Bond to get a new title so you can register your vehicle.",
+    "The bond amount must be 1.5 times that of the current value of the vehicle as established by the local DMV or a nationally accepted appraisal guide.",
+    "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
+  ],
+  "rates": {
+    "noCreditCheckUpTo": "$30,000",
+    "minPremium": "$100",
+    "rate": "1.5%",
+    "instantIssueUpTo": "$30,000",
+    "amountRequired": "1.5x the value of the vehicle as determined by the local DMV / NADA / KBB"
+  },
+  "faqs": [
+    {
+      "q": "What is an Arizona motor vehicle certificate of title bond?",
+      "a": [
+        "Arizona Revised Statutes Title 28 Section 2057 requires individuals with insufficient vehicle ownership evidence to file a surety bond. These bonds protect previous owners and lien holders as well as potential purchasers in the future.",
+        "By filing this bond, the current vehicle owner verifies that, to their knowledge, they are the vehicle's sole owner. If the original title is provided by somebody other than the bonded title vehicle owner, a claim can be filed against the bond. The surety company will pay valid claims up to the full bond amount, and then the bonded principal must reimburse the surety company.",
+        "Arizona vehicle title bonds are required to register vehicles with missing titles. If you plan to sell vehicles in Arizona, a separate Arizona motor vehicle dealer bond is required."
+      ]
+    },
+    {
+      "q": "What is the purpose of the Arizona Lost Title Bond?",
+      "a": [
+        "Arizona requires residents to purchase a surety bond as part of the application process to obtain a duplicate title. The bond ensures that the rightful vehicle owner will not suffer a financial loss if the title applicant is seeking to obtain the title fraudulently.",
+        "If the title applicant is engaging in fraud, then the rightful vehicle owner can file a claim against the bond and receive compensation up to the full amount of the bond. In short, the bond acts as a safeguard against people attempting to obtain ownership of a vehicle through unethical means."
+      ]
+    },
+    {
+      "q": "Who needs a title bond in Arizona?",
+      "a": [
+        "The Arizona Motor Vehicle Division will require a title applicant to purchase a surety bond if they cannot determine with certainty that the title applicant actually owns the vehicle. Typically, title applicants will need to obtain a surety bond in the following situations:",
+        [
+          "The vehicle has never been titled",
+          "The applicant never received the title",
+          "The previous owner never titled the vehicle",
+          "The applicant has the title but there is an error in the title transfer",
+          "The applicant purchased an unclaimed/abandoned vehicle and is not a bonded agent"
+        ]
+      ]
+    },
+    {
+      "q": "How much does an Arizona certificate of title bond cost?",
+      "a": [
+        "Arizona title bonds are typically $100 or 1.5% of the required bond amount for applicants with good credit."
+      ]
+    },
+    {
+      "q": "How do I get an Arizona lost title bond?",
+      "a": [
+        "The application is very simple and straightforward. You will need the following information to complete it:",
+        [
+          "Your name and home address",
+          "Vehicle year, make and model",
+          "Vehicle VIN # or serial #",
+          "Amount the bond needs to be for, or the value of the vehicle",
+          "A valid credit or debit card to pay for your bond"
+        ]
+      ]
+    },
+    {
+      "q": "Is a credit check required for the Arizona Lost Title Bond?",
+      "a": [
+        "We do not conduct a credit check for bonds that are less than $25,000. For bonds over $25,000, we have bad credit bonding programs that can get your bond approved and issued with the same fast and easy service."
+      ]
+    },
+    {
+      "q": "How do I renew my title bond?",
+      "a": [
+        "Lost title bonds in Arizona expire 3 years from the effective date and do not renew. The state will return the bond at that time."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "slug": "michigan-title-bonds",
+  "name": "Michigan",
+  "abbr": "MI",
+  "agency": "Michigan Department of State Vehicle Title Division",
+  "statute": "Michigan Vehicle Code Section 257.217",
+  "seoTitle": "Michigan Title Bond Rates & Requirements",
+  "metaDescription": "Michigan title bond costs start at $100. Bond amount is 2x the vehicle's fair market value. No credit check up to $30,000 and instant issue available.",
+  "intro": [
+    "If you do not have proof of ownership (a title) for your boat, motor vehicle, motorhome, mobile home, motorcycle or other titled property, you can provide the State of Michigan with a Certificate of Title Bond in order to replace your lost, stolen, damaged or defective title. You will be able to register your vehicle with this new title.",
+    "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
+  ],
+  "rates": {
+    "noCreditCheckUpTo": "$30,000",
+    "minPremium": "$100",
+    "rate": "1.5%",
+    "instantIssueUpTo": "$30,000",
+    "amountRequired": "2x the amount determined by the Michigan Secretary of State"
+  },
+  "faqs": [
+    {
+      "q": "What are Michigan title bonds?",
+      "a": [
+        "Michigan Vehicle Code Section 257.217 requires individuals who don't have proof of vehicle ownership to file a surety bond. The state's bond form is officially titled the \"Vehicle Uniform Surety Bond,\" but these bonds are more commonly known as \"certificate of title bonds\" or just \"title bonds.\"",
+        "The Michigan Natural Resources and Environmental Protection Act enforces a similar surety bond requirement for watercraft owners. Bonds must be filed within 30 days of issuance.",
+        "These bonds specifically protect the Secretary of State, previous owners, and future owners of the vehicle against expenses, losses, or damages. If the original title is found and presented to the state, a claim can be made against the bond. The surety company would pay valid claims up to the full bond amount, which the bonded vehicle owner would be required to reimburse."
+      ]
+    },
+    {
+      "q": "How much does a title bond cost in Michigan?",
+      "a": [
+        "Michigan title bond costs start at $100. The exact cost will vary depending on the vehicle type as well as the surety bond amount required by the Michigan Secretary of State Vehicle Title Division.",
+        "Vehicle title bond costs:",
+        [
+          "Bond amounts up to $6,000 cost just $100.",
+          "Bond amounts from $6,001 to $50,000 cost $15 per $1,000 of coverage, starting at $100.",
+          "Bond amounts exceeding $50,000 must be reviewed by an underwriter for pricing, starting at $750."
+        ],
+        "Watercraft title bond costs:",
+        [
+          "Bond amounts up to $6,000 cost just $100.",
+          "Bond amounts between $6,001 and $25,000 cost $15 per $1,000 of coverage, starting at $100.",
+          "Bond amounts exceeding $25,000 must be reviewed by an underwriter for pricing, starting at $375."
+        ],
+        "The Michigan Lost Title Bond costs either $100 or 1.5% of the bond amount, whichever is greater (rates may vary for bonds greater than $25,000)."
+      ]
+    },
+    {
+      "q": "How do you get a title bond in Michigan?",
+      "a": [
+        "You can purchase your Michigan certificate of title bond online 24/7. You must provide the following information for Secretary of State Vehicle Title Division approval:",
+        ["name", "address", "vehicle identification number (VIN)", "vehicle year, make, body type"],
+        "Once your order has been processed, your surety bond documentation will be issued. You'll receive your official surety bond by email."
+      ]
+    },
+    {
+      "q": "What is the purpose of the Michigan Lost Title Bond?",
+      "a": [
+        "Michigan requires residents to purchase a surety bond as part of the application process to obtain a bonded title. The bond ensures that the rightful vehicle owner will not suffer a financial loss if the title applicant is seeking to obtain the title fraudulently.",
+        "If the title applicant is engaging in fraud, then the rightful vehicle owner can file a claim against the bond and receive compensation up to the full amount of the bond. In short, the bond acts as a safeguard against people attempting to obtain ownership of a vehicle through unethical means."
+      ]
+    },
+    {
+      "q": "Who is required to purchase a bond?",
+      "a": [
+        "The Michigan Secretary of State will require a title applicant to purchase a surety bond if the applicant cannot present the department with adequate proof that the applicant does in fact own the vehicle. Typically, lost title bonds are required for the following reasons:",
+        [
+          "The vehicle has never been titled",
+          "The applicant never received the title",
+          "The previous owner never titled the vehicle",
+          "The applicant has the title but there is an error in the title transfer",
+          "The applicant purchased an unclaimed/abandoned vehicle and is not a bonded agent"
+        ],
+        "If the title applicant cannot locate the vehicle's previous owner/title, they will not need to purchase a surety bond in the following scenarios:",
+        [
+          "They have received ownership of the vehicle through a court order",
+          "The vehicle is over 10 years old and is valued at $2,500 or less"
+        ]
+      ]
+    },
+    {
+      "q": "Who regulates Michigan vehicle registration?",
+      "a": [
+        "The Michigan Department of State Vehicle Title Division enforces registration requirements and documentation for vehicles or watercraft without titles, including the vehicle uniform surety bond form."
+      ]
+    },
+    {
+      "q": "Who needs a Michigan title bond?",
+      "a": [
+        "Vehicle or watercraft owners with insufficient proof of ownership must purchase and file a vehicle uniform surety bond as part of their registration. Vehicles less than 10 years old valued at more than $2,500 must be bonded. All watercraft valued at more than $2,500 must have bonded titles.",
+        "Please note a Michigan vehicle uniform surety bond is required if you have insufficient vehicle ownership. If you're planning to sell vehicles, a separate Michigan vehicle dealer bond is required."
+      ]
+    },
+    {
+      "q": "How is the vehicle uniform surety bond amount determined?",
+      "a": [
+        "The Secretary of State Vehicle Title Division determines the required bond amount for vehicles and watercraft, which will be 2 times the vehicle or watercraft's value. Applicants should always verify the exact required bond amount with the SOS before purchasing their bonds.",
+        "Michigan statute 257.217 dictates that the bond amount must be equal to twice the vehicle's fair market value. To determine the vehicle's value, title applicants can have their vehicle appraised by any licensed Michigan auto dealer or utilize any recognized vehicle appraisal guide."
+      ]
+    },
+    {
+      "q": "How do I update or change my lost title surety bond form?",
+      "a": [
+        "If the Michigan Secretary of State Vehicle Title Division requires your surety bond documentation to be updated for any reason, contact your surety provider. The most common changes for these bonds include updating the:",
+        ["owner's name", "owner's address", "vehicle or watercraft information"]
+      ]
+    },
+    {
+      "q": "Is a credit check required for the Michigan Lost Title Bond?",
+      "a": [
+        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+      ]
+    },
+    {
+      "q": "Do I need to renew my certificate of title surety bond?",
+      "a": [
+        "Michigan vehicle uniform surety bonds expire at the end of a 3-year term and do not renew. If no claims are made against the bond, the state will return it."
+      ]
+    },
+    {
+      "q": "How do I apply for a bonded title in Michigan?",
+      "a": [
+        "To apply for a bonded title, complete the following steps.",
+        "Consult the Secretary of State. Bonded title applicants in Michigan should consult their local Secretary of State branch office prior to purchasing a surety bond. Michigan does not require all title applicants to obtain a bonded title, and usually only does so as an absolute last resort. Title applicants should ensure that they actually need a bond before purchasing one.",
+        "Determine the vehicle's value. After receiving confirmation that they need a bond, title applicants in Michigan should determine the vehicle's value. To determine the bond amount, title applicants should have their vehicle appraised by a licensed auto dealer or use a recognized vehicle appraisal guide, such as Kelley Blue Book.",
+        "Purchase a surety bond. Bonded title applicants must purchase and maintain a surety bond in an amount equal to twice the vehicle's fair market value.",
+        "Complete the title application. Bonded title applicants in Michigan can obtain a duplicate title application by visiting their local Secretary of State branch office. The Secretary of State will review the application, and mail the title applicant a bonded title if approved.",
+        "Watercraft bonded title instructions: submit an application for a watercraft certificate of title as well as payment of fees within 15 days of watercraft purchase, then purchase and file a watercraft title registration surety bond."
+      ]
+    },
+    {
+      "q": "How do Michigan bonded title applicants file their bond?",
+      "a": [
+        "In Michigan, bonded title applicants should submit the completed bond form, including the power of attorney, to their local Secretary of State branch office. The Michigan Lost Title Surety Bond requires signatures from both the surety company that issues the bond and the bonded title applicant.",
+        "The surety company should include the following information on the bond form:",
+        [
+          "The legal name and address of the entity/individual(s) buying the bond",
+          "Surety company's name",
+          "Bond amount",
+          "Vehicle information",
+          "Date the bond is signed"
+        ]
+      ]
+    },
+    {
+      "q": "What are the insurance requirements for bonded title applicants in Michigan?",
+      "a": [
+        "Michigan requires all motor vehicle owners to purchase auto insurance with the following minimum limits:",
+        ["$50,000 per person", "$100,000 per accident", "$10,000 property damage per accident"],
+        "Bonded title applicants must purchase and maintain a surety bond in an amount equal to twice the vehicle's fair market value."
+      ]
+    },
+    {
+      "q": "How can Michigan residents avoid claims against their Lost Title Bond?",
+      "a": [
+        "To avoid claims against their bond, bonded title applicants in Michigan must ensure that they are the rightful owners of the motor vehicle."
+      ]
+    }
+  ]
+}

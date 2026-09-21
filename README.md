@@ -83,6 +83,28 @@ Note that the API work will need server-side route handlers to hold the surety
 credentials. Those belong in `app/api/`; credentials go in environment variables
 and must never reach the client bundle.
 
+## Deployment
+
+Hosted on Vercel (team `jadam1`, project `titlebonds`), linked to this GitHub
+repo — every push to the production branch deploys automatically.
+
+### Indexing is gated to the canonical domain
+
+Preview and `*.vercel.app` builds serve the same content as production. If Google
+indexed one, it would put a duplicate of the entire site in competition with
+titlebonds.us — the exact thing this rebuild exists to prevent.
+
+So `robots.ts` serves `Disallow: /` and the pages carry `noindex` unless the
+deployment is the canonical host. That check (`isCanonicalHost()` in
+`lib/site.ts`) compares Vercel's `VERCEL_PROJECT_PRODUCTION_URL` against
+`site.url`, so it flips itself on once titlebonds.us is attached as the
+production domain — there's no flag to remember.
+
+**These values are read at build time.** Attaching the domain does not rebuild
+by itself, so after cutover trigger one deploy (push a commit or redeploy from
+the dashboard) and then confirm `https://titlebonds.us/robots.txt` says
+`Allow: /`. Until you see that, the live site is telling crawlers to stay out.
+
 ## Business details
 
 Phone, email, address and partner links live in `lib/site.ts`. Change them there

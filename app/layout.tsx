@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { formattedAddress, site } from "@/lib/site";
+import { formattedAddress, isCanonicalHost, site } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +19,11 @@ export const metadata: Metadata = {
     title: `${site.name} | Lost, Stolen & Damaged Title Bonds`,
     description: site.description,
   },
-  robots: { index: true, follow: true },
+  // robots.txt already blocks non-canonical hosts; this also keeps them out
+  // of the index if a staging URL is linked to from somewhere else.
+  robots: isCanonicalHost()
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
 };
 
 const organizationSchema = {

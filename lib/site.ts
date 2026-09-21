@@ -37,3 +37,21 @@ export function applyUrl(stateName?: string): string {
 }
 
 export const formattedAddress = `${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}`;
+
+/**
+ * Whether this deployment is the canonical titlebonds.us site.
+ *
+ * Preview builds and the project's *.vercel.app URLs serve the same content as
+ * production. Letting search engines index them would put a duplicate of the
+ * whole site in competition with the real domain, which is the one thing this
+ * rebuild exists to protect.
+ *
+ * `VERCEL_PROJECT_PRODUCTION_URL` is the domain Vercel considers this project's
+ * production host. It only equals the canonical host once titlebonds.us is
+ * attached as the production domain, so indexing turns itself on at cutover
+ * with no flag to remember.
+ */
+export function isCanonicalHost(): boolean {
+  if (process.env.VERCEL_ENV !== "production") return false;
+  return process.env.VERCEL_PROJECT_PRODUCTION_URL === new URL(site.url).host;
+}

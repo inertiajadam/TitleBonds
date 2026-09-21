@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ApplyButton } from "@/components/ApplyButton";
 import { FaqItem } from "@/components/Faq";
 import { Section, SectionHeading } from "@/components/Section";
-import { StateSelect } from "@/components/StateSelect";
+import { Hero } from "@/components/Hero";
 import { Steps } from "@/components/Steps";
 import { TrustBar } from "@/components/TrustBar";
 import { getRecentPosts } from "@/lib/posts";
@@ -32,37 +32,9 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="bg-navy-950 text-white">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:py-28">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold tracking-wide text-amber-accent uppercase">
-              The Title Bond Agency
-            </p>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Replace your lost, stolen or damaged title today
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-navy-200 sm:text-xl">
-              Replace a lost, stolen or defective title for your car, truck,
-              semi-truck, RV, motorcycle, mobile home, boat, ATV, trailer,
-              airplane and more.
-            </p>
+      <Hero states={states} />
 
-            <div className="mt-10 max-w-xl">
-              <StateSelect
-                states={states}
-                label="Select your state to learn more"
-              />
-            </div>
-
-            <p className="mt-6 text-sm text-navy-300">
-              Rates from 1.5% &middot; No credit check under $30,000 &middot;
-              Most bonds issued same day
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <Section>
+      <Section className="!py-14">
         <TrustBar />
       </Section>
 

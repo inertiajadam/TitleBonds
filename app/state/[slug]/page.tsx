@@ -127,7 +127,7 @@ export default async function StatePage({ params }: Params) {
                   {rateRows.map(([key, label]) => (
                     <div key={key} className="flex justify-between gap-6 py-3">
                       <dt className="shrink-0 text-navy-600">{label}</dt>
-                      <dd className="min-w-0 text-right font-semibold text-balance">
+                      <dd className="tnum min-w-0 text-right font-semibold text-balance">
                         {state.rates[key]}
                       </dd>
                     </div>
@@ -171,7 +171,7 @@ export default async function StatePage({ params }: Params) {
                         className={
                           index === 0
                             ? "py-3 pr-4 font-medium text-navy-900"
-                            : "py-3 pr-4 text-navy-600"
+                            : "tnum py-3 pr-4 text-navy-600"
                         }
                       >
                         {cell}

@@ -17,8 +17,11 @@
   --color-amber-accent: #f2a11d;
   --color-amber-accent-dark: #d2860a;
 
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  /* next/font injects these; the stack behind them covers the brief moment
+     before the self-hosted file is parsed and any no-JS/edge case. */
+  --font-sans: var(--font-text), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-display), var(--font-sans);
 
   --radius-card: 0.875rem;
 }
@@ -40,4 +43,23 @@ body {
 /* Give anchored FAQ/section targets room below the sticky header. */
 :target {
   scroll-margin-top: 6rem;
+}
+
+/* Headlines take the display face and tighter tracking; at large sizes the
+   default spacing reads loose and undermines the weight. */
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.022em;
+}
+
+h1 {
+  letter-spacing: -0.03em;
+}
+
+/* Tabular figures keep the rate tables and bond amounts in vertical columns. */
+.tnum {
+  font-variant-numeric: tabular-nums;
 }

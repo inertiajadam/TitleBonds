@@ -1,10 +1,33 @@
 import type { Metadata } from "next";
+import { Archivo, Inter } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { formattedAddress, isCanonicalHost, site } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationNode, websiteNode } from "@/lib/schema";
 import "./globals.css";
+
+/**
+ * Both families are downloaded and self-hosted at build time by next/font, so
+ * there is no request to a third-party font CDN at runtime and no flash of
+ * unstyled text — the earlier objection to a webfont was about a hosted kit,
+ * which this avoids.
+ *
+ * Archivo carries the headlines; Inter sets the long regulatory copy, where
+ * small-size legibility matters more than personality.
+ */
+const display = Archivo({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const text = Inter({
+  subsets: ["latin"],
+  variable: "--font-text",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -37,8 +60,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className="font-sans">
+    <html lang="en" className={`${display.variable} ${text.variable}`}>
+      <body className="font-sans antialiased">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-navy-900 focus:px-4 focus:py-2 focus:text-white"

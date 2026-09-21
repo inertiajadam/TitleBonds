@@ -11,21 +11,31 @@ import heroImage from "@/public/img/hero-trailer.jpg";
 export function Hero({ states }: { states: Array<{ slug: string; name: string }> }) {
   return (
     <section className="relative isolate overflow-hidden bg-navy-950">
-      <Image
-        src={heroImage}
-        alt=""
-        priority
-        placeholder="blur"
-        sizes="100vw"
-        className="absolute inset-0 size-full object-cover object-center"
-      />
+      {/* Below lg the hero is tall and narrow, and covering it with a
+          landscape photo blows up a thin slice of the middle — the trailer
+          stopped reading as a trailer at all. So the photo takes a band
+          across the top at close to its own proportions and the copy sits on
+          navy beneath it, matching the state pages. From lg it goes back to a
+          full backdrop with the headline over the open sky, which is what the
+          photo was chosen for. */}
+      <div className="absolute inset-x-0 top-0 h-56 sm:h-72 lg:inset-0 lg:h-auto">
+        <Image
+          src={heroImage}
+          alt=""
+          priority
+          placeholder="blur"
+          sizes="100vw"
+          className="size-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/15 via-navy-950/20 to-navy-950 lg:hidden" />
+      </div>
 
       {/* Two scrims: a horizontal one so the headline stays legible over the
           bright sky, and a vertical one to seat the section on the page. */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/25" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/40" />
+      <div className="absolute inset-0 hidden bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/25 lg:block" />
+      <div className="absolute inset-0 hidden bg-gradient-to-t from-navy-950 via-transparent to-navy-950/40 lg:block" />
 
-      <div className="relative mx-auto max-w-6xl px-4 py-24 sm:py-32 lg:py-40">
+      <div className="relative mx-auto max-w-6xl px-4 pt-60 pb-20 sm:pt-80 sm:pb-24 lg:py-40">
         <div className="max-w-2xl">
           <p className="flex items-center gap-2.5 text-sm font-semibold tracking-[0.18em] text-amber-accent uppercase">
             <span className="h-px w-8 bg-amber-accent" />

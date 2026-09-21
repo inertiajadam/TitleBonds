@@ -84,24 +84,33 @@ export default async function StatePage({ params }: Params) {
   return (
     <>
       <div className="relative isolate overflow-hidden bg-navy-950 text-white">
-        {/* Backdrop only — the alt is empty because the heading beside it
-            already says what the page is about, and the scrims below drop the
-            photo far enough that describing it would be noise. */}
-        <Image
-          src={photo.src}
-          alt=""
-          priority
-          placeholder="blur"
-          sizes="100vw"
-          className="absolute inset-0 size-full object-cover object-center"
-        />
-        {/* The lighten-to-the-right only makes sense once the rate card is
-            beside the copy and covering that side. Below lg the text runs the
-            full width, so the scrim stays close to flat. */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/95 to-navy-950/85 lg:via-navy-950/88 lg:to-navy-950/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950/45" />
+        {/* Decorative — the heading says what the page is about, so describing
+            the photograph would only add noise for a screen reader.
 
-        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-20">
+            Below lg the masthead is tall and narrow, and a full-bleed cover
+            crop of a landscape photo there shows a thin slice out of its
+            middle. So the photo takes a band across the top at close to its
+            own proportions, where the whole composition is legible, and the
+            copy sits on solid navy underneath it rather than fighting a scrim
+            for contrast. From lg it goes back to a full backdrop, because the
+            rate card is beside the copy by then and covers that half. */}
+        <div className="absolute inset-x-0 top-0 h-56 sm:h-72 lg:inset-0 lg:h-auto">
+          <Image
+            src={photo.src}
+            alt=""
+            priority
+            placeholder="blur"
+            sizes="100vw"
+            className="size-full object-cover object-center"
+          />
+          {/* Settles the band onto the content block with no hard edge. */}
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/15 via-navy-950/20 to-navy-950 lg:hidden" />
+        </div>
+
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-navy-950 via-navy-950/88 to-navy-950/30 lg:block" />
+        <div className="absolute inset-0 hidden bg-gradient-to-t from-navy-950 via-transparent to-navy-950/45 lg:block" />
+
+        <div className="relative mx-auto max-w-6xl px-4 pt-60 pb-16 sm:pt-80 sm:pb-20 lg:py-16 xl:py-20">
           <nav aria-label="Breadcrumb" className="text-sm text-navy-300">
             <Link href="/" className="hover:text-white">
               Home

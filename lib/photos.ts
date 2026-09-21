@@ -85,13 +85,15 @@ export function isPhotoKey(value: string): value is PhotoKey {
 /**
  * Photos of the property this agency actually bonds. State pages draw their
  * masthead backdrop from this set.
+ *
+ * hero-trailer is deliberately absent: it belongs to the homepage, and a state
+ * page repeating it made the two look like the same page.
  */
 const STATE_PHOTOS: PhotoKey[] = [
   "pickup-sunset",
   "rv-highway",
   "trailer-marina",
   "trailer-night",
-  "hero-trailer",
 ];
 
 /**

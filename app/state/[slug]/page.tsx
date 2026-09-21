@@ -1,0 +1,218 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { ApplyButton } from "@/components/ApplyButton";
+import { FaqItem } from "@/components/Faq";
+import { Section, SectionHeading } from "@/components/Section";
+import { Steps } from "@/components/Steps";
+import { site } from "@/lib/site";
+import { getAllStates, getState, getStateSlugs } from "@/lib/states";
+
+type Params = { params: Promise<{ slug: string }> };
+
+export function generateStaticParams() {
+  return getStateSlugs().map((slug) => ({ slug }));
+}
+
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { slug } = await params;
+  const state = getState(slug);
+  if (!state) return {};
+
+  return {
+    title: state.seoTitle,
+    description: state.metaDescription,
+    alternates: { canonical: `/state/${state.slug}` },
+    openGraph: {
+      title: state.seoTitle,
+      description: state.metaDescription,
+      url: `/state/${state.slug}`,
+    },
+  };
+}
+
+const rateLabels: Array<[keyof NonNullable<ReturnType<typeof getState>>["rates"], string]> = [
+  ["noCreditCheckUpTo", "No credit check up to"],
+  ["minPremium", "Minimum premium"],
+  ["rate", "Rate"],
+  ["instantIssueUpTo", "Instant issue up to"],
+  ["amountRequired", "Bond amount required"],
+];
+
+export default async function StatePage({ params }: Params) {
+  const { slug } = await params;
+  const state = getState(slug);
+  if (!state) notFound();
+
+  const others = getAllStates().filter((item) => item.slug !== state.slug);
+  const rateRows = rateLabels.filter(([key]) => state.rates[key]);
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: state.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a.flat().join(" ") },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Choose Your State",
+        item: `${site.url}/choose-your-state`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: state.name,
+        item: `${site.url}/state/${state.slug}`,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <div className="bg-navy-950 text-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+          <nav aria-label="Breadcrumb" className="text-sm text-navy-300">
+            <Link href="/" className="hover:text-white">
+              Home
+            </Link>
+            <span className="mx-2">/</span>
+            <Link href="/choose-your-state" className="hover:text-white">
+              Choose Your State
+            </Link>
+            <span className="mx-2">/</span>
+            <span className="text-white">{state.name}</span>
+          </nav>
+
+          <div className="mt-6 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+            <div>
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+                Get your {state.name} title bond today
+              </h1>
+              <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-200">
+                {state.intro.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <ApplyButton stateName={state.name}>
+                  Get your {state.name} title bond instantly
+                </ApplyButton>
+                <a
+                  href={site.phoneHref}
+                  className="inline-flex items-center rounded-full px-6 py-3.5 font-semibold text-white ring-1 ring-navy-600 transition-colors hover:bg-navy-900"
+                >
+                  Call {site.phone}
+                </a>
+              </div>
+            </div>
+
+            {rateRows.length > 0 && (
+              <aside className="rounded-card bg-white p-7 text-navy-900 shadow-lg">
+                <h2 className="text-lg font-bold">
+                  {state.name} title bond rates &amp; requirements
+                </h2>
+                <dl className="mt-5 divide-y divide-navy-100">
+                  {rateRows.map(([key, label]) => (
+                    <div key={key} className="flex justify-between gap-4 py-3">
+                      <dt className="text-navy-600">{label}</dt>
+                      <dd className="text-right font-semibold">{state.rates[key]}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-5 text-sm text-navy-500">
+                  Issued by the {state.agency}
+                  {state.statute ? ` under ${state.statute}` : ""}.
+                </p>
+              </aside>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <Section>
+        <SectionHeading
+          eyebrow="How it works"
+          title={`Getting bonded in ${state.name}`}
+          description="Don't overpay. Apply today and get your title bond in three simple steps."
+          centered
+        />
+        <div className="mt-12">
+          <Steps />
+        </div>
+      </Section>
+
+      <div className="bg-navy-50/60">
+        <Section>
+          <SectionHeading
+            eyebrow="Common questions"
+            title={`${state.name} title bond questions`}
+            centered
+          />
+          <div className="mx-auto mt-10 max-w-3xl">
+            {state.faqs.map((faq) => (
+              <FaqItem key={faq.q} q={faq.q} a={faq.a} />
+            ))}
+          </div>
+        </Section>
+      </div>
+
+      <Section className="text-center">
+        <h2 className="text-3xl font-bold tracking-tight text-navy-950">
+          Ready to replace your {state.name} title?
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-navy-600">
+          Apply online for a quick decision, or call our bond experts if you want
+          help before you start.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <ApplyButton stateName={state.name} />
+          <a
+            href={site.phoneHref}
+            className="inline-flex items-center rounded-full px-6 py-3.5 font-semibold text-navy-800 ring-1 ring-navy-200 transition-colors hover:bg-navy-50"
+          >
+            {site.phone}
+          </a>
+        </div>
+      </Section>
+
+      <Section className="!pt-0">
+        <h2 className="text-sm font-semibold tracking-wide text-navy-500 uppercase">
+          Title bonds in other states
+        </h2>
+        <ul className="mt-5 flex flex-wrap gap-2">
+          {others.map((item) => (
+            <li key={item.slug}>
+              <Link
+                href={`/state/${item.slug}`}
+                className="inline-block rounded-full border border-navy-100 px-4 py-1.5 text-sm text-navy-700 transition-colors hover:border-navy-300 hover:bg-navy-50"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+    </>
+  );
+}

@@ -1,0 +1,122 @@
+{
+  "slug": "texas-title-bonds",
+  "name": "Texas",
+  "abbr": "TX",
+  "agency": "Texas Department of Motor Vehicles",
+  "statute": "Texas statute 501.053",
+  "seoTitle": "Texas Title Bond Rates & Requirements",
+  "metaDescription": "Get your Texas certificate of title bond instantly. Rates start at $100 or 1.5%, no credit check up to $30,000, and instant issue on qualifying bonds.",
+  "intro": [
+    "If you do not have proof of ownership (a title) for your boat, motor vehicle, motorhome, mobile home, motorcycle or other titled property, you can provide the State of Texas with a Certificate of Title Bond in order to replace your lost, stolen, damaged or defective title. You will be able to register your vehicle with this new title.",
+    "You must be a resident of the State of Texas, a member of the military stationed in Texas, or have a vehicle that was last titled in Texas.",
+    "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
+  ],
+  "rates": {
+    "noCreditCheckUpTo": "$30,000",
+    "minPremium": "$100",
+    "rate": "1.5%",
+    "instantIssueUpTo": "$30,000",
+    "amountRequired": "1.5x the value of the vehicle"
+  },
+  "faqs": [
+    {
+      "q": "What is a Texas Lost Title Bond?",
+      "a": [
+        "Texas statute 501.053 requires residents who do not have adequate proof that they own their vehicle to purchase a surety bond prior to obtaining a duplicate title. The Texas legislature enacted the bonding requirement to ensure that the rightful vehicle owner will receive compensation if the title applicant does not actually own the vehicle.",
+        "The bond will be active for three years from the date of issuance and must be in an amount equal to one and a half times the vehicle's value."
+      ]
+    },
+    {
+      "q": "How do I get a bonded title in Texas?",
+      "a": [
+        "Determine the eligibility of your vehicle. Before starting your application, verify you as the vehicle owner and that your vehicle meets Texas Department of Motor Vehicles bonded title requirements. As the vehicle owner, you must be a resident of Texas or military personnel stationed in Texas. Your vehicle is not eligible for a title if it's considered junked or inoperable, but it does not have to be considered operational.",
+        "Have your vehicle inspected (if out of state). If you're a Texas resident but your vehicle was purchased out of state, you'll need to have your vehicle inspected at a Texas certified safety inspection station and receive a Vehicle Inspection Report to verify the vehicle identification number. If your vehicle has never been titled or registered in Texas, you'll need to provide a Law Enforcement Identification Number Inspection form, also known as a VTR-68-A form. This form can only be given to you by an auto theft investigator officer, who will be conducting a vehicle identification number inspection on your vehicle. You can contact your local law enforcement authorities to determine when and where these inspections are done, as the Texas DMV does not provide them.",
+        "Complete and submit the required documents to the DMV. You'll complete and submit several materials to your local Texas DMV along with your $15.00 administration fee that can be paid for with cash, check, or money order payment. After they're submitted, wait for approval from the DMV to move on to the next step.",
+        [
+          "Bonded Title Application (Form VTR-130-SOF)",
+          "Vehicle Inspection Form (if applicable)",
+          "Law Enforcement Identification Number Inspection form (if applicable)",
+          "If available, any proof of ownership",
+          "Valid photo ID"
+        ],
+        "Determine your bond amount. Once you've received approval, the DMV will issue you a Notice of Determination for a Bonded Title or Tax Assessor-Collector Hearing (form VTR-130-ND) that lists your required bond amount, which will be equal to 1 1/2 times your vehicle value. If your vehicle is 25 years old or older and has an appraisal value under $4,000, your surety bond amount will be set at $4,000.",
+        "Purchase your surety bond. Once you know your bond amount, you'll use your Notice of Determination for Bonded Title or Tax Assessor-Collector Hearing form to buy your Texas certificate of title bond online 24/7. Texas certificate of title bond costs start at $100 and are delivered in minutes by email. You have 1 year from the date the DMV issued your notice to purchase your surety bond before a new notice form and bond is needed. You must physically sign your bond before filing it with your local DMV.",
+        "Submit your bonded title application. Now that you've purchased your surety bond, you can officially apply for your vehicle's bonded title! You'll provide your Application for a Texas Title and/or Registration form, your official Texas certificate of title bond, and all other application materials listed in step 3. If you have a commercial vehicle or truck, you'll also need to provide a weight certificate. Imported vehicles must have documents that indicate the vehicle was properly imported and is compliant or exempt from federal safety regulations.",
+        "You can submit your application to your local DMV in person or by mail. You have 30 days within the issuance of your surety bond to submit all your bonded title application materials to your local county tag office. If it is not submitted within the allotted time, your county tax office will not accept your application or surety bond.",
+        "Since the Texas bonded title works the same as the original title, you now have proof of ownership for your vehicle. A bonded title is effective for 3 years, and at the end of that time will replace the vehicle's original title."
+      ]
+    },
+    {
+      "q": "What is the purpose of the Texas Lost Title Bond?",
+      "a": [
+        "Texas requires residents to purchase a surety bond as part of the application process to obtain a bonded title. The bond ensures that the rightful vehicle owner will not suffer a financial loss if the title applicant is seeking to obtain the title fraudulently.",
+        "If the title applicant is engaging in fraud, then the rightful vehicle owner can file a claim against the bond and receive compensation up to the full amount of the bond. In short, the bond acts as a safeguard against people attempting to obtain ownership of a vehicle through unethical means."
+      ]
+    },
+    {
+      "q": "How is the bond amount determined?",
+      "a": [
+        "Texas statute 501.053 dictates that the bond amount must be equal to one and a half times the vehicle's value. To determine the vehicle's value, the Department of Motor Vehicles will either use the Standard Presumptive Value (SPV) from its website or utilize the National Automobile Dealers Association (NADA) appraisal guide.",
+        "If no value is available through either SPV or NADA, title applicants may have their vehicle appraised by a licensed auto dealer or insurance adjuster."
+      ]
+    },
+    {
+      "q": "Is a credit check required for the Texas Lost Title Bond?",
+      "a": [
+        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+      ]
+    },
+    {
+      "q": "How much does the Texas Lost Title Bond cost?",
+      "a": [
+        "The Texas Lost Title Bond costs either $100 or 1.5% of the bond amount, whichever is greater (rates may vary for bonds greater than $25,000)."
+      ]
+    },
+    {
+      "q": "Who is required to purchase a bond?",
+      "a": [
+        "The Texas Department of Motor Vehicles requires title applicants to purchase a surety bond if the applicant cannot present the department with tangible proof that they own the vehicle and are unable to contact the vehicle's previous owner. Lost title bonds are typically required for the following reasons:",
+        [
+          "The vehicle has never been titled",
+          "The applicant never received the title",
+          "The previous owner never titled the vehicle",
+          "The applicant has the title but there is an error in the title transfer",
+          "The applicant purchased an unclaimed/abandoned vehicle and is not a bonded agent"
+        ],
+        "Vehicles that are considered junk or nonrepairable are ineligible for a title."
+      ]
+    },
+    {
+      "q": "How do Texas bonded title applicants file their bond?",
+      "a": [
+        "In Texas, bonded title applicants should submit the completed bond form, including the power of attorney, to their local DMV office. The Texas Lost Title Surety Bond requires signatures from both the surety company that issues the bond and the bonded title applicant.",
+        "The surety company should include the following information on the bond form:",
+        [
+          "The legal name and address of the entity/individual(s) buying the bond",
+          "Surety company's name and address",
+          "Bond amount",
+          "Vehicle information",
+          "Date the bond goes into effect"
+        ]
+      ]
+    },
+    {
+      "q": "What are the insurance requirements for bonded title applicants in Texas?",
+      "a": [
+        "Texas requires all motor vehicle owners to purchase auto insurance with the following minimum limits:",
+        [
+          "$30,000 per person",
+          "$60,000 per accident",
+          "$25,000 property damage per accident"
+        ],
+        "Bonded title applicants must purchase and maintain a surety bond in an amount equal to one and a half times the vehicle's value."
+      ]
+    },
+    {
+      "q": "How can Texas residents avoid claims against their Lost Title Bond?",
+      "a": [
+        "To avoid claims against their bond, bonded title applicants in Texas must ensure that they are the rightful owners of the motor vehicle."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "slug": "iowa",
+  "name": "Iowa",
+  "abbr": "IA",
+  "agency": "Iowa Department of Transportation",
+  "statute": "Iowa Code Chapter 321 Section 24",
+  "seoTitle": "Iowa Title Bond Rates & Requirements",
+  "metaDescription": "Iowa certificate of title bond costs start at $100. Apply online 24/7, no credit check under $25,000, and receive your bond documents by email instantly.",
+  "intro": [
+    "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
+  ],
+  "rates": {
+    "noCreditCheckUpTo": "$25,000",
+    "minPremium": "$100",
+    "rate": "1.5%",
+    "amountRequired": "1.5x the current value of the vehicle"
+  },
+  "faqs": [
+    {
+      "q": "What is an Iowa certificate of title bond?",
+      "a": [
+        "Iowa Code Chapter 321 Section 24 requires individuals to file a surety bond for vehicle registration if they have unsatisfactory ownership proof. The Iowa title bond protects any prior owner or future owner from expenses, losses, or damages resulting from certificate of title issuance.",
+        "If the original vehicle title is found and a valid claim is made on the bond, the surety company will pay harmed parties up to the full bond amount. The bonded vehicle owner must then reimburse the surety company.",
+        "Common reasons for unsatisfactory proof of ownership include:",
+        [
+          "lost, stolen, or damaged vehicle titles",
+          "inaccurate VIN or vehicle information",
+          "the vehicle is older than 25 years and junked",
+          "security interest cannot be released"
+        ]
+      ]
+    },
+    {
+      "q": "How much does an Iowa certificate of title bond cost?",
+      "a": [
+        "Iowa certificate of title bond costs start at $100. The exact cost will vary depending on the surety bond amount required by the Iowa Department of Transportation.",
+        [
+          "Bond amounts up to $6,000 cost $100.",
+          "Bond amounts from $6,001 to $50,000 cost $15 for every $1,000 of coverage, starting at $100.",
+          "Bond amounts higher than $50,000 must be reviewed by an underwriter for pricing, starting at $750."
+        ],
+        "The Iowa Lost Title Bond costs either $100 or 1.5% of the bond amount, whichever is greater (rates may vary for bonds greater than $25,000)."
+      ]
+    },
+    {
+      "q": "How do you get a bonded title in Iowa?",
+      "a": [
+        "You can purchase an Iowa certificate title bond online 24/7. You must provide the following information for Department of Transportation approval.",
+        [
+          "name",
+          "county",
+          "vehicle book value",
+          "vehicle identification number (VIN)",
+          "year",
+          "make"
+        ],
+        "Once your payment is processed, your official bond documents will be delivered to your email instantly."
+      ]
+    },
+    {
+      "q": "What is the purpose of the Iowa Lost Title Bond?",
+      "a": [
+        "Iowa requires residents to purchase a surety bond as part of the application process to obtain a bonded title. The bond ensures that the rightful vehicle owner will not suffer a financial loss if the title applicant is seeking to obtain the title fraudulently.",
+        "If the title applicant is engaging in fraud, then the rightful vehicle owner can file a claim against the bond and receive compensation up to the full amount of the bond. In short, the bond acts as a safeguard against people attempting to obtain ownership of a vehicle through unethical means."
+      ]
+    },
+    {
+      "q": "Who is required to purchase a bond?",
+      "a": [
+        "The Iowa Department of Transportation will require a title applicant to purchase a surety bond if the applicant cannot present the department with adequate proof that the applicant does in fact own the vehicle. Typically, lost title bonds are required for the following reasons:",
+        [
+          "The vehicle has never been titled",
+          "The applicant never received the title",
+          "The previous owner never titled the vehicle",
+          "The applicant has the title but there is an error in the title transfer",
+          "The applicant purchased an unclaimed/abandoned vehicle and is not a bonded agent"
+        ],
+        "Vehicles that have been issued a junking certificate cannot be titled through bonding unless the vehicle is at least 25 years old."
+      ]
+    },
+    {
+      "q": "Who registers vehicles in Iowa?",
+      "a": [
+        "The Iowa Department of Transportation Motor Vehicle Division regulates vehicle registration, including requirements, for vehicles with lost, stolen, or missing titles. Your lost title surety bond must be submitted to the Iowa DOT within 30 days.",
+        "Iowa title bonds are used to register vehicles. If you plan to sell vehicles, a separate Iowa motor vehicle dealer bond is required."
+      ]
+    },
+    {
+      "q": "How do I determine my bond amount?",
+      "a": [
+        "Iowa statute 321.24 dictates that the bond amount must be equal to one and a half times the vehicle's current value. The Department of Transportation will determine the vehicle's value during the title application process."
+      ]
+    },
+    {
+      "q": "Is a credit check required for the Iowa Lost Title Bond?",
+      "a": [
+        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+      ]
+    },
+    {
+      "q": "How do I update my certificate of title bond form?",
+      "a": [
+        "If the Iowa Department of Transportation requires your surety bond documentation to be updated for any reason, contact your surety provider. The most common changes for these bonds include updating the:",
+        ["name", "county", "vehicle information"]
+      ]
+    },
+    {
+      "q": "Does your Iowa bonded title expire?",
+      "a": [
+        "Your Iowa title bond expires 3 years from its effective date and does not renew. At that time the Iowa Department of Transportation may return the bond if the vehicle is no longer registered in the state and evidence of the original certificate is provided."
+      ]
+    },
+    {
+      "q": "How do I get an Iowa bonded title?",
+      "a": [
+        "Review the Bonded Certificate of Title information on the Iowa Department of Transportation website and follow the steps listed below.",
+        "Submit the Application for Registration and Bonded Certificate of Title for a Vehicle with written proof of ownership, such as a bill of sale or canceled check. Once the Iowa DOT reviews the documents, they will look for an active title for the vehicle. If a record is found but the current owner does not respond or waives the claim, the bonding process will continue.",
+        "Bonded title applicants must complete the title application and submit it via email to vscusto@iowadot.us or mail it to the Iowa Department of Transportation, Office of Vehicle and Motor Carrier Services, Box 9278, Des Moines, Iowa 50306.",
+        "File a surety bond with your county treasurer. Bonded title applicants in Iowa should consult with their local county treasurer prior to purchasing a surety bond. Iowa does not require all title applicants to obtain a bonded title, and title applicants should ensure that they actually need a bond before purchasing one.",
+        "Send the county treasurer's surety bond receipt and authorization letter to the Iowa Bureau of Investigations and Identity Protection. After receiving an authorization letter, pay the application fees and register your vehicle with the county treasurer within 30 days."
+      ]
+    },
+    {
+      "q": "How do Iowa bonded title applicants file their bond?",
+      "a": [
+        "In Iowa, bonded title applicants should mail the completed bond form, including the power of attorney, to the Iowa Department of Transportation, Office of Vehicle and Motor Carrier Services, Box 9278, Des Moines, Iowa 50306.",
+        "The Iowa Lost Title Surety Bond requires signatures from both the surety company that issues the bond and the bonded title applicant. The Department of Transportation will provide the title applicant with a bond form after they have received the title application."
+      ]
+    },
+    {
+      "q": "What are the insurance requirements for bonded title applicants in Iowa?",
+      "a": [
+        "Iowa requires all motor vehicle owners to purchase auto insurance with the following minimum limits:",
+        [
+          "$20,000 per person",
+          "$40,000 per accident",
+          "$15,000 property damage per accident"
+        ],
+        "Bonded title applicants must purchase and maintain a surety bond in an amount equal to one and a half times the vehicle's current retail value."
+      ]
+    },
+    {
+      "q": "How can Iowa residents avoid claims against their Lost Title Bond?",
+      "a": [
+        "To avoid claims against their bond, bonded title applicants in Iowa must ensure that they are the rightful owners of the motor vehicle."
+      ]
+    }
+  ]
+}

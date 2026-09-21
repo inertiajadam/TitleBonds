@@ -1,0 +1,146 @@
+{
+  "slug": "nevada",
+  "name": "Nevada",
+  "abbr": "NV",
+  "agency": "Nevada Department of Motor Vehicles",
+  "statute": "Nevada Revised Statute 482.2605",
+  "seoTitle": "Nevada Title Bond Rates & Requirements",
+  "metaDescription": "Nevada title bond costs start at $100 for the state-required 3-year term. Bond amount is 1.5x the vehicle's MSRP value.",
+  "intro": [
+    "Follow the links below to find and apply for your Nevada surety bond and let our expert staff get the bond you need at the lowest possible price."
+  ],
+  "rates": {
+    "noCreditCheckUpTo": "$25,000",
+    "minPremium": "$100",
+    "rate": "1.5%",
+    "amountRequired": "1.5x the vehicle's Manufacturer's Suggested Retail Price (MSRP)"
+  },
+  "faqs": [
+    {
+      "q": "What is a Nevada bonded title?",
+      "a": [
+        "Nevada Revised Statute 482.2605 requires that individuals missing official vehicle ownership documentation file a surety bond with the DMV when applying for a bonded title. In Nevada, form VP-272 is officially titled the \"Vehicle Bond Affidavit,\" but it's more commonly known as a \"certificate of title surety bond,\" \"lost title bond,\" or \"bonded title.\"",
+        "The Nevada certificate of title bond protects any prior owner, prior lien holder, or future purchaser against expenses, losses, or damages resulting from certificate of title issuance. If the original title is found and a valid claim is made against the bond, the surety company will pay damages up to the full bond amount. The bonded vehicle owner must then reimburse any claims paid."
+      ]
+    },
+    {
+      "q": "How much does a Nevada certificate of title bond cost?",
+      "a": [
+        "Nevada title bond costs start at $100 for the state-required 3-year term. The exact cost will vary depending on the surety bond amount required by the Nevada Department of Motor Vehicles.",
+        [
+          "Bond amounts up to $5,000 cost $100.",
+          "Bond amounts from $5,001 to $25,000 cost $20 for every $1,000 of coverage, starting at $100.",
+          "Bond amounts from $25,000 to $50,000 cost $15 for every $1,000 of coverage, starting at $375.",
+          "Bond amounts for more than $50,000 must be reviewed by an underwriter for pricing, starting at $750."
+        ],
+        "The Nevada Lost Title Bond costs either $100 or 1.5% of the bond amount, whichever is greater (rates may vary for bonds greater than $25,000)."
+      ]
+    },
+    {
+      "q": "Where can you get a Nevada vehicle title bond?",
+      "a": [
+        "You can purchase your Nevada lost title bond online. Simply provide the following information required for Nevada Department of Motor Vehicles approval:",
+        ["vehicle owner name", "address", "county", "phone number", "vehicle identification number (VIN)", "vehicle year, make, and model", "driver's license number"],
+        "Once you submit your order, a copy of your surety bond documentation will be emailed to you instantly. Your official bond will be mailed to you based on your shipping selection during checkout."
+      ]
+    },
+    {
+      "q": "How fast can I get a lost title bond?",
+      "a": [
+        "The Nevada DMV requires your title surety bond to be physically issued and delivered to you. Once your payment is processed, you'll receive a copy of your bond by email within minutes. If you're in a rush to receive your official bond, choose overnight shipping when submitting your order."
+      ]
+    },
+    {
+      "q": "What is the purpose of the Nevada Lost Title Bond?",
+      "a": [
+        "Nevada requires residents to purchase a surety bond as part of the application process to obtain a bonded title. The bond ensures that the rightful vehicle owner will not suffer a financial loss if the title applicant is seeking to obtain the title fraudulently.",
+        "If the title applicant is engaging in fraud, then the rightful vehicle owner can file a claim against the bond and receive compensation up to the full amount of the bond. In short, the bond acts as a safeguard against people attempting to obtain ownership of a vehicle through unethical means."
+      ]
+    },
+    {
+      "q": "Who needs a Nevada bonded title?",
+      "a": [
+        "If you're trying to register a vehicle with the Nevada DMV but can't provide valid ownership documentation, you can apply for a bonded title. To qualify for a bonded title, you must be a Nevada resident who owns a vehicle within the state. If your vehicle has an open lien, you're not eligible to purchase a surety bond to get a bonded title.",
+        "Please note a Nevada certificate of title bond is required if you have insufficient vehicle ownership. If you plan to sell vehicles, a separate Nevada vehicle industry license bond is required.",
+        "Lost title bonds are typically required for the following reasons:",
+        [
+          "The vehicle has never been titled",
+          "The applicant never received the title",
+          "The previous owner never titled the vehicle",
+          "The applicant has the title but there is an error in the title transfer",
+          "The applicant purchased an unclaimed/abandoned vehicle and is not a bonded agent"
+        ]
+      ]
+    },
+    {
+      "q": "Who regulates registration for vehicles with missing titles?",
+      "a": [
+        "The Nevada DMV office enforces vehicle registration requirements and approves bonded title applications for missing vehicle titles. You must fulfill all DMV bond requirements before your replacement title application will be approved."
+      ]
+    },
+    {
+      "q": "How do I determine my bond amount?",
+      "a": [
+        "Nevada statute 482.2605 dictates that the bond amount must be equal to one and a half times the value of the vehicle's Manufacturer's Suggested Retail Price (MSRP). Lost title bonds for salvage vehicles must equal 25% of the vehicle's MSRP value.",
+        "If you need help determining your required surety bond amount, contact the Department of Motor Vehicles before purchasing your bond. The state DMV website specifically advises NOT to purchase a surety bond until the DMV has authorized your bonded title application."
+      ]
+    },
+    {
+      "q": "Is a credit check required for the Nevada Lost Title Bond?",
+      "a": [
+        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+      ]
+    },
+    {
+      "q": "How do I update or change my bond form?",
+      "a": [
+        "If the Nevada DMV requires any updates to your official bond documentation, contact your surety company. The most common changes include:",
+        ["vehicle information", "owner's name", "owner's address, county, or phone number"]
+      ]
+    },
+    {
+      "q": "Do Nevada bonded titles expire?",
+      "a": [
+        "Nevada certificate of title bonds expire after 3 years and do not renew. The DMV will return your original title surety bond to you after it expires as long as no claims have been filed against it."
+      ]
+    },
+    {
+      "q": "How can Nevada residents avoid claims against their Lost Title Bond?",
+      "a": [
+        "To avoid claims against your lost title bond, you should verify you're the vehicle's sole legal owner before purchasing your surety bond and applying for your bonded title. If you're aware of an existing lien holder, you must clear the open lien from the vehicle before purchasing a surety bond or applying for your bonded title."
+      ]
+    },
+    {
+      "q": "How do I apply for a bonded title in Nevada?",
+      "a": [
+        "To apply for a bonded title, complete the following steps.",
+        "Contact the DMV. Bonded title applicants in Nevada should consult the DMV's Title Research Section at (775) 684-4180 prior to purchasing a surety bond. Nevada does not require all title applicants to obtain a bonded title, and usually only does so as an absolute last resort. Title applicants should ensure that they actually need a bond before purchasing one. If the DMV determines the applicant needs a bond, they will provide the applicant with an Affidavit for Bonded Vehicle Title form that must be completed.",
+        "Have the vehicle inspected. Bonded title applicants must have their vehicle inspected by either a DMV full service office, a sworn law enforcement officer, or any business authorized by the DMV to conduct inspections. The applicant must also complete parts 1 and 2 of the affidavit during the inspection.",
+        "Mail the affidavit to the Title Research Section. After their vehicle has been inspected, title applicants should mail their completed affidavit, as well as copies of any and all ownership documents, to: Nevada Department of Motor Vehicles, Title Research Section, 555 Wright Way, Carson City, NV 89711.",
+        "Purchase a surety bond. After receiving the applicant's Affidavit of Bonded Vehicle Title form, the DMV will mail the applicant a Vehicle Bond Affidavit and will inform the applicant of their required bond amount. Bonded title applicants must purchase and maintain a surety bond in an amount equal to one and a half times the vehicle's MSRP value.",
+        "Return all documents to the DMV. After purchasing their bond, bonded title applicants must mail their bond, as well as all affidavits and original documentation, to the Nevada Department of Motor Vehicles."
+      ]
+    },
+    {
+      "q": "How do Nevada bonded title applicants file their bond?",
+      "a": [
+        "In Nevada, bonded title applicants should mail the completed bond form, including the power of attorney, to: Nevada Department of Motor Vehicles, Title Research Section, 555 Wright Way, Carson City, NV 89711.",
+        "The Nevada Lost Title Surety Bond requires signatures from both the surety company that issues the bond and the bonded title applicant. The surety company should include the following information on the bond form:",
+        [
+          "The legal name, address, and phone number of the entity/individual(s) buying the bond",
+          "Surety company's name, address, phone number, and email address",
+          "Bond amount",
+          "Vehicle information",
+          "Date the bond is signed"
+        ]
+      ]
+    },
+    {
+      "q": "What are the insurance requirements for bonded title applicants in Nevada?",
+      "a": [
+        "Nevada requires all motor vehicle owners to purchase auto insurance with the following minimum limits:",
+        ["$25,000 per person", "$50,000 per accident", "$20,000 property damage per accident"]
+      ]
+    }
+  ]
+}

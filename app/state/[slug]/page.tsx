@@ -9,7 +9,7 @@ import { Steps } from "@/components/Steps";
 import { StateAnswer, stateAnswerText } from "@/components/StateAnswer";
 import { site } from "@/lib/site";
 import { getAllStates, getState, getStateSlugs } from "@/lib/states";
-import { statePhoto } from "@/lib/photos";
+import { getPhoto } from "@/lib/photos";
 import { JsonLd } from "@/components/JsonLd";
 import {
   breadcrumbNode,
@@ -57,7 +57,7 @@ export default async function StatePage({ params }: Params) {
   const state = getState(slug);
   if (!state) notFound();
 
-  const photo = statePhoto(state.slug);
+  const photo = getPhoto(state.image);
   const others = getAllStates().filter((item) => item.slug !== state.slug);
   const rateRows = rateLabels.filter(([key]) => state.rates[key]);
 

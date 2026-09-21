@@ -1,5 +1,4 @@
 import type { StaticImageData } from "next/image";
-import { getStateSlugs } from "@/lib/states";
 import contractDesk from "@/public/img/contract-desk.jpg";
 import heroTrailer from "@/public/img/hero-trailer.jpg";
 import pickupSunset from "@/public/img/pickup-sunset.jpg";
@@ -14,6 +13,10 @@ import trailerNight from "@/public/img/trailer-night.jpg";
  * Pages refer to photos by key rather than importing files directly, so a
  * content file can name an image without reaching into the build graph, and so
  * a key that no longer exists fails the build instead of rendering a gap.
+ * Each state and post names its own key; nothing here assigns them.
+ *
+ * hero-trailer is the homepage's — don't pin it to a state as well, or the two
+ * pages read as the same page.
  */
 
 export type PhotoKey =
@@ -80,40 +83,4 @@ export function getPhoto(key: PhotoKey): Photo {
 
 export function isPhotoKey(value: string): value is PhotoKey {
   return value in photos;
-}
-
-/**
- * Photos of the property this agency actually bonds. State pages draw their
- * masthead backdrop from this set.
- *
- * hero-trailer is deliberately absent: it belongs to the homepage, and a state
- * page repeating it made the two look like the same page.
- */
-const STATE_PHOTOS: PhotoKey[] = [
-  "pickup-sunset",
-  "rv-highway",
-  "trailer-marina",
-  "trailer-night",
-];
-
-/**
- * Pick a state's masthead photo from its slug.
- *
- * Deterministic on purpose: the same state gets the same photo on every build,
- * so a page's appearance never changes underneath a cached screenshot or a
- * visual diff, and neighbouring states in the footer list don't all match.
- */
-export function statePhotoKey(slug: string): PhotoKey {
-  // Dealt round-robin down the alphabetical state list rather than hashed: a
-  // hash of 32 slugs across 5 photos clumps badly (a third of the states drew
-  // the homepage hero), whereas this spreads them evenly and guarantees that
-  // states sitting next to each other in a list never match. Still
-  // deterministic, so a state keeps its photo from build to build.
-  const index = getStateSlugs().indexOf(slug);
-  if (index < 0) return STATE_PHOTOS[0];
-  return STATE_PHOTOS[index % STATE_PHOTOS.length];
-}
-
-export function statePhoto(slug: string): Photo {
-  return photos[statePhotoKey(slug)];
 }

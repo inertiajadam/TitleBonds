@@ -1,6 +1,5 @@
 import { OG_CONTENT_TYPE, OG_SIZE, renderOgImage } from "@/lib/og";
 import { getState, getStateSlugs } from "@/lib/states";
-import { statePhotoKey } from "@/lib/photos";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
@@ -29,6 +28,6 @@ export default async function Image({
     eyebrow: `${state?.name ?? ""} title bonds`,
     title: `Get your ${state?.name ?? ""} title bond today`,
     facts,
-    photo: statePhotoKey(slug),
+    photo: state?.image,
   });
 }

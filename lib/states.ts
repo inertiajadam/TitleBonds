@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { isPhotoKey, type PhotoKey } from "@/lib/photos";
 
 /**
  * A block of answer content. A plain string is a paragraph; an array of
@@ -40,6 +41,8 @@ export type TitleBondState = {
   statute?: string;
   seoTitle: string;
   metaDescription: string;
+  /** Key into the photo registry; the masthead backdrop and the og:image. */
+  image: PhotoKey;
   intro: string[];
   rates: StateRates;
   bondAmountTable?: BondAmountTable;
@@ -63,6 +66,11 @@ function readStates(): TitleBondState[] {
     if (state.slug !== expected) {
       throw new Error(
         `State content ${file} declares slug "${state.slug}"; expected "${expected}".`,
+      );
+    }
+    if (!isPhotoKey(state.image)) {
+      throw new Error(
+        `State content ${file} names image "${state.image}", which is not in the photo registry.`,
       );
     }
     return state;

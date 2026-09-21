@@ -50,7 +50,7 @@ export default async function BlogPostPage({ params }: Params) {
   };
 
   return (
-    <Section className="max-w-3xl">
+    <Section width="prose">
       <nav aria-label="Breadcrumb" className="text-sm text-navy-500">
         <Link href="/blog" className="hover:text-navy-900">
           Blog
@@ -104,6 +104,40 @@ export default async function BlogPostPage({ params }: Params) {
                       <li key={itemIndex}>{item}</li>
                     ))}
                   </ol>
+                );
+              case "table":
+                return (
+                  <div key={index} className="overflow-x-auto">
+                    <table className="w-full min-w-lg border-collapse text-left text-sm">
+                      <thead>
+                        <tr className="border-b border-navy-200">
+                          {block.columns.map((column) => (
+                            <th key={column} className="py-3 pr-4 font-semibold text-navy-950">
+                              {column}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {block.rows.map((row) => (
+                          <tr key={row[0]} className="border-b border-navy-100">
+                            {row.map((cell, cellIndex) => (
+                              <td
+                                key={cellIndex}
+                                className={
+                                  cellIndex === 0
+                                    ? "py-3 pr-4 font-medium text-navy-900"
+                                    : "py-3 pr-4 text-navy-600"
+                                }
+                              >
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 );
               default:
                 return (

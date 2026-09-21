@@ -6,7 +6,8 @@ export type PostBlock =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "ul"; items: string[] }
-  | { type: "ol"; items: string[] };
+  | { type: "ol"; items: string[] }
+  | { type: "table"; columns: string[]; rows: string[][] };
 
 export type Post = {
   slug: string;

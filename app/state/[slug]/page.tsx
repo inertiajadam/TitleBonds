@@ -125,9 +125,11 @@ export default async function StatePage({ params }: Params) {
                 </h2>
                 <dl className="mt-5 divide-y divide-navy-100">
                   {rateRows.map(([key, label]) => (
-                    <div key={key} className="flex justify-between gap-4 py-3">
-                      <dt className="text-navy-600">{label}</dt>
-                      <dd className="text-right font-semibold">{state.rates[key]}</dd>
+                    <div key={key} className="flex justify-between gap-6 py-3">
+                      <dt className="shrink-0 text-navy-600">{label}</dt>
+                      <dd className="min-w-0 text-right font-semibold text-balance">
+                        {state.rates[key]}
+                      </dd>
                     </div>
                   ))}
                 </dl>

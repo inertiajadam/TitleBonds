@@ -24,7 +24,7 @@ const faqSchema = {
 export default function FaqPage() {
   return (
     <>
-      <Section className="max-w-3xl">
+      <Section width="prose">
         <SectionHeading
           eyebrow="Frequently asked questions"
           title="Answers to all of your questions about title bonds"

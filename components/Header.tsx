@@ -51,9 +51,9 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <ApplyButton className="hidden px-5 py-2.5 text-sm sm:inline-flex">
-              Apply Now
-            </ApplyButton>
+            <span className="hidden sm:block">
+              <ApplyButton size="compact">Apply Now</ApplyButton>
+            </span>
             <button
               type="button"
               onClick={() => setOpen((value) => !value)}

@@ -1,12 +1,22 @@
+const widths = {
+  default: "max-w-6xl",
+  prose: "max-w-3xl",
+} as const;
+
 export function Section({
   children,
+  width = "default",
   className = "",
 }: {
   children: React.ReactNode;
+  /** "prose" narrows the column for long-form reading. */
+  width?: keyof typeof widths;
   className?: string;
 }) {
   return (
-    <section className={`mx-auto max-w-6xl px-4 py-16 sm:py-20 ${className}`}>
+    <section
+      className={`mx-auto ${widths[width]} px-4 py-16 sm:py-20 ${className}`}
+    >
       {children}
     </section>
   );

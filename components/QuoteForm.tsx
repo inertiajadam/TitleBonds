@@ -119,7 +119,16 @@ export function QuoteForm({ stateName }: { stateName: string }) {
       )}
 
       <p className="mt-4 text-xs leading-relaxed text-navy-500">
-        We use your details only to prepare your bond quote.
+        We use your details only to prepare your bond quote. See our{" "}
+        <a
+          href="/privacy-policy"
+          target="_blank"
+          rel="noopener"
+          className="underline underline-offset-2 hover:text-navy-700"
+        >
+          privacy policy
+        </a>
+        .
       </p>
     </form>
   );

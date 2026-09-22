@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/frequently-asked-questions", priority: 0.7 },
     { path: "/blog", priority: 0.6 },
     { path: "/contact", priority: 0.5 },
+    { path: "/privacy-policy", priority: 0.2 },
+    { path: "/terms", priority: 0.2 },
   ].map((route) => ({
     url: `${site.url}${route.path}`,
     lastModified: new Date(),

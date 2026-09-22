@@ -81,7 +81,18 @@ export function Footer() {
         </div>
 
         <p className="mt-12 border-t border-navy-800 pt-8 text-xs text-navy-400">
-          {site.name} &copy; {new Date().getFullYear()}. All Rights Reserved.
+          <span>
+            {site.name} &copy; {new Date().getFullYear()}. All Rights Reserved.
+          </span>
+          <span className="mt-3 block sm:mt-0 sm:ml-4 sm:inline">
+            <Link href="/privacy-policy" className="hover:text-white">
+              Privacy Policy
+            </Link>
+            <span className="mx-2 text-navy-500">&middot;</span>
+            <Link href="/terms" className="hover:text-white">
+              Terms of Use
+            </Link>
+          </span>
         </p>
       </div>
     </footer>

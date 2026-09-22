@@ -200,6 +200,18 @@ export default async function LandingPage({ params }: Params) {
           <p className="mt-4 text-xs text-navy-500">
             {site.name} &copy; {new Date().getFullYear()}. All Rights Reserved.
           </p>
+          {/* Required where a page collects personal information, and the one
+              exception to this page carrying no links off itself. New tab, so
+              a half-filled form is not lost to a policy check. */}
+          <p className="mt-2 text-xs text-navy-500">
+            <a href="/privacy-policy" target="_blank" rel="noopener" className="underline">
+              Privacy Policy
+            </a>
+            <span className="mx-2">&middot;</span>
+            <a href="/terms" target="_blank" rel="noopener" className="underline">
+              Terms of Use
+            </a>
+          </p>
         </div>
       </footer>
 

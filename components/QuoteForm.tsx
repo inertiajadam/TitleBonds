@@ -60,6 +60,8 @@ export function QuoteForm({ stateName }: { stateName: string }) {
   return (
     <form
       onSubmit={onSubmit}
+      // Session recording must never capture what someone types here.
+      data-clarity-mask="true"
       className="rounded-card bg-white p-6 text-navy-900 shadow-lg sm:p-7"
       noValidate={false}
     >

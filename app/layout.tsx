@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo, Inter } from "next/font/google";
-import { isCanonicalHost, site } from "@/lib/site";
+import { isCanonicalHost, isProductionDeployment, site } from "@/lib/site";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Clarity } from "@/components/Clarity";
 import { ConversionEvents } from "@/components/ConversionEvents";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationNode, websiteNode } from "@/lib/schema";
@@ -60,7 +61,8 @@ export const metadata: Metadata = {
  * behaviour for a fork or a local run rather than something to work around.
  */
 const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const analyticsEnabled = Boolean(measurementId) && isCanonicalHost();
+const clarityId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID;
+const analyticsEnabled = isProductionDeployment();
 
 const siteGraph = {
   "@context": "https://schema.org",
@@ -75,12 +77,13 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <JsonLd data={siteGraph} />
-        {analyticsEnabled && (
+        {analyticsEnabled && measurementId && (
           <>
-            <GoogleAnalytics gaId={measurementId!} />
+            <GoogleAnalytics gaId={measurementId} />
             <ConversionEvents />
           </>
         )}
+        {analyticsEnabled && clarityId && <Clarity projectId={clarityId} />}
       </body>
     </html>
   );

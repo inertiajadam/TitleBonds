@@ -51,6 +51,17 @@ export const formattedAddress = `${site.address.street}, ${site.address.city}, $
  * attached as the production domain, so indexing turns itself on at cutover
  * with no flag to remember.
  */
+/**
+ * True on a production deployment, whatever host it is served from.
+ *
+ * Analytics keys off this rather than the canonical host so that measurement
+ * works before titlebonds.us is attached, while indexing stays gated on
+ * isCanonicalHost below. Preview and branch builds still send nothing.
+ */
+export function isProductionDeployment(): boolean {
+  return process.env.VERCEL_ENV === "production";
+}
+
 export function isCanonicalHost(): boolean {
   if (process.env.VERCEL_ENV !== "production") return false;
   return process.env.VERCEL_PROJECT_PRODUCTION_URL === new URL(site.url).host;

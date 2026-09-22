@@ -3,6 +3,25 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  /**
+   * Block indexing on any host that is not the canonical domain.
+   *
+   * The page-level robots meta is decided at build time, so once titlebonds.us
+   * is attached every deployment renders as indexable, including the
+   * .vercel.app alias and every preview. This is evaluated per request against
+   * the actual Host header, so only the real domain is ever indexable and the
+   * build-time flag cannot get this wrong.
+   */
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        missing: [{ type: "host", value: "titlebonds.us" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+    ];
+  },
+
   async redirects() {
     return [
       // The legacy WordPress site used inconsistent state slugs. Those exact

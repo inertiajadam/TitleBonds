@@ -46,7 +46,11 @@ export function Footer() {
               <p>{formattedAddress}</p>
               <p>
                 Call us:{" "}
-                <a href={site.phoneHref} className="font-semibold text-white hover:underline">
+                <a
+                  href={site.phoneHref}
+                  data-track-location="footer"
+                  className="font-semibold text-white hover:underline"
+                >
                   {site.phone}
                 </a>
               </p>

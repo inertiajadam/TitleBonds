@@ -86,7 +86,7 @@ export default function FaqPage() {
             of a vehicle when a title is missing or incomplete.
           </p>
           <div className="mt-7">
-            <ApplyButton>Apply Now</ApplyButton>
+            <ApplyButton location="faq_cta">Apply Now</ApplyButton>
           </div>
         </div>
       </Section>

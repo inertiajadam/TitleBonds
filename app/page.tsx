@@ -51,7 +51,7 @@ export default function HomePage() {
           <Steps />
         </div>
         <div className="mt-10 text-center">
-          <ApplyButton>Apply Now</ApplyButton>
+          <ApplyButton location="hero">Apply Now</ApplyButton>
         </div>
       </Section>
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { applyUrl } from "@/lib/site";
+import { APPLY_CLICK, trackAttrs, type LinkLocation } from "@/lib/analytics";
 
 type Props = {
   stateName?: string;
@@ -7,6 +8,8 @@ type Props = {
   variant?: keyof typeof variants;
   size?: keyof typeof sizes;
   className?: string;
+  /** Which CTA this is, so a weak button can be told from a weak page. */
+  location: LinkLocation;
 };
 
 const variants = {
@@ -30,13 +33,15 @@ export function ApplyButton({
   variant = "primary",
   size = "default",
   className = "",
+  location,
 }: Props) {
   return (
     <Link
       href={applyUrl(stateName)}
+      {...trackAttrs(APPLY_CLICK, location, stateName)}
       className={`inline-flex items-center justify-center gap-2 rounded-full font-semibold shadow-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${sizes[size]} ${variants[variant]} ${className}`}
     >
-      {children ?? (stateName ? `Get Your ${stateName} Title Bond` : "Apply Now")}
+      {children ?? (stateName ? `Get Your ${stateName} Bonded Title` : "Apply Now")}
       <svg
         aria-hidden="true"
         viewBox="0 0 20 20"

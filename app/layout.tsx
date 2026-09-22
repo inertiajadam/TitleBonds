@@ -3,6 +3,8 @@ import { Archivo, Inter } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { formattedAddress, isCanonicalHost, site } from "@/lib/site";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { ConversionEvents } from "@/components/ConversionEvents";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationNode, websiteNode } from "@/lib/schema";
 import "./globals.css";
@@ -51,6 +53,17 @@ export const metadata: Metadata = {
     : { index: false, follow: false },
 };
 
+/**
+ * Analytics loads on the canonical production host only.
+ *
+ * Preview deployments share the same code, and sending their traffic to the
+ * same property would quietly mix our own testing into the client's numbers.
+ * Unset measurement ID means nothing loads at all, which is the correct
+ * behaviour for a fork or a local run rather than something to work around.
+ */
+const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const analyticsEnabled = Boolean(measurementId) && isCanonicalHost();
+
 const siteGraph = {
   "@context": "https://schema.org",
   "@graph": [organizationNode(), websiteNode()],
@@ -73,6 +86,12 @@ export default function RootLayout({
         <Footer />
         <JsonLd data={siteGraph} />
         <span className="sr-only">{formattedAddress}</span>
+        {analyticsEnabled && (
+          <>
+            <GoogleAnalytics gaId={measurementId!} />
+            <ConversionEvents />
+          </>
+        )}
       </body>
     </html>
   );

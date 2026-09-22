@@ -21,7 +21,11 @@ export function Header() {
       <div className="bg-navy-900 text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-center gap-2 px-4 py-2 text-sm">
           <span className="hidden sm:inline">Call a title bond expert today!</span>
-          <a href={site.phoneHref} className="font-semibold underline-offset-4 hover:underline">
+          <a
+            href={site.phoneHref}
+            data-track-location="header"
+            className="font-semibold underline-offset-4 hover:underline"
+          >
             {site.phone}
           </a>
         </div>
@@ -52,7 +56,7 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <span className="hidden sm:block">
-              <ApplyButton size="compact">Apply Now</ApplyButton>
+              <ApplyButton size="compact" location="header">Apply Now</ApplyButton>
             </span>
             <button
               type="button"

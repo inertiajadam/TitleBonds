@@ -182,7 +182,7 @@ export default async function BlogPostPage({ params }: Params) {
           are issued the same day.
         </p>
         <div className="mt-7">
-          <ApplyButton>Apply Now</ApplyButton>
+          <ApplyButton location="post_cta">Apply Now</ApplyButton>
         </div>
       </div>
 

@@ -48,6 +48,7 @@ export default function ContactPage() {
           <h2 className="text-lg font-bold text-navy-950">Call us</h2>
           <a
             href={site.phoneHref}
+            data-track-location="contact"
             className="mt-3 inline-block text-3xl font-bold text-navy-700 hover:underline"
           >
             {site.phone}
@@ -79,7 +80,7 @@ export default function ContactPage() {
           Apply online in about two minutes. Most bonds are issued the same day.
         </p>
         <div className="mt-7">
-          <ApplyButton>Apply Now</ApplyButton>
+          <ApplyButton location="contact">Apply Now</ApplyButton>
         </div>
       </div>
     </Section>

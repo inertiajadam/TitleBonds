@@ -1,0 +1,23 @@
+{
+  "slug": "what-happens-when-your-bonded-title-expires",
+  "title": "What Happens When Your Bonded Title Expires",
+  "date": "2026-09-22",
+  "excerpt": "Nothing is taken away from you. When the bond term ends without a claim, the bonded notation stops applying and you are left holding an ordinary title.",
+  "metaDescription": "What happens at the end of a title bond term: how the bonded notation clears, whether you need to do anything, and how long the term runs by state.",
+  "image": "desk-calendar",
+  "body": [
+    {"type": "p", "text": "Nothing is taken away from you. The bond runs for a fixed term, and if nobody makes a valid claim against it during that time, the bond simply ends. The notation on your title stops applying and you are left holding an ordinary title for a vehicle you have owned all along."},
+    {"type": "p", "text": "This is the part of the process that worries people most and matters least. The word \"expires\" suggests something lapsing that you need to renew. In practice the end of the term is the finish line."},
+    {"type": "h2", "text": "How long the term runs"},
+    {"type": "p", "text": "Three years is the most common term. Two states run longer:"},
+    {"type": "ul", "items": ["Most states: 3 years", "Connecticut and Wisconsin: 5 years", "Utah: 7 years"]},
+    {"type": "p", "text": "The term is set by the state, not by us and not by the surety, and it starts when the bond is filed rather than when you bought the vehicle."},
+    {"type": "h2", "text": "Do you have to do anything?"},
+    {"type": "p", "text": "In most states, no. The notation is tied to the bond term and stops applying on its own. Some states will issue a clean title on request once the term has passed, and a few will do it automatically at the next transfer. If you want the notation physically gone from the document rather than simply expired, ask your motor vehicle agency what they require, as the answer is state-specific."},
+    {"type": "p", "text": "You do not renew a title bond. A bond that has run its term has done its job."},
+    {"type": "h2", "text": "During the term"},
+    {"type": "ul", "items": ["You can register, insure and drive the vehicle normally.", "You can sell it. The buyer receives a title carrying the notation for whatever is left of the term.", "You do not pay anything further. The premium was a one-time charge for the whole term.", "If a claim is made and proves valid, the surety pays the claimant and you are responsible for reimbursing the surety."]},
+    {"type": "h2", "text": "How often are claims actually made?"},
+    {"type": "p", "text": "Rarely. The bond exists because the state needs a remedy to exist, not because these claims are common. Most bonds run their term without anyone ever contacting the surety, which is exactly what both the state and the owner want."}
+  ]
+}

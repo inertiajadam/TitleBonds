@@ -1,4 +1,11 @@
 import type { StaticImageData } from "next/image";
+import calculatorDesk from "@/public/img/calculator-desk.jpg";
+import carKeys from "@/public/img/car-keys.jpg";
+import deskCalendar from "@/public/img/desk-calendar.jpg";
+import documentsLaptop from "@/public/img/documents-laptop.jpg";
+import letterDesk from "@/public/img/letter-desk.jpg";
+import manufacturedHomes from "@/public/img/manufactured-homes.jpg";
+import readingPaperwork from "@/public/img/reading-paperwork.jpg";
 import boatTrailer from "@/public/img/boat-trailer.jpg";
 import classicTruck from "@/public/img/classic-truck.jpg";
 import contractDesk from "@/public/img/contract-desk.jpg";
@@ -23,6 +30,13 @@ import trailerNight from "@/public/img/trailer-night.jpg";
  */
 
 export type PhotoKey =
+  | "calculator-desk"
+  | "car-keys"
+  | "desk-calendar"
+  | "documents-laptop"
+  | "letter-desk"
+  | "manufactured-homes"
+  | "reading-paperwork"
   | "boat-trailer"
   | "classic-truck"
   | "contract-desk"
@@ -46,6 +60,41 @@ export type Photo = {
 };
 
 export const photos: Record<PhotoKey, Photo> = {
+  "calculator-desk": {
+    src: calculatorDesk,
+    alt: "A hand working a desk calculator beside printed figures.",
+    og: "/img/og/calculator-desk.jpg",
+  },
+  "car-keys": {
+    src: carKeys,
+    alt: "One person handing a car key to another in front of a vehicle.",
+    og: "/img/og/car-keys.jpg",
+  },
+  "desk-calendar": {
+    src: deskCalendar,
+    alt: "A year planner standing on a bare wooden desk.",
+    og: "/img/og/desk-calendar.jpg",
+  },
+  "documents-laptop": {
+    src: documentsLaptop,
+    alt: "A person leafing through a clipped stack of documents beside a laptop.",
+    og: "/img/og/documents-laptop.jpg",
+  },
+  "letter-desk": {
+    src: letterDesk,
+    alt: "A person at a desk reading a letter taken from its envelope.",
+    og: "/img/og/letter-desk.jpg",
+  },
+  "manufactured-homes": {
+    src: manufacturedHomes,
+    alt: "An aerial view of a manufactured home community in rural America.",
+    og: "/img/og/manufactured-homes.jpg",
+  },
+  "reading-paperwork": {
+    src: readingPaperwork,
+    alt: "A person at a home office desk reading through paperwork.",
+    og: "/img/og/reading-paperwork.jpg",
+  },
   "boat-trailer": {
     src: boatTrailer,
     alt: "A powerboat sitting on its trailer beside the water under a broken sky.",

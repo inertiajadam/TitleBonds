@@ -1,0 +1,23 @@
+{
+  "slug": "what-is-a-bonded-title",
+  "title": "What Is a Bonded Title?",
+  "date": "2026-09-22",
+  "excerpt": "A bonded title is a vehicle title a state issues on the strength of a surety bond, when you can prove you own the vehicle but cannot produce the original title.",
+  "metaDescription": "A bonded title is a title issued against a surety bond when the original is missing. What it is, what it costs, and how it differs from a standard title.",
+  "image": "documents-laptop",
+  "body": [
+    {"type": "p", "text": "A bonded title is a vehicle title a state issues on the strength of a surety bond, for an owner who can show the vehicle is theirs but cannot produce the original title. The bond stands behind your claim of ownership: if someone later proves they had a better claim, the bond pays them rather than leaving them without recourse. That protection is what lets the motor vehicle agency issue a title it would otherwise refuse."},
+    {"type": "p", "text": "It is a real title. You can register the vehicle, insure it, and sell it. The only practical difference is a note on the record saying the title is bonded, and that note comes off once the bond term ends without a claim."},
+    {"type": "h2", "text": "Why the bond exists at all"},
+    {"type": "p", "text": "A title is the state's record of who owns a vehicle. Without one, the agency has no way to know whether the person in front of the counter is the owner, a buyer who was never given the paperwork, or somebody with no right to the vehicle at all. Refusing to issue a title protects previous owners and lienholders, and it strands honest owners."},
+    {"type": "p", "text": "The surety bond resolves that. A surety company agrees to cover a loss if the state issues the title and a legitimate claimant appears. The state gets its protection, you get your title, and the surety carries the risk it has priced."},
+    {"type": "h2", "text": "What a bonded title costs"},
+    {"type": "p", "text": "Two numbers matter and they are easy to confuse. The bond amount is the coverage the state requires, usually 1.5 or 2 times the value of the vehicle. The premium is what you actually pay for the bond, typically 1.5% of that bond amount, with a $100 minimum. A vehicle valued at $8,000 in a state requiring 1.5x coverage needs a $12,000 bond, which costs $180."},
+    {"type": "p", "text": "Bonds under $30,000 do not require a credit check. Your own state's figures are on its page, since the multiplier and the valuation method both vary."},
+    {"type": "h2", "text": "How it differs from a standard title"},
+    {"type": "ul", "items": ["A standard title is issued from the state's existing ownership record; a bonded title is issued against a bond because that record is missing or broken.", "A bonded title carries a notation for the length of the bond term, most commonly three years.", "Once the term passes with no claim, the notation drops away and you hold an ordinary title.", "Both let you register, insure and sell the vehicle throughout."]},
+    {"type": "h2", "text": "Who ends up needing one"},
+    {"type": "ul", "items": ["The original title was lost, stolen or damaged beyond use.", "You bought the vehicle and the seller never handed over the title.", "The vehicle was bought at auction, or acquired abandoned, with no paperwork.", "The vehicle was built or assembled and was never titled.", "The title you hold is defective: wrong information, missing signatures, or an unresolved lien."]},
+    {"type": "p", "text": "The same route covers more than cars. Trucks, semi-trucks, RVs, motorcycles, mobile homes, boats, ATVs, trailers and aircraft can all be bonded where the state allows it."}
+  ]
+}

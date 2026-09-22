@@ -1,0 +1,25 @@
+{
+  "slug": "how-to-get-a-bonded-title",
+  "title": "How to Get a Bonded Title",
+  "date": "2026-09-22",
+  "excerpt": "Getting a bonded title takes three steps: establish what your vehicle is worth, buy a surety bond for the amount your state requires, and file it with your motor vehicle agency.",
+  "metaDescription": "The steps to get a bonded title: what your state needs, what documents to gather, what the bond costs, and how long each stage takes.",
+  "image": "reading-paperwork",
+  "body": [
+    {"type": "p", "text": "Getting a bonded title takes three steps: establish what the vehicle is worth, buy a surety bond for the amount your state requires, and file that bond with your motor vehicle agency along with their application. The bond itself is usually the fastest part. Most are issued the same day and many are delivered by email within minutes."},
+    {"type": "h2", "text": "Step 1: work out your bond amount"},
+    {"type": "p", "text": "Your state sets the coverage, almost always as a multiple of the vehicle's value: commonly 1.5x, sometimes 2x. How the value is established is the part that varies. Some states accept a national guide such as NADA or Kelley Blue Book, some want an appraisal from a licensed dealer on letterhead, and some have their own inspector do it."},
+    {"type": "p", "text": "This is the step most likely to send you back to the counter a second time, so check your state's requirement before paying for anything."},
+    {"type": "h2", "text": "Step 2: buy the bond"},
+    {"type": "p", "text": "To issue the bond we need very little:"},
+    {"type": "ul", "items": ["Your name and address", "The year, make and model of the vehicle", "The VIN or serial number", "The bond amount your state requires"]},
+    {"type": "p", "text": "The premium is typically 1.5% of the bond amount with a $100 minimum, and bonds under $30,000 do not require a credit check. Once it is issued you receive the original bond documents to sign."},
+    {"type": "h2", "text": "Step 3: file with the state"},
+    {"type": "p", "text": "Sign the original documents and submit them to your motor vehicle agency with whatever else they require. Expect that list to include some of the following, though only your state's page is authoritative:"},
+    {"type": "ul", "items": ["The state's bonded title or ownership application form", "A bill of sale, or whatever evidence of ownership you hold", "A VIN inspection, where the state requires one", "An odometer disclosure for newer vehicles", "Proof that no title exists in the state's records, sometimes called a title search or record check"]},
+    {"type": "h2", "text": "How long the whole thing takes"},
+    {"type": "p", "text": "The bond can be issued in minutes. What sets your timeline is the state: the valuation, any inspection, and the agency's own processing. That is measured in days or weeks rather than hours, and it varies enough between states that a general estimate would be misleading."},
+    {"type": "h2", "text": "What to avoid"},
+    {"type": "ul", "items": ["Buying a bond before you know the required amount. A bond written for the wrong amount will be rejected and has to be redone.", "Using a valuation method your state does not accept.", "Leaving the bond documents unsigned, or signing a copy rather than the original.", "Assuming another state's process applies. The multiplier, the term and the accepted evidence all differ."]}
+  ]
+}

@@ -1,8 +1,13 @@
 import type { TitleBondState } from "@/lib/states";
 
 /**
- * A direct, self-contained answer to "what does a title bond cost in X and how
+ * A direct, self-contained answer to "how much is a bonded title in X and how
  * does it work", built from the same structured rates the page displays.
+ *
+ * It opens on "bonded title" rather than "title bond" because that is the
+ * phrasing searchers use by roughly nine to one, and this sentence is what an
+ * answer engine quotes. The bond is still named precisely in the same breath:
+ * the bond is the thing you buy, the bonded title is the thing you get.
  *
  * Answer engines quote the first passage that answers the question outright, so
  * the page leads with one rather than making them assemble it from the FAQ.
@@ -15,11 +20,11 @@ export function stateAnswerText(state: TitleBondState): string {
 
   if (minPremium && rate) {
     sentences.push(
-      `A ${state.name} certificate of title bond costs ${minPremium} or ${rate.replace(/ \(.*\)$/, "")} of the bond amount, whichever is greater.`,
+      `Getting a bonded title in ${state.name} means filing a certificate of title bond, which costs ${minPremium} or ${rate.replace(/ \(.*\)$/, "")} of the bond amount, whichever is greater.`,
     );
   } else if (minPremium) {
     sentences.push(
-      `${state.name} certificate of title bonds start at ${minPremium}.`,
+      `Getting a bonded title in ${state.name} means filing a certificate of title bond, which starts at ${minPremium}.`,
     );
   }
 

@@ -126,7 +126,7 @@ export default async function StatePage({ params }: Params) {
           <div className="mt-6 grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-start">
             <div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                Get your {state.name} title bond today
+                Get a bonded title in {state.name}
               </h1>
               <StateAnswer state={state} />
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-200">
@@ -136,7 +136,7 @@ export default async function StatePage({ params }: Params) {
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
                 <ApplyButton stateName={state.name}>
-                  Get your {state.name} title bond instantly
+                  Get your {state.name} bonded title
                 </ApplyButton>
                 <a
                   href={site.phoneHref}
@@ -150,7 +150,7 @@ export default async function StatePage({ params }: Params) {
             {rateRows.length > 0 && (
               <aside className="rounded-card bg-white p-7 text-navy-900 shadow-lg">
                 <h2 className="text-lg font-bold">
-                  {state.name} title bond rates &amp; requirements
+                  {state.name} bonded title rates &amp; requirements
                 </h2>
                 <dl className="mt-5 divide-y divide-navy-100">
                   {rateRows.map(([key, label]) => (
@@ -237,7 +237,7 @@ export default async function StatePage({ params }: Params) {
         <Section>
           <SectionHeading
             eyebrow="Common questions"
-            title={`${state.name} title bond questions`}
+            title={`${state.name} bonded title questions`}
             centered
           />
           <div className="mx-auto mt-10 max-w-3xl">
@@ -269,7 +269,7 @@ export default async function StatePage({ params }: Params) {
 
       <Section className="!pt-0">
         <h2 className="text-sm font-semibold tracking-wide text-navy-500 uppercase">
-          Title bonds in other states
+          Bonded titles in other states
         </h2>
         <ul className="mt-5 flex flex-wrap gap-2">
           {others.map((item) => (

@@ -25,8 +25,8 @@ export default async function Image({
   ].filter((fact): fact is string => Boolean(fact));
 
   return renderOgImage({
-    eyebrow: `${state?.name ?? ""} title bonds`,
-    title: `Get your ${state?.name ?? ""} title bond today`,
+    eyebrow: `${state?.name ?? ""} bonded titles`,
+    title: `Get a bonded title in ${state?.name ?? ""}`,
     facts,
     photo: state?.image,
   });

@@ -6,6 +6,11 @@ import documentsLaptop from "@/public/img/documents-laptop.jpg";
 import letterDesk from "@/public/img/letter-desk.jpg";
 import manufacturedHomes from "@/public/img/manufactured-homes.jpg";
 import readingPaperwork from "@/public/img/reading-paperwork.jpg";
+import carLotSale from "@/public/img/car-lot-sale.jpg";
+import damagedCar from "@/public/img/damaged-car.jpg";
+import handshakeSale from "@/public/img/handshake-sale.jpg";
+import motorboatWater from "@/public/img/motorboat-water.jpg";
+import worriedPaperwork from "@/public/img/worried-paperwork.jpg";
 import boatTrailer from "@/public/img/boat-trailer.jpg";
 import classicTruck from "@/public/img/classic-truck.jpg";
 import contractDesk from "@/public/img/contract-desk.jpg";
@@ -30,6 +35,11 @@ import trailerNight from "@/public/img/trailer-night.jpg";
  */
 
 export type PhotoKey =
+  | "car-lot-sale"
+  | "damaged-car"
+  | "handshake-sale"
+  | "motorboat-water"
+  | "worried-paperwork"
   | "calculator-desk"
   | "car-keys"
   | "desk-calendar"
@@ -60,6 +70,31 @@ export type Photo = {
 };
 
 export const photos: Record<PhotoKey, Photo> = {
+  "car-lot-sale": {
+    src: carLotSale,
+    alt: "A seller holding a sale sign between cars on a dealership lot.",
+    og: "/img/og/car-lot-sale.jpg",
+  },
+  "damaged-car": {
+    src: damagedCar,
+    alt: "A crash-damaged silver car standing in a repair workshop.",
+    og: "/img/og/damaged-car.jpg",
+  },
+  "handshake-sale": {
+    src: handshakeSale,
+    alt: "Two people shaking hands beside a red car.",
+    og: "/img/og/handshake-sale.jpg",
+  },
+  "motorboat-water": {
+    src: motorboatWater,
+    alt: "A white motorboat at anchor on flat water at sunset.",
+    og: "/img/og/motorboat-water.jpg",
+  },
+  "worried-paperwork": {
+    src: worriedPaperwork,
+    alt: "An older man at a kitchen table frowning at a letter beside a laptop.",
+    og: "/img/og/worried-paperwork.jpg",
+  },
   "calculator-desk": {
     src: calculatorDesk,
     alt: "A hand working a desk calculator beside printed figures.",

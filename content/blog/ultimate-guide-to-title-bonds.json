@@ -6,19 +6,15 @@
   "metaDescription": "The ultimate guide to title bonds: what a certificate of title bond is, who needs one, when it's required, and how much it costs.",
   "image": "trailer-night",
   "body": [
-    { "type": "h2", "text": "What is a title bond?" },
-    { "type": "p", "text": "When you register your vehicle, you are required to show proof of ownership, which in most cases is the title (or certificate of title) for the vehicle. Sometimes your title becomes lost, stolen, or damaged. Your local Department of Motor Vehicles will take a bonded title in lieu of your original title in order to register your vehicle." },
-    { "type": "p", "text": "The certificate of title bond provides security to the Department of Motor Vehicles in the event that a title issue arises within the term of the bond." },
-    { "type": "h2", "text": "Who needs a title bond?" },
-    { "type": "p", "text": "In addition to helping you register your vehicle, a title bond proves that you own the vehicle and have the rights to obtain insurance or even sell the vehicle. Vehicles that require a title include automobiles, trailers, motorcycles, scooters, ATVs, custom built vehicles, motorhomes, buses, mobile homes, trailer homes, semi trucks and trailers, boats, PWC, and aircraft." },
-    { "type": "h2", "text": "Reasons you might need a title bond" },
-    { "type": "ul", "items": [
-      "Original vehicle title is lost, damaged, stolen or defective (signed incorrectly, etc.)",
-      "You did not receive a title when you purchased a vehicle",
-      "Vehicle is custom-built",
-      "Vehicle is too old to have a title"
-    ]},
-    { "type": "h2", "text": "How much does a title bond cost?" },
-    { "type": "p", "text": "The cost of a title bond varies slightly based on the value of the vehicle. Generally, the average cost of a title bond is 1% to 1.5% of the bond amount. Many bonds can be obtained for as low as $100, and the best surety bond companies offer title bonds with no credit check and instant approval, for bond amounts up to $30,000." }
+    {"type": "h2", "text": "What is a title bond?"},
+    {"type": "p", "text": "When you register your vehicle, you are required to show proof of ownership, which in most cases is the title (or certificate of title) for the vehicle. Sometimes your title becomes lost, stolen, or damaged. Your local Department of Motor Vehicles will take a bonded title in lieu of your original title in order to register your vehicle."},
+    {"type": "p", "text": "The certificate of title bond provides security to the Department of Motor Vehicles in the event that a title issue arises within the term of the bond."},
+    {"type": "h2", "text": "Who needs a title bond?"},
+    {"type": "p", "text": "In addition to helping you register your vehicle, a title bond proves that you own the vehicle and have the rights to obtain insurance or even sell the vehicle. Vehicles that require a title include automobiles, trailers, motorcycles, scooters, ATVs, custom built vehicles, motorhomes, buses, mobile homes, trailer homes, semi trucks and trailers, boats, PWC, and aircraft."},
+    {"type": "h2", "text": "Reasons you might need a title bond"},
+    {"type": "ul", "items": ["Original vehicle title is lost, damaged, stolen or defective (signed incorrectly, etc.)", "You did not receive a title when you purchased a vehicle", "Vehicle is custom-built", "Vehicle is too old to have a title"]},
+    {"type": "h2", "text": "How much does a title bond cost?"},
+    {"type": "p", "text": "The cost of a title bond varies slightly based on the value of the vehicle. Generally, the average cost of a title bond is 1% to 1.5% of the bond amount. Many bonds can be obtained for as low as $100, and the best surety bond companies offer title bonds with no credit check and instant approval, for bond amounts up to $30,000."},
+    {"type": "p", "text": "Since this guide was written the process has been broken out in more detail: [what is a bonded title](/what-is-a-bonded-title) covers the fundamentals, [how to get a bonded title](/how-to-get-a-bonded-title) the steps, and [how your bond amount is determined](/how-your-bond-amount-is-determined) the valuation your state will ask for."}
   ]
 }

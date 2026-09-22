@@ -6,6 +6,7 @@ import { ApplyButton } from "@/components/ApplyButton";
 import { Section } from "@/components/Section";
 import { getAllPosts, getPost } from "@/lib/posts";
 import { getPhoto } from "@/lib/photos";
+import { RichText } from "@/components/RichText";
 import { site } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { articleNode, breadcrumbNode, graph } from "@/lib/schema";
@@ -118,7 +119,9 @@ export default async function BlogPostPage({ params }: Params) {
                 return (
                   <ul key={index} className="ml-5 list-disc space-y-2 text-navy-700">
                     {block.items.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item}</li>
+                      <li key={itemIndex}>
+                        <RichText text={item} />
+                      </li>
                     ))}
                   </ul>
                 );
@@ -126,7 +129,9 @@ export default async function BlogPostPage({ params }: Params) {
                 return (
                   <ol key={index} className="ml-5 list-decimal space-y-2 text-navy-700">
                     {block.items.map((item, itemIndex) => (
-                      <li key={itemIndex}>{item}</li>
+                      <li key={itemIndex}>
+                        <RichText text={item} />
+                      </li>
                     ))}
                   </ol>
                 );
@@ -167,7 +172,7 @@ export default async function BlogPostPage({ params }: Params) {
               default:
                 return (
                   <p key={index} className="text-lg leading-relaxed text-navy-700">
-                    {block.text}
+                    <RichText text={block.text} />
                   </p>
                 );
             }

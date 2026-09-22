@@ -8,15 +8,15 @@
   "body": [
     {"type": "p", "text": "Your bond amount is your vehicle's value multiplied by a figure your state sets, most often 1.5 or 2. What varies far more than the multiplier is whose valuation the state will accept, and getting that wrong is the most common reason an application is sent back."},
     {"type": "h2", "text": "The two numbers people confuse"},
-    {"type": "p", "text": "The bond amount is coverage, not cost. It is the maximum the surety would pay a legitimate claimant. The premium is your cost: typically 1.5% of the bond amount, with a $100 minimum."},
-    {"type": "p", "text": "So a $10,000 vehicle in a state requiring 1.5x coverage needs a $15,000 bond, and that bond costs $225. You are not paying $15,000, and you never will unless a valid claim is made and you fail to reimburse the surety."},
+    {"type": "p", "text": "The bond amount is coverage, not cost. It is the maximum the surety would pay a legitimate claimant. The premium is your cost: typically 1.5% of the bond amount, with a $100 minimum. [What is a bonded title](/what-is-a-bonded-title) sets out what you are buying."},
+    {"type": "p", "text": "So a $10,000 vehicle in a state requiring 1.5x coverage needs a $15,000 bond, and that bond costs $225. [What a bonded title costs in total](/how-much-does-a-bonded-title-cost) adds the state's own fees on top. You are not paying $15,000, and you never will unless a valid claim is made and you fail to reimburse the surety."},
     {"type": "h2", "text": "How states establish value"},
     {"type": "p", "text": "Broadly there are four accepted methods, and states pick one or allow a choice between several:"},
     {"type": "ul", "items": ["A national price guide such as NADA or Kelley Blue Book. Some states restrict this to vehicles under a certain age.", "An appraisal by a licensed dealer, usually required on company letterhead and signed, sometimes with the dealer's licence number.", "A state inspector's valuation, carried out as part of a vehicle inspection.", "A schedule set by the state itself, based on vehicle type and age rather than an individual valuation."]},
     {"type": "h2", "text": "Where it goes wrong"},
     {"type": "ul", "items": ["Using a price guide in a state that requires a dealer appraisal, or for a vehicle older than the guide is accepted for.", "Valuing the vehicle in its current condition when the state asks for retail value, or the reverse.", "An appraisal that is missing the letterhead, the signature or the licence number the state asks for.", "Rounding the bond amount down. States treat the required amount as a minimum."]},
     {"type": "h2", "text": "Older, custom and homemade vehicles"},
-    {"type": "p", "text": "A vehicle with no entry in any price guide needs one of the other routes, usually a dealer appraisal or a state inspection. The same applies to custom builds, kit vehicles and trailers assembled from parts, where there is no comparable model to price against."},
+    {"type": "p", "text": "A vehicle with no entry in any price guide needs one of the other routes, usually a dealer appraisal or a state inspection. Confirming the VIN decodes correctly with the [NHTSA VIN decoder](https://vpic.nhtsa.dot.gov/decoder/) is worth doing first. The same applies to custom builds, kit vehicles and trailers assembled from parts, where there is no comparable model to price against."},
     {"type": "p", "text": "Because every part of this is state-specific, check your state's page for its multiplier, its accepted valuation methods and its minimum bond amount before paying for a valuation."}
   ]
 }

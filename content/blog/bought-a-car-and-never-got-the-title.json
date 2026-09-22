@@ -1,0 +1,23 @@
+{
+  "slug": "bought-a-car-and-never-got-the-title",
+  "title": "You Bought a Car and Never Got the Title",
+  "date": "2025-09-30",
+  "excerpt": "The seller promised to mail it and never did, or handed you a title signed by somebody else. Here is what you can still do, and where a bonded title fits.",
+  "metaDescription": "What to do when a seller never hands over the vehicle title: chasing the seller, open titles, and when a bonded title is the way out.",
+  "image": "car-lot-sale",
+  "body": [
+    {"type": "p", "text": "It is the most common way people end up needing a bonded title. The money changed hands, the car is in your driveway, and the title never arrived. Maybe the seller promised to post it. Maybe they handed you one already signed by someone else. [Replacing a lost, stolen or defective title](/everything-you-need-to-know-about-replacing-lost-stolen-or-defective-motor-vehicle-titles) covers the neighbouring cases. Either way you cannot register a vehicle you cannot prove you own."},
+    {"type": "h2", "text": "First, try the cheaper route"},
+    {"type": "p", "text": "A bonded title is not the first step. Work through these in order, because each is faster and cheaper than the one after it:"},
+    {"type": "ol", "items": ["Contact the seller. A title that was simply forgotten is the easy case, and a duplicate title the registered owner requests from their own state solves it outright.", "Check whether the seller still owns it on paper. If the state's record still shows them, they can apply for a duplicate and sign it over properly.", "Ask your state what it accepts as evidence of ownership. Some will issue a title on a bill of sale plus an inspection, with no bond at all. Start at the [state motor vehicle directory](https://www.usa.gov/state-motor-vehicle-services).", "Only then look at a bonded title."]},
+    {"type": "h2", "text": "The open title problem"},
+    {"type": "p", "text": "An \"open\" or \"jumped\" title is one the previous owner signed without the buyer's name filled in, then passed along, sometimes through several hands. It is common and it is a problem, because the person who signed it is not the person who sold it to you, and the chain of ownership on paper does not reach you."},
+    {"type": "p", "text": "Most states will not accept an open title. A bonded title resolves it, because the bond stands behind your claim rather than relying on a chain of signatures that cannot be verified."},
+    {"type": "h2", "text": "Check the vehicle before you commit"},
+    {"type": "p", "text": "Before spending on a bond, confirm the vehicle is what the seller said it was. The [National Motor Vehicle Title Information System](https://vehiclehistory.bja.ojp.gov/), run by the US Department of Justice, records title, brand and salvage history across states, and a vehicle branded salvage or reported stolen changes your position entirely. You can also confirm the VIN decodes to the right vehicle with the [NHTSA VIN decoder](https://vpic.nhtsa.dot.gov/decoder/)."},
+    {"type": "p", "text": "The Federal Trade Commission's guidance on [buying a used car](https://consumer.ftc.gov/articles/buying-used-car-dealer) is worth reading if the purchase was recent and you are weighing whether to pursue the seller."},
+    {"type": "h2", "text": "When the bond is the answer"},
+    {"type": "p", "text": "Once the seller cannot or will not produce a title, and your state will not issue one on the evidence you hold, the bond is the remaining route. It costs 1.5% of the bond amount with a $100 minimum, and no credit check applies under $30,000."},
+    {"type": "p", "text": "The process is the same as any other bonded title: see [how to get a bonded title](/how-to-get-a-bonded-title) for the steps, and [how your bond amount is determined](/how-your-bond-amount-is-determined) for the valuation your state will want."}
+  ]
+}

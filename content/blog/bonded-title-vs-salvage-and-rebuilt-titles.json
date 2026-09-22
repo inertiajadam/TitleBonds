@@ -1,0 +1,22 @@
+{
+  "slug": "bonded-title-vs-salvage-and-rebuilt-titles",
+  "title": "Bonded Title vs. Salvage and Rebuilt Titles",
+  "date": "2026-03-10",
+  "excerpt": "They get confused constantly and they describe different things. A bonded title is about missing paperwork. A salvage title is about the condition of the vehicle.",
+  "metaDescription": "The difference between bonded, salvage and rebuilt titles: what each one means, what it does to resale value, and whether a vehicle can carry more than one.",
+  "image": "damaged-car",
+  "body": [
+    {"type": "p", "text": "These three get treated as interchangeable and they are not related. A bonded title is about missing paperwork. A salvage or rebuilt title is about what happened to the vehicle. A car can carry both at once, and confusing them costs people money on both sides of a sale."},
+    {"type": "h2", "text": "What each one actually means"},
+    {"type": "table", "columns": ["Title type", "What it says", "What caused it"], "rows": [["Bonded", "Ownership is backed by a surety bond because the original title is missing", "Paperwork: a lost, never-delivered or defective title"], ["Salvage", "An insurer declared the vehicle a total loss", "Damage: collision, flood, fire or theft recovery"], ["Rebuilt", "A salvage vehicle has been repaired and passed state inspection", "Damage, then repair"]]},
+    {"type": "p", "text": "A bonded title says nothing whatsoever about the condition of the vehicle. A salvage title says nothing about whether the paperwork is in order, which is a separate problem covered in [what is a defective vehicle title](/what-is-a-defective-vehicle-title)."},
+    {"type": "h2", "text": "Can a vehicle have both?"},
+    {"type": "p", "text": "Yes, and it is not unusual. A car totalled by an insurer, sold at auction without paperwork, then rebuilt, can end up needing a bonded title while also carrying a salvage or rebuilt brand. The bond resolves the ownership question. The brand stays, because the brand describes history that actually happened."},
+    {"type": "p", "text": "That is the key difference in how they behave over time. A bonded notation drops away when the bond term ends. A salvage or rebuilt brand follows the vehicle permanently, and the [national title record](https://vehiclehistory.bja.ojp.gov/) is designed precisely so that it cannot be washed away by moving the vehicle between states."},
+    {"type": "h2", "text": "What each does to value"},
+    {"type": "ul", "items": ["A bonded title has little lasting effect. The notation expires and buyers who understand it treat the vehicle as ordinary.", "A salvage or rebuilt brand has a large and permanent effect, and also affects insurability and financing.", "A buyer who confuses the two will discount a bonded title as though it were branded. That is worth correcting in the sale."]},
+    {"type": "h2", "text": "When neither is the right tool"},
+    {"type": "p", "text": "If the dispute is over who owns the vehicle rather than over missing paperwork, a bond may not resolve it. A contested claim is a matter for a court, through a [quiet title action](https://www.law.cornell.edu/wex/quiet_title) or similar, not for a surety."},
+    {"type": "p", "text": "If your situation is the paperwork one, [what is a bonded title](/what-is-a-bonded-title) covers how it works and [what happens when your bonded title expires](/what-happens-when-your-bonded-title-expires) covers the end of the term."}
+  ]
+}

@@ -10,6 +10,11 @@ import { site } from "@/lib/site";
  * the lead away is worse than one that admits it cannot take it right now.
  *
  * To connect it, set LEAD_WEBHOOK_URL and nothing else here changes.
+ *
+ * LEAD_WEBHOOK_SECRET is optional and sent as `x-webhook-secret` when present.
+ * The destination we run (a Supabase edge function) requires it, because the
+ * endpoint is public and a lead row is cheap to forge otherwise. A destination
+ * that authenticates some other way, or not at all, simply leaves it unset.
  */
 
 export type Lead = {
@@ -60,10 +65,14 @@ export async function deliverLead(lead: Lead): Promise<DeliveryResult> {
   const endpoint = process.env.LEAD_WEBHOOK_URL;
   if (!endpoint) return { ok: false, reason: "unconfigured" };
 
+  const headers: Record<string, string> = { "content-type": "application/json" };
+  const secret = process.env.LEAD_WEBHOOK_SECRET;
+  if (secret) headers["x-webhook-secret"] = secret;
+
   try {
     const response = await fetch(endpoint, {
       method: "POST",
-      headers: { "content-type": "application/json" },
+      headers,
       body: JSON.stringify({ ...lead, source: site.url, receivedAt: new Date().toISOString() }),
     });
     return response.ok ? { ok: true } : { ok: false, reason: "upstream" };

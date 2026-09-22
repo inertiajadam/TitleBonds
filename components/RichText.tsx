@@ -9,11 +9,28 @@ import { Fragment } from "react";
  * rather than by pulling in a Markdown renderer for one feature.
  *
  * A href starting with "/" is one of ours and routes client-side. Everything
- * else leaves the site and is marked nofollow, which is a deliberate editorial
- * choice rather than a default: these cite statutes and agencies, and the
- * citation is for the reader.
+ * else leaves the site.
+ *
+ * Government and university sources are followed: they are editorial citations
+ * of the agencies and statutes the copy relies on, which is what a link is for.
+ * Any other outbound link is nofollow by default, so a commercial link added
+ * later does not quietly pass authority just because nobody remembered.
  */
 const LINK = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+
+/**
+ * Parse the URL rather than matching on the string: ".gov" appears in
+ * evil.gov.example.com too, and only the host's real suffix should count.
+ * An href that will not parse is treated as untrusted.
+ */
+export function isAuthoritativeSource(href: string): boolean {
+  try {
+    const { hostname } = new URL(href);
+    return hostname.endsWith(".gov") || hostname.endsWith(".edu");
+  } catch {
+    return false;
+  }
+}
 
 export function RichText({ text }: { text: string }) {
   const parts: React.ReactNode[] = [];
@@ -38,7 +55,11 @@ export function RichText({ text }: { text: string }) {
           key={start}
           href={href}
           target="_blank"
-          rel="nofollow noopener noreferrer"
+          rel={
+            isAuthoritativeSource(href)
+              ? "noopener noreferrer"
+              : "nofollow noopener noreferrer"
+          }
           className="font-medium text-navy-700 underline underline-offset-2 hover:text-navy-900"
         >
           {label}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import { useState } from "react";
 import { site } from "@/lib/site";
 import { ApplyButton } from "./ApplyButton";
@@ -34,9 +35,7 @@ export function Header() {
       <div className="border-b border-navy-100">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
           <Link href="/" className="flex items-center gap-2.5">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-navy-800 text-sm font-bold text-white">
-              TB
-            </span>
+            <Logo className="size-9 shrink-0" />
             <span className="text-lg font-bold tracking-tight text-navy-900">
               Title Bond <span className="text-navy-500">Agency</span>
             </span>

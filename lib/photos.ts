@@ -1,6 +1,9 @@
 import type { StaticImageData } from "next/image";
+import boatTrailer from "@/public/img/boat-trailer.jpg";
+import classicTruck from "@/public/img/classic-truck.jpg";
 import contractDesk from "@/public/img/contract-desk.jpg";
 import heroTrailer from "@/public/img/hero-trailer.jpg";
+import motorcycleRoad from "@/public/img/motorcycle-road.jpg";
 import pickupSunset from "@/public/img/pickup-sunset.jpg";
 import rvHighway from "@/public/img/rv-highway.jpg";
 import signatureLine from "@/public/img/signature-line.jpg";
@@ -20,8 +23,11 @@ import trailerNight from "@/public/img/trailer-night.jpg";
  */
 
 export type PhotoKey =
+  | "boat-trailer"
+  | "classic-truck"
   | "contract-desk"
   | "hero-trailer"
+  | "motorcycle-road"
   | "pickup-sunset"
   | "rv-highway"
   | "signature-line"
@@ -40,6 +46,16 @@ export type Photo = {
 };
 
 export const photos: Record<PhotoKey, Photo> = {
+  "boat-trailer": {
+    src: boatTrailer,
+    alt: "A powerboat sitting on its trailer beside the water under a broken sky.",
+    og: "/img/og/boat-trailer.jpg",
+  },
+  "classic-truck": {
+    src: classicTruck,
+    alt: "A restored red stake-bed pickup truck parked on grass under trees.",
+    og: "/img/og/classic-truck.jpg",
+  },
   "contract-desk": {
     src: contractDesk,
     alt: "A person at a desk holding a pen over a multi-page printed contract.",
@@ -49,6 +65,11 @@ export const photos: Record<PhotoKey, Photo> = {
     src: heroTrailer,
     alt: "A vintage travel trailer parked under an open sky.",
     og: "/img/og/hero-trailer.jpg",
+  },
+  "motorcycle-road": {
+    src: motorcycleRoad,
+    alt: "A motorcyclist riding away down a two-lane road through summer woodland.",
+    og: "/img/og/motorcycle-road.jpg",
   },
   "pickup-sunset": {
     src: pickupSunset,

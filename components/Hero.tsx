@@ -49,7 +49,7 @@ export function Hero({ states }: { states: Array<{ slug: string; name: string }>
 
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-navy-100 sm:text-xl">
             A certificate of title bond replaces a lost, stolen, damaged or
-            defective title — for your car, truck, RV, motorcycle, mobile home,
+            defective title for your car, truck, RV, motorcycle, mobile home,
             boat, trailer or aircraft.
           </p>
 

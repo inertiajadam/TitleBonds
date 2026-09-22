@@ -21,7 +21,7 @@ export function GET() {
 
 > ${site.description}
 
-We write certificate of title bonds — the surety bond a state motor vehicle
+We write certificate of title bonds, the surety bond a state motor vehicle
 agency accepts in place of an original vehicle title, so the owner can obtain a
 bonded title and register the vehicle.
 
@@ -38,7 +38,7 @@ bonded title and register the vehicle.
 
 ## Who needs a title bond
 
-A title bond is required when a vehicle owner cannot produce a valid title —
+A title bond is required when a vehicle owner cannot produce a valid title:
 the title was lost, stolen, damaged or defective; the vehicle was never titled;
 the seller never handed over the title; or the vehicle was bought unclaimed or
 at auction without one.

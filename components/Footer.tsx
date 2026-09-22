@@ -25,6 +25,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {[
                 { href: "/choose-your-state", label: "Choose Your State" },
+                { href: "/about", label: "About Us" },
                 { href: "/frequently-asked-questions", label: "Frequently Asked Questions" },
                 { href: "/blog", label: "Industry News" },
                 { href: "/contact", label: "Contact Us" },

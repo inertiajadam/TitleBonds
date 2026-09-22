@@ -28,6 +28,28 @@ export const site = {
   },
 } as const;
 
+/**
+ * Verifiable credentials for the About page.
+ *
+ * Deliberately empty. Every entry here is a claim a visitor could check and
+ * that a regulator could hold the agency to, so none of it can be inferred or
+ * approximated — a licence number, a rating or a founding year has to come
+ * from the business. The About page renders this section only when it has
+ * something true to put in it, rather than showing placeholders.
+ *
+ * To populate: add entries and they appear. Nothing else changes.
+ */
+export type Credential = {
+  /** e.g. "Licensed in", "Founded", "Better Business Bureau" */
+  label: string;
+  /** The value exactly as it may be stated publicly. */
+  value: string;
+  /** Optional page where someone can verify the claim. */
+  href?: string;
+};
+
+export const credentials: Credential[] = [];
+
 /** Where an "Apply Now" for a given state should send the visitor. */
 export function applyUrl(stateName?: string): string {
   const base = `${site.partner.url}/surety-bonds/certificate-of-title-bonds`;

@@ -9,6 +9,7 @@ import { ApplyButton } from "./ApplyButton";
 const nav = [
   { href: "/", label: "Home" },
   { href: "/choose-your-state", label: "Choose Your State" },
+  { href: "/about", label: "About" },
   { href: "/frequently-asked-questions", label: "FAQs" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },

@@ -19,6 +19,17 @@ const nextConfig: NextConfig = {
         missing: [{ type: "host", value: "titlebonds.us" }],
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
+      {
+        // The admin lists customers' names, phone numbers and VINs. Unlike the
+        // rule above this one has no host condition: there is no deployment,
+        // canonical or otherwise, on which these pages should be indexable.
+        source: "/admin/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" },
+          { key: "Cache-Control", value: "no-store, max-age=0" },
+          { key: "Referrer-Policy", value: "no-referrer" },
+        ],
+      },
     ];
   },
 

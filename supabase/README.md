@@ -38,3 +38,26 @@ ref is known.
 There is no admin UI. Leads are read from the Supabase dashboard's table
 editor, newest first. If someone needs them elsewhere, the honest next step is
 a notification on insert rather than a second copy of the data.
+
+## The admin
+
+`/admin` lists the leads and lets whoever is working them set a status. It
+sits outside the `(site)` route group, so it carries none of the marketing
+chrome, and both its routes are dynamic — nothing about it is prerendered.
+
+It needs four environment variables in Vercel (production):
+
+| Variable | What it is |
+| --- | --- |
+| `ADMIN_PASSWORD` | The shared password for the sign-in page |
+| `ADMIN_SESSION_SECRET` | Random 32+ bytes; signs the session cookie |
+| `SUPABASE_URL` | `https://<ref>.supabase.co` |
+| `SUPABASE_SERVICE_ROLE_KEY` | Service role key, so it can read past RLS |
+
+With the last two unset the page says so rather than erroring. With the first
+two unset nobody can sign in at all, which is the right failure.
+
+One shared password, not per-user accounts: it cannot tell you who looked, and
+revoking one person means changing it for everyone. That is the trade-off the
+agency's size currently justifies, and `lib/admin-auth.ts` is the file to
+replace when it stops being true.

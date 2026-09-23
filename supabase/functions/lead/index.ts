@@ -12,6 +12,7 @@
  */
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { timingSafeEqual } from "jsr:@std/crypto@1/timing-safe-equal";
+import { sendLeadNotification, type Notifiable } from "./notify.ts";
 
 const REQUIRED = ["name", "phone", "email", "state", "vehicle", "vin"] as const;
 
@@ -96,6 +97,12 @@ Deno.serve(async (req) => {
     console.error("lead insert failed", error.code, error.message);
     return json({ error: "storage" }, 502);
   }
+
+  // The lead is safe now, so nothing below this line may fail the request.
+  // A stored lead nobody was emailed about is recoverable from the admin; a
+  // lead rejected because an email provider was down is gone for good.
+  const notified = await sendLeadNotification({ ...(row as Notifiable), receivedAt });
+  if (!notified) console.warn("lead stored but not notified");
 
   return json({ ok: true }, 200);
 });

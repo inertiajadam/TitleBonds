@@ -33,6 +33,33 @@ ref is known.
 5. Redeploy the site so it picks up the new environment variables, then submit
    a real quote and confirm a row lands in `leads`.
 
+## Notification on insert
+
+After a lead is stored, the function emails whoever is on `LEAD_NOTIFY_TO` via
+Resend. The email leads with a tap-to-call button, because a title bond lead is
+won by ringing back quickly, and `Reply-To` is the customer, so replying from a
+phone reaches them rather than the agency's own inbox.
+
+| Variable | What it is |
+| --- | --- |
+| `RESEND_API_KEY` | Resend API key |
+| `LEAD_NOTIFY_FROM` | Sender, on a domain verified in Resend |
+| `LEAD_NOTIFY_TO` | Comma-separated recipients |
+
+All three are set on the edge function, not on Vercel; the site never talks to
+Resend. With any of them missing the function still stores the lead and simply
+logs that it went un-notified, which is why the admin remains the source of
+truth rather than the inbox.
+
+Sending is best effort on purpose: the send happens after the insert and its
+result is never allowed to fail the request. A stored lead nobody was emailed
+about can be recovered from the admin; a lead rejected because an email
+provider was down is gone.
+
+Lead fields are escaped before they reach the HTML body and stripped of
+newlines before they reach the subject. Everything in that email was typed by a
+stranger into a public form.
+
 ## Reading the leads
 
 There is no admin UI. Leads are read from the Supabase dashboard's table

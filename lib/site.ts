@@ -1,10 +1,11 @@
 /**
  * Single source of truth for business details and outbound links.
  *
- * `applyUrl()` is deliberately funnelled through one function: today every
- * "Apply Now" hands off to A1 Surety Bonds, but the next phase replaces that
- * with an on-site instant-issue flow backed by the surety API. When that
- * lands, this is the only place that changes.
+ * `applyUrl()` is deliberately funnelled through one function, which is what
+ * made moving every "Apply Now" from A1 Surety Bonds to the on-site flow a
+ * one-line change. A1 remains the bond partner and is still named in the
+ * privacy policy and on the About page; what changed is where the customer
+ * fills the form in, not who writes the bond.
  */
 export const site = {
   name: "The Title Bond Agency",
@@ -50,12 +51,16 @@ export type Credential = {
 
 export const credentials: Credential[] = [];
 
-/** Where an "Apply Now" for a given state should send the visitor. */
-export function applyUrl(stateName?: string): string {
-  const base = `${site.partner.url}/surety-bonds/certificate-of-title-bonds`;
-  return stateName
-    ? `${base}?state=${encodeURIComponent(stateName)}`
-    : base;
+/**
+ * Where an "Apply Now" should send the visitor.
+ *
+ * Takes the state's slug rather than its display name because the slugs are
+ * the legacy WordPress ones and do not follow from the name: Tennessee is
+ * "tennessee-title-bonds" but Iowa is just "iowa". Deriving one from the other
+ * would 404 on about half the states.
+ */
+export function applyUrl(stateSlug?: string): string {
+  return stateSlug ? `/apply/${stateSlug}` : "/apply";
 }
 
 export const formattedAddress = `${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}`;

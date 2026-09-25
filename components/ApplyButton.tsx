@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { applyUrl } from "@/lib/site";
-import { APPLY_CLICK, trackAttrs, type LinkLocation } from "@/lib/analytics";
+import { APPLY_START, trackAttrs, type LinkLocation } from "@/lib/analytics";
 
 type Props = {
+  /** Shown in the label and reported with the event. */
   stateName?: string;
+  /** Routes straight into that state's application. Slugs are legacy, so this
+   *  cannot be derived from stateName. */
+  stateSlug?: string;
   children?: React.ReactNode;
   variant?: keyof typeof variants;
   size?: keyof typeof sizes;
@@ -29,6 +33,7 @@ const sizes = {
 
 export function ApplyButton({
   stateName,
+  stateSlug,
   children,
   variant = "primary",
   size = "default",
@@ -37,8 +42,8 @@ export function ApplyButton({
 }: Props) {
   return (
     <Link
-      href={applyUrl(stateName)}
-      {...trackAttrs(APPLY_CLICK, location, stateName)}
+      href={applyUrl(stateSlug)}
+      {...trackAttrs(APPLY_START, location, stateName)}
       className={`inline-flex items-center justify-center gap-2 rounded-full font-semibold shadow-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${sizes[size]} ${variants[variant]} ${className}`}
     >
       {children ?? (stateName ? `Get Your ${stateName} Bonded Title` : "Apply Now")}

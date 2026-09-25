@@ -135,7 +135,7 @@ export default async function StatePage({ params }: Params) {
                 ))}
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
-                <ApplyButton stateName={state.name} location="masthead">
+                <ApplyButton stateName={state.name} stateSlug={state.slug} location="masthead">
                   Get your {state.name} bonded title
                 </ApplyButton>
                 <a
@@ -259,7 +259,7 @@ export default async function StatePage({ params }: Params) {
           help before you start.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <ApplyButton stateName={state.name} location="state_cta" />
+          <ApplyButton stateName={state.name} stateSlug={state.slug} location="state_cta" />
           <a
             href={site.phoneHref}
             data-track-location="state_cta"

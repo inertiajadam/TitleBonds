@@ -1,15 +1,24 @@
 /**
  * Conversion events.
  *
- * This business has two outcomes and neither of them happens on this site: the
- * visitor either leaves for the partner's application form or picks up the
- * phone. Both are ordinary link clicks, so both are invisible to analytics
- * unless we say so explicitly — which is why the property recorded no
- * conversions at all for the twelve months before this was added.
+ * Both outcomes used to happen off this site: the visitor either left for the
+ * partner's application form or picked up the phone. Both were ordinary link
+ * clicks, invisible to analytics unless declared, which is why the property
+ * recorded no conversions at all for the twelve months before this was added.
+ *
+ * Now that the application is on-site, the Apply Now buttons are navigation
+ * rather than an outcome, so they report APPLY_START instead. Only a submitted
+ * form reports APPLY_CLICK. Firing both from the button would have counted
+ * every click as a conversion and quietly inflated the figure the ad spend is
+ * judged on.
  */
 
 /** Event names. Mark these as key events in GA4; code cannot do that part. */
+
+/** A form was submitted: a quote request or a full application. The outcome. */
 export const APPLY_CLICK = "apply_click";
+/** An Apply Now button was clicked. Intent, not an outcome: do not mark this. */
+export const APPLY_START = "apply_start";
 export const PHONE_CLICK = "phone_click";
 
 /** Where on the page the link was, so a weak CTA can be told from a weak page. */

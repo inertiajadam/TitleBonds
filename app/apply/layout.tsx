@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
+import { Wordmark } from "@/components/Wordmark";
 import { site } from "@/lib/site";
 
 /**
@@ -23,7 +23,7 @@ export default function ApplyLayout({ children }: { children: React.ReactNode })
       <header className="border-b border-navy-100 bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
           <Link href="/" aria-label={site.name}>
-            <Logo className="h-8 w-auto" />
+            <Wordmark size="compact" />
           </Link>
           <a
             href={site.phoneHref}

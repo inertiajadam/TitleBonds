@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Logo } from "@/components/Logo";
+import { Wordmark } from "@/components/Wordmark";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Steps } from "@/components/Steps";
 import { getPhoto } from "@/lib/photos";
@@ -67,12 +67,7 @@ export default async function LandingPage({ params }: Params) {
       {/* No navigation: the only ways out are the form and the phone. */}
       <header className="border-b border-navy-100 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5">
-          <span className="flex items-center gap-2.5">
-            <Logo className="size-8 shrink-0" />
-            <span className="text-base font-bold tracking-tight text-navy-900">
-              The Title Bond <span className="text-navy-500">Agency</span>
-            </span>
-          </span>
+          <Wordmark size="compact" />
           <a
             href={site.phoneHref}
             data-track-location="lp_header"

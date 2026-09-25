@@ -17,10 +17,19 @@ server rather than a signed-in user. That makes the URL publicly reachable, so
 the secret is the only thing standing between the leads table and anyone who
 finds the endpoint. The function fails closed if the secret is not configured.
 
+## Where this is deployed
+
+Supabase project `lsowtkebqxdyvpniuglg` ("Title Bonds", us-east-1). The
+function is at `https://lsowtkebqxdyvpniuglg.supabase.co/functions/v1/lead`.
+
+`SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` reach Vercel through the
+Supabase integration rather than being set by hand, so rotating the key in
+Supabase propagates without anyone editing Vercel.
+
 ## Deploying it
 
-The Supabase project itself has to exist first; everything below assumes its
-ref is known.
+Kept for the next environment. The steps below are already done for the
+project named above.
 
 1. Apply the migration in `migrations/` to create `public.leads`. RLS is on
    with no policies, so only the service role reaches it.

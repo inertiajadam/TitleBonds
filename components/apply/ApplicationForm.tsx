@@ -2,19 +2,24 @@
 
 import { useMemo, useState } from "react";
 import { computeEstimate, usd, type BondRule } from "@/lib/bond-math";
+import { APPLY_CLICK, track } from "@/lib/analytics";
+import { site } from "@/lib/site";
 
 /**
  * The application flow.
  *
- * Two of the four steps are live. Applicant details wait on the field list
- * from the bond platform, and payment waits on knowing which gateway the
- * agency uses; both are rendered as explicit "not built yet" panels rather
- * than being hidden, so what is missing is obvious in review instead of
- * looking finished and silently doing nothing.
+ * Three steps, and the application completes without taking payment. The
+ * agency's gateway is not known yet, so rather than leave the flow dead-ended
+ * the customer is told plainly that they will get a call to confirm the amount
+ * and pay. That is worth more than a fourth step that does not work: it is
+ * already better than sending them to another company's website.
  *
- * Nothing here is submitted anywhere yet. That is deliberate: an application
- * that appears to send and does not is the failure mode the quote form's 503
- * was written to avoid, and the same rule applies here.
+ * The applicant fields are the ones every surety needs for every bond, so they
+ * are safe to build before the platform's spec lands. Anything that spec adds
+ * rides in `details`, which the API and the table both pass through untouched.
+ *
+ * A failed submit says so and offers the phone number. It never says thank you
+ * for something it did not manage to send.
  */
 
 type Props = {
@@ -30,12 +35,32 @@ const VEHICLE_FIELDS = [
   { name: "model", label: "Model", width: "md" },
 ] as const;
 
-const STEPS = ["Vehicle", "Value", "Your details", "Payment"] as const;
+const APPLICANT_FIELDS = [
+  { name: "applicantName", label: "Full legal name", span: "col-span-6", autoComplete: "name" },
+  { name: "applicantPhone", label: "Phone", span: "col-span-6 sm:col-span-3", autoComplete: "tel", type: "tel" },
+  { name: "applicantEmail", label: "Email", span: "col-span-6 sm:col-span-3", autoComplete: "email", type: "email" },
+  { name: "addressLine1", label: "Street address", span: "col-span-6", autoComplete: "address-line1" },
+  { name: "addressLine2", label: "Apartment or unit (optional)", span: "col-span-6", autoComplete: "address-line2", optional: true },
+  { name: "city", label: "City", span: "col-span-6 sm:col-span-3", autoComplete: "address-level2" },
+  { name: "region", label: "State", span: "col-span-3 sm:col-span-1", autoComplete: "address-level1" },
+  { name: "postalCode", label: "ZIP", span: "col-span-3 sm:col-span-2", autoComplete: "postal-code" },
+] as const;
+
+type ApplicantField = (typeof APPLICANT_FIELDS)[number]["name"];
+
+const STEPS = ["Vehicle", "Value", "Your details"] as const;
+
+type Status = "idle" | "sending" | "sent" | "invalid" | "unavailable";
 
 export function ApplicationForm({ stateName, rule, noRuleReason }: Props) {
   const [step, setStep] = useState(0);
   const [vehicle, setVehicle] = useState({ year: "", make: "", model: "", vin: "" });
   const [value, setValue] = useState("");
+  const [applicant, setApplicant] = useState<Record<ApplicantField, string>>({
+    applicantName: "", applicantPhone: "", applicantEmail: "",
+    addressLine1: "", addressLine2: "", city: "", region: "", postalCode: "",
+  });
+  const [status, setStatus] = useState<Status>("idle");
 
   // Recomputed as they type, which is the whole reason this is a client
   // component and the arithmetic lives in a module without node:fs in it.
@@ -47,6 +72,59 @@ export function ApplicationForm({ stateName, rule, noRuleReason }: Props) {
   const vehicleComplete =
     vehicle.year.trim() !== "" && vehicle.make.trim() !== "" &&
     vehicle.model.trim() !== "" && vehicle.vin.trim() !== "";
+
+  const applicantComplete = APPLICANT_FIELDS.every(
+    (field) => "optional" in field || applicant[field.name].trim() !== "",
+  );
+
+  async function submit() {
+    setStatus("sending");
+    const response = await fetch("/api/application", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        ...applicant,
+        state: stateName,
+        vehicleYear: vehicle.year,
+        vehicleMake: vehicle.make,
+        vehicleModel: vehicle.model,
+        vin: vehicle.vin,
+        vehicleValue: Number(value.replace(/[^0-9.]/g, "")),
+        // What was on screen when they agreed, so a later dispute has a record.
+        ...(estimate.kind === "estimate"
+          ? { estimatedBondAmount: estimate.bondAmount, estimatedPremium: estimate.premium }
+          : {}),
+      }),
+    }).catch(() => null);
+
+    if (response?.ok) {
+      track(APPLY_CLICK, { link_location: "apply_form", state: stateName });
+      setStatus("sent");
+      return;
+    }
+    setStatus(response?.status === 400 ? "invalid" : "unavailable");
+  }
+
+  if (status === "sent") {
+    return (
+      <div className="rounded-card bg-white p-7 shadow-sm sm:p-8" role="status">
+        <h2 className="text-xl font-bold text-navy-950">Application received</h2>
+        <p className="mt-3 leading-relaxed text-navy-700">
+          We are confirming your {stateName} bond amount now. Someone will call
+          you on the number you gave us to take payment, usually the same day.
+          Nothing has been charged.
+        </p>
+        <a
+          href={site.phoneHref}
+          data-track="phone_click"
+          data-track-location="apply_confirmation"
+          className="mt-6 inline-flex items-center rounded-full bg-navy-900 px-6 py-3 font-semibold text-white"
+        >
+          Or call {site.phone} now
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div className="rounded-card bg-white p-6 shadow-sm sm:p-8" data-clarity-mask="true">
@@ -190,34 +268,81 @@ export function ApplicationForm({ stateName, rule, noRuleReason }: Props) {
         </section>
       )}
 
-      {step >= 2 && (
+      {step === 2 && (
         <section className="mt-5">
-          <h2 className="text-xl font-bold text-navy-950">{STEPS[step]}</h2>
-          <div className="mt-4 rounded-xl border border-dashed border-navy-300 bg-navy-50 p-5">
+          <h2 className="text-xl font-bold text-navy-950">Your details</h2>
+          <p className="mt-1 text-sm text-navy-600">
+            As they should appear on the bond, which is the legal name and the
+            address your title will be mailed to.
+          </p>
+
+          <div className="mt-5 grid grid-cols-6 gap-3">
+            {APPLICANT_FIELDS.map((field) => (
+              <label key={field.name} className={field.span}>
+                <span className="text-sm font-medium text-navy-700">{field.label}</span>
+                <input
+                  value={applicant[field.name]}
+                  type={"type" in field ? field.type : "text"}
+                  autoComplete={field.autoComplete}
+                  onChange={(e) =>
+                    setApplicant({ ...applicant, [field.name]: e.target.value })
+                  }
+                  className="mt-1.5 w-full rounded-lg border border-navy-200 px-3 py-2.5 text-base outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
+                />
+              </label>
+            ))}
+            {/* Honeypot, same trick as the quote form. */}
+            <input
+              type="text" name="company" tabIndex={-1} autoComplete="off"
+              aria-hidden="true" className="absolute left-[-9999px] h-px w-px opacity-0"
+            />
+          </div>
+
+          <div className="mt-5 rounded-xl border border-navy-200 bg-navy-50 p-4">
             <p className="text-sm leading-relaxed text-navy-700">
-              {step === 2
-                ? "Not built yet. The applicant fields are waiting on the bond platform's application spec, so that what we collect matches what it needs rather than being mapped twice."
-                : "Not built yet. Payment is waiting on which gateway the agency uses. Card details will go straight from this page to the processor and never touch our servers."}
+              <strong className="font-semibold text-navy-900">
+                You are not charged now.
+              </strong>{" "}
+              We confirm your bond amount
+              {estimate.kind === "estimate" ? ` (estimated ${usd(estimate.premium)})` : ""}{" "}
+              and call you to take payment, usually the same day.
             </p>
           </div>
+
           <div className="mt-6 flex gap-3">
             <button
               type="button"
-              onClick={() => setStep(step - 1)}
-              className="rounded-full px-5 py-3.5 font-semibold text-navy-800 ring-1 ring-navy-200 hover:bg-navy-50"
+              onClick={() => setStep(1)}
+              disabled={status === "sending"}
+              className="rounded-full px-5 py-3.5 font-semibold text-navy-800 ring-1 ring-navy-200 hover:bg-navy-50 disabled:opacity-40"
             >
               Back
             </button>
-            {step === 2 && (
-              <button
-                type="button"
-                onClick={() => setStep(3)}
-                className="flex-1 rounded-full bg-navy-900 px-6 py-3.5 font-semibold text-white hover:bg-navy-800"
-              >
-                Continue
-              </button>
-            )}
+            <button
+              type="button"
+              disabled={!applicantComplete || status === "sending"}
+              onClick={submit}
+              className="flex-1 rounded-full bg-amber-accent px-6 py-3.5 font-semibold text-navy-950 transition-colors hover:bg-amber-accent-dark disabled:opacity-40"
+            >
+              {status === "sending" ? "Submitting…" : "Submit application"}
+            </button>
           </div>
+
+          {status === "invalid" && (
+            <p className="mt-3 text-sm text-red-700" role="alert">
+              Please check your phone number and email, then try again.
+            </p>
+          )}
+          {status === "unavailable" && (
+            <p className="mt-3 text-sm text-red-700" role="alert">
+              We could not submit that just now, and we would rather tell you
+              than lose it. Please call{" "}
+              <a href={site.phoneHref} className="font-semibold underline">
+                {site.phone}
+              </a>{" "}
+              and we will take the application over the phone.
+            </p>
+          )}
         </section>
       )}
     </div>

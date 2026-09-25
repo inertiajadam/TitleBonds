@@ -97,3 +97,28 @@ One shared password, not per-user accounts: it cannot tell you who looked, and
 revoking one person means changing it for everyone. That is the trade-off the
 agency's size currently justifies, and `lib/admin-auth.ts` is the file to
 replace when it stops being true.
+
+## Applications
+
+`/apply` collects a full bond application and posts it to `/api/application`,
+which forwards to the `application` edge function. Same secret, same
+fail-closed behaviour, same 503-rather-than-drop rule as leads. It lands in
+`public.applications`, which is separate from `leads` because a lead is a
+request to be called back and an application is someone committing to buy.
+
+`APPLICATION_WEBHOOK_URL` points at the function; it reuses
+`LEAD_WEBHOOK_SECRET` rather than having its own, because the two endpoints
+trust the same one caller and a second secret would be another thing to rotate
+without being another boundary.
+
+The table records `estimated_bond_amount` and `estimated_premium`: what the
+customer actually saw when they applied. The figures are provisional, so when
+the surety's real number differs this is the record of what was on screen.
+Both are null for Alabama and New York, which publish no formula.
+
+Anything the bond platform's spec adds later goes in the `details` JSON
+column, so a new field is a deploy rather than a migration.
+
+**Payment is not collected.** The gateway is not known yet, so the flow
+completes without it and tells the customer they will be called to pay. The
+notification email says PAYMENT NOT TAKEN for the same reason.

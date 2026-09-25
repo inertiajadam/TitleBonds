@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 import { computeEstimate, usd, type BondRule } from "@/lib/bond-math";
 import { APPLY_CLICK, track } from "@/lib/analytics";
 import { site } from "@/lib/site";
+import { inspectVin } from "@/lib/vin";
+import type { VinDecode } from "@/app/api/vin/route";
 
 /**
  * The application flow.
@@ -61,6 +63,49 @@ export function ApplicationForm({ stateName, rule, noRuleReason }: Props) {
     addressLine1: "", addressLine2: "", city: "", region: "", postalCode: "",
   });
   const [status, setStatus] = useState<Status>("idle");
+  const [decode, setDecode] = useState<VinDecode | null>(null);
+  const [decoding, setDecoding] = useState(false);
+
+  const vinShape = inspectVin(vehicle.vin);
+
+  /**
+   * Looked up when they leave the field rather than as they type: a VIN is 17
+   * characters copied off a door jamb, and firing on every keystroke would be
+   * sixteen requests for one answer.
+   */
+  async function lookUpVin() {
+    if (vinShape.kind !== "standard") { setDecode(null); return; }
+    setDecoding(true);
+    const response = await fetch(`/api/vin?vin=${encodeURIComponent(vinShape.vin)}`)
+      .catch(() => null);
+    const result: VinDecode = response?.ok
+      ? await response.json().catch(() => ({ ok: false, reason: "unavailable" as const }))
+      : { ok: false, reason: "unavailable" };
+    setDecode(result);
+    setDecoding(false);
+
+    // Fill only what they have left blank. Overwriting what someone typed
+    // would be wrong even when NHTSA disagrees, because they are the one
+    // holding the vehicle.
+    if (result.ok) {
+      setVehicle((current) => ({
+        ...current,
+        year: current.year.trim() || result.year || "",
+        make: current.make.trim() || result.make || "",
+        model: current.model.trim() || result.model || "",
+      }));
+    }
+  }
+
+  /** Where NHTSA and the customer disagree, worth flagging to both of them. */
+  const mismatch =
+    decode?.ok
+      ? (["year", "make", "model"] as const).filter((key) => {
+          const typed = vehicle[key].trim().toLowerCase();
+          const found = (decode[key] ?? "").trim().toLowerCase();
+          return typed && found && typed !== found;
+        })
+      : [];
 
   // Recomputed as they type, which is the whole reason this is a client
   // component and the arithmetic lives in a module without node:fs in it.
@@ -94,6 +139,18 @@ export function ApplicationForm({ stateName, rule, noRuleReason }: Props) {
         ...(estimate.kind === "estimate"
           ? { estimatedBondAmount: estimate.bondAmount, estimatedPremium: estimate.premium }
           : {}),
+        // What the VIN check found, so whoever writes the bond sees the same
+        // thing the customer did, including any disagreement.
+        details: {
+          vinShape: vinShape.kind,
+          ...(decode?.ok
+            ? { vinDecoded: { year: decode.year, make: decode.make, model: decode.model,
+                              bodyClass: decode.bodyClass } }
+            : decode
+              ? { vinDecodeFailed: decode.reason }
+              : {}),
+          ...(mismatch.length > 0 ? { vinMismatch: mismatch } : {}),
+        },
       }),
     }).catch(() => null);
 
@@ -175,14 +232,50 @@ export function ApplicationForm({ stateName, rule, noRuleReason }: Props) {
                 value={vehicle.vin}
                 autoComplete="off"
                 onChange={(e) => setVehicle({ ...vehicle, vin: e.target.value })}
+                onBlur={lookUpVin}
                 className="mt-1.5 w-full rounded-lg border border-navy-200 px-3 py-2.5 font-mono text-base outline-none focus:border-navy-500 focus:ring-2 focus:ring-navy-200"
               />
-              {/* Older trailers and homebuilts have short serials, so this is
-                  never length-checked here. */}
-              <span className="mt-1 block text-xs text-navy-500">
-                Older trailers and boats often have a short serial rather than a
-                17-character VIN. Enter whatever is on yours.
+
+              {/* Everything below reports. None of it blocks: this product
+                  exists disproportionately for property whose serial predates
+                  the 17-character standard. */}
+              <span className="mt-1.5 block text-xs leading-relaxed" role="status">
+                {decoding ? (
+                  <span className="text-navy-500">Checking the VIN…</span>
+                ) : decode?.ok ? (
+                  <span className="text-green-800">
+                    NHTSA: {[decode.year, decode.make, decode.model].filter(Boolean).join(" ")}
+                    {decode.bodyClass ? ` · ${decode.bodyClass}` : ""}
+                  </span>
+                ) : vinShape.kind === "check-digit-failed" ? (
+                  <span className="text-amber-accent-dark">
+                    That does not look like a valid 17-character VIN. Worth
+                    double checking, though you can carry on if you are sure.
+                  </span>
+                ) : decode?.ok === false && decode.reason === "not-found" ? (
+                  <span className="text-navy-500">
+                    Not in the federal database, which is common for older
+                    vehicles. Carry on.
+                  </span>
+                ) : (
+                  <span className="text-navy-500">
+                    Older trailers and boats often have a short serial rather
+                    than a 17-character VIN. Enter whatever is on yours.
+                  </span>
+                )}
               </span>
+
+              {mismatch.length > 0 && (
+                <span className="mt-2 block rounded-lg bg-amber-50 px-3 py-2 text-xs leading-relaxed text-navy-800">
+                  NHTSA reads this VIN as{" "}
+                  <strong className="font-semibold">
+                    {[decode?.ok ? decode.year : "", decode?.ok ? decode.make : "", decode?.ok ? decode.model : ""]
+                      .filter(Boolean).join(" ")}
+                  </strong>
+                  . If your paperwork says otherwise, keep what your paperwork
+                  says and we will sort it out with you.
+                </span>
+              )}
             </label>
           </div>
 

@@ -15,10 +15,13 @@ export function StateSelect({
   states,
   label = "Select your state",
   buttonLabel = "Get Started",
+  /** Where picking a state sends you. The application flow reuses this. */
+  basePath = "/state",
 }: {
   states: Option[];
   label?: string;
   buttonLabel?: string;
+  basePath?: string;
 }) {
   const router = useRouter();
   const [slug, setSlug] = useState("");
@@ -27,7 +30,7 @@ export function StateSelect({
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (slug) router.push(`/state/${slug}`);
+        if (slug) router.push(`${basePath}/${slug}`);
       }}
       className="flex w-full flex-col gap-3 sm:flex-row sm:gap-2"
     >

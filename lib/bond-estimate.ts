@@ -1,4 +1,7 @@
 import { getAllStates, type TitleBondState } from "@/lib/states";
+import { computeEstimate, type BondEstimate, type BondRule } from "@/lib/bond-math";
+
+export type { BondEstimate, BondRule };
 
 /**
  * Estimating the bond amount and premium from a vehicle's value.
@@ -21,19 +24,12 @@ import { getAllStates, type TitleBondState } from "@/lib/states";
  *      still says 1.5, the build fails rather than quietly quoting low.
  */
 
-/** Premium is a percentage of the bond amount, not of the vehicle's value. */
-const PREMIUM_RATE = 0.015;
-const MINIMUM_PREMIUM = 100;
-
-type BondRule = {
-  /** Bond amount = vehicle value x this. */
-  multiplier: number;
-  /** Floor the state applies to the bond amount itself, in dollars. */
-  minimumBondAmount?: number;
-};
-
-/** Keyed by state abbreviation. Every entry is traceable to that state's page. */
-const BOND_RULES: Record<string, BondRule> = {
+/**
+ * Keyed by state abbreviation. Every entry is traceable to that state's page.
+ * `basis` is filled in from the state's own prose when a rule is handed out,
+ * so the wording under the figures can never drift from the page.
+ */
+const BOND_RULES: Record<string, Omit<BondRule, "basis">> = {
   AK: { multiplier: 1.5 },
   AZ: { multiplier: 1.5 },
   AR: { multiplier: 1.5 },
@@ -76,50 +72,33 @@ const NO_FORMULA: Record<string, string> = {
   NY: "The New York DMV sets the bond amount case by case.",
 };
 
-export type BondEstimate =
-  | {
-      kind: "estimate";
-      /** Dollars, already including any state minimum. */
-      bondAmount: number;
-      /** Dollars, rounded up so the real figure is never higher than quoted. */
-      premium: number;
-      multiplier: number;
-      /** The state's own wording, for showing under the figures. */
-      basis: string;
-    }
-  | { kind: "unavailable"; reason: string };
-
 export function hasEstimator(abbr: string): boolean {
   return abbr in BOND_RULES;
 }
 
-export function estimateBond(state: TitleBondState, vehicleValue: number): BondEstimate {
-  if (!Number.isFinite(vehicleValue) || vehicleValue <= 0) {
-    return { kind: "unavailable", reason: "Enter the vehicle's value to see an estimate." };
-  }
-
-  const rule = BOND_RULES[state.abbr];
-  if (!rule) {
-    return {
-      kind: "unavailable",
-      reason:
-        NO_FORMULA[state.abbr] ??
-        `We confirm the bond amount for ${state.name} before quoting.`,
-    };
-  }
-
-  const bondAmount = Math.max(
-    Math.round(vehicleValue * rule.multiplier),
-    rule.minimumBondAmount ?? 0,
+/** Why this state publishes no formula, for showing in place of figures. */
+export function noFormulaReason(state: TitleBondState): string {
+  return (
+    NO_FORMULA[state.abbr] ??
+    `We confirm the bond amount for ${state.name} before quoting.`
   );
+}
 
-  return {
-    kind: "estimate",
-    bondAmount,
-    premium: Math.max(Math.ceil(bondAmount * PREMIUM_RATE), MINIMUM_PREMIUM),
-    multiplier: rule.multiplier,
-    basis: state.rates.amountRequired ?? "",
-  };
+/**
+ * The serialisable rule for a state, or null when it has no formula.
+ *
+ * This is what gets handed to the application form so it can recalculate in
+ * the browser as the customer types, without shipping the whole rule table or
+ * the content loader to the client.
+ */
+export function getBondRule(state: TitleBondState): BondRule | null {
+  const rule = BOND_RULES[state.abbr];
+  if (!rule) return null;
+  return { ...rule, basis: state.rates.amountRequired ?? "" };
+}
+
+export function estimateBond(state: TitleBondState, vehicleValue: number): BondEstimate {
+  return computeEstimate(getBondRule(state), vehicleValue, noFormulaReason(state));
 }
 
 /**

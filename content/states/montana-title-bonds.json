@@ -12,10 +12,10 @@
     "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
   ],
   "rates": {
-    "noCreditCheckUpTo": "$30,000",
+    "noCreditCheckUpTo": "$50,000",
     "minPremium": "$100",
     "rate": "1.5%",
-    "instantIssueUpTo": "$30,000",
+    "instantIssueUpTo": "$50,000",
     "amountRequired": "Equal to the value of the vehicle per the NADA appraisal guide"
   },
   "faqs": [
@@ -83,7 +83,7 @@
     {
       "q": "Is a credit check required for the Montana Lost Title Bond?",
       "a": [
-        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+        "We do not conduct a credit check for bonds that are less than $50,000. At limits over $50,000, we will review your standing to determine the qualification and rates for the bond."
       ]
     },
     {

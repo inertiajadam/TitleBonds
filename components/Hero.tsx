@@ -60,7 +60,7 @@ export function Hero({ states }: { states: Array<{ slug: string; name: string }>
           <dl className="mt-12 grid max-w-xl grid-cols-3 gap-x-5 gap-y-6 border-t border-white/15 pt-7">
             {[
               ["From $100", "or 1.5% of the bond"],
-              ["No credit check", "on bonds under $30k"],
+              ["No credit check", "on bonds under $50k"],
               ["Same day", "most bonds issued"],
             ].map(([value, label]) => (
               <div key={value}>

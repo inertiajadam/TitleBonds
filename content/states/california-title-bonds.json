@@ -5,17 +5,17 @@
   "agency": "California Department of Motor Vehicles",
   "statute": "California Vehicle Code § 4157",
   "seoTitle": "California Bonded Title: Cost & Requirements",
-  "metaDescription": "A bonded title in California costs $100 or 1.5% of the bond amount. Bond amount: appraised value of the vehicle. No credit check under $30,000.",
+  "metaDescription": "A bonded title in California costs $100 or 1.5% of the bond amount. Bond amount: appraised value of the vehicle. No credit check under $50,000.",
   "image": "trailer-marina",
   "intro": [
     "According to California Code (VEH § 4157), a motor vehicle ownership bond may be used in lieu of the original proof of ownership. This bond is required to transfer a title in California if you do not have proper evidence of ownership.",
     "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
   ],
   "rates": {
-    "noCreditCheckUpTo": "$30,000",
+    "noCreditCheckUpTo": "$50,000",
     "minPremium": "$100",
     "rate": "1.5%",
-    "instantIssueUpTo": "$30,000",
+    "instantIssueUpTo": "$50,000",
     "amountRequired": "Appraised (fair market) value of the vehicle"
   },
   "faqs": [
@@ -74,7 +74,7 @@
     {
       "q": "Is a credit check required for the California Lost Title Bond?",
       "a": [
-        "We do not conduct a credit check for bonds that are less than $25,000. For bonds over $25,000, we have bad credit bonding programs that can get your bond approved and issued with the same fast and easy service."
+        "We do not conduct a credit check for bonds that are less than $50,000. For bonds over $50,000, we have bad credit bonding programs that can get your bond approved and issued with the same fast and easy service."
       ]
     },
     {

@@ -11,9 +11,10 @@
     "Follow the links below to find and apply for your Nevada surety bond and let our expert staff get the bond you need at the lowest possible price."
   ],
   "rates": {
-    "noCreditCheckUpTo": "$25,000",
+    "noCreditCheckUpTo": "$50,000",
     "minPremium": "$100",
     "rate": "1.5%",
+    "instantIssueUpTo": "$50,000",
     "amountRequired": "1.5x the vehicle's Manufacturer's Suggested Retail Price (MSRP)"
   },
   "faqs": [
@@ -89,7 +90,7 @@
     {
       "q": "Is a credit check required for the Nevada Lost Title Bond?",
       "a": [
-        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+        "We do not conduct a credit check for bonds that are less than $50,000. At limits over $50,000, we will review your standing to determine the qualification and rates for the bond."
       ]
     },
     {

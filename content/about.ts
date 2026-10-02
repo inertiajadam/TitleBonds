@@ -53,7 +53,7 @@ export const about: {
     { type: "h2", text: "How we price" },
     {
       type: "p",
-      text: "The bond amount is set by your state, usually as a multiple of the vehicle's value. What you pay is a premium on that amount: typically 1.5%, with a $100 minimum. Bonds under $30,000 are issued with no credit check, because the surety is assessing the vehicle's history rather than your finances.",
+      text: "The bond amount is set by your state, usually as a multiple of the vehicle's value. What you pay is a premium on that amount: typically 1.5%, with a $100 minimum. Bonds under $50,000 are issued with no credit check, because the surety is assessing the vehicle's history rather than your finances.",
     },
     {
       type: "p",

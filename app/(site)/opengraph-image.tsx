@@ -11,7 +11,7 @@ export default function Image() {
     title: "Replace your lost, stolen or damaged title",
     facts: [
       "Rates from 1.5%",
-      "No credit check under $30,000",
+      "No credit check under $50,000",
       "Most bonds issued same day",
     ],
     photo: "hero-trailer",

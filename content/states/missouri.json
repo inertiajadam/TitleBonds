@@ -5,15 +5,16 @@
   "agency": "Missouri Department of Revenue Motor Vehicle Bureau",
   "statute": "Title XIX Section 301.192 of the Missouri Revised Statutes",
   "seoTitle": "Missouri Bonded Title: Cost & Requirements",
-  "metaDescription": "A bonded title in Missouri costs $100 or 1.5% of the bond amount. Bond amount: 2x the. No credit check under $25,000.",
+  "metaDescription": "A bonded title in Missouri costs $100 or 1.5% of the bond amount. Bond amount: 2x the. No credit check under $50,000.",
   "image": "rv-highway",
   "intro": [
     "Follow the links below to find and apply for your Missouri surety bond and let our expert staff get the bond you need at the lowest possible price."
   ],
   "rates": {
-    "noCreditCheckUpTo": "$25,000",
+    "noCreditCheckUpTo": "$50,000",
     "minPremium": "$100",
     "rate": "1.5%",
+    "instantIssueUpTo": "$50,000",
     "amountRequired": "2x the appraised value of the vehicle (minimum $100)"
   },
   "faqs": [
@@ -87,7 +88,7 @@
     {
       "q": "Is a credit check required for the Missouri Lost Title Bond?",
       "a": [
-        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+        "We do not conduct a credit check for bonds that are less than $50,000. At limits over $50,000, we will review your standing to determine the qualification and rates for the bond."
       ]
     },
     {

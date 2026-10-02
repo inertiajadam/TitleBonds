@@ -67,7 +67,7 @@ export function QuoteForm({ stateName }: { stateName: string }) {
     >
       <h2 className="text-xl font-bold">Get your {stateName} quote</h2>
       <p className="mt-1.5 text-sm text-navy-600">
-        Takes about a minute. No credit check under $30,000.
+        Takes about a minute. No credit check under $50,000.
       </p>
 
       <div className="mt-5 space-y-3.5">

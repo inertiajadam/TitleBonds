@@ -5,17 +5,17 @@
   "agency": "Wyoming Department of Transportation",
   "statute": "Wyoming Statute 31-2-105",
   "seoTitle": "Wyoming Bonded Title: Cost & Requirements",
-  "metaDescription": "A bonded title in Wyoming costs $100 or 1.5% of the bond amount. Bond amount: 2x the value of the vehicle. No credit check under $30,000.",
+  "metaDescription": "A bonded title in Wyoming costs $100 or 1.5% of the bond amount. Bond amount: 2x the value of the vehicle. No credit check under $50,000.",
   "image": "motorcycle-road",
   "intro": [
     "If you do not have proof of ownership (a title) for your boat, motor vehicle, motorhome, mobile home, motorcycle or other titled property, you can provide the State of Wyoming with a Certificate of Title Bond in order to replace your lost, stolen, damaged or defective title. You will be able to register your vehicle with this new title.",
     "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
   ],
   "rates": {
-    "noCreditCheckUpTo": "$30,000",
+    "noCreditCheckUpTo": "$50,000",
     "minPremium": "$100",
     "rate": "1.5%",
-    "instantIssueUpTo": "$30,000",
+    "instantIssueUpTo": "$50,000",
     "amountRequired": "2x the value of the vehicle per NADA / KBB, current or past registration, or appraisal by a licensed dealer"
   },
   "faqs": [
@@ -91,7 +91,7 @@
     {
       "q": "Is a credit check required for the Wyoming Lost Title Bond?",
       "a": [
-        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+        "We do not conduct a credit check for bonds that are less than $50,000. At limits over $50,000, we will review your standing to determine the qualification and rates for the bond."
       ]
     },
     {

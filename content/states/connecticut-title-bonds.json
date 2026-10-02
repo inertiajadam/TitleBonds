@@ -5,17 +5,17 @@
   "agency": "Connecticut Department of Motor Vehicles",
   "statute": "Connecticut statute 14-176",
   "seoTitle": "Connecticut Bonded Title: Cost & Requirements",
-  "metaDescription": "A bonded title in Connecticut costs $100 or 1.5% of the bond amount. Bond amount: 2x the value of the vehicle. No credit check under $30,000.",
+  "metaDescription": "A bonded title in Connecticut costs $100 or 1.5% of the bond amount. Bond amount: 2x the value of the vehicle. No credit check under $50,000.",
   "image": "trailer-night",
   "intro": [
     "If you do not have acceptable evidence of ownership for your motor vehicle, boat, motor home, mobile home, motorcycle or other titled property, you can provide the State of Connecticut with a Certificate of Title Bond to get a new title so you can register your vehicle. The bond must be in force for five (5) years.",
     "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
   ],
   "rates": {
-    "noCreditCheckUpTo": "$30,000",
+    "noCreditCheckUpTo": "$50,000",
     "minPremium": "$100",
     "rate": "1.5%",
-    "instantIssueUpTo": "$30,000",
+    "instantIssueUpTo": "$50,000",
     "amountRequired": "2x the value of the vehicle as determined by the local DMV"
   },
   "faqs": [
@@ -55,7 +55,7 @@
     {
       "q": "Is a credit check required for the Connecticut Lost Title Bond?",
       "a": [
-        "We do not conduct a credit check for bonds that are less than $25,000. For bonds over $25,000, we have bad credit bonding programs that can get your bond approved and issued with the same fast and easy service."
+        "We do not conduct a credit check for bonds that are less than $50,000. For bonds over $50,000, we have bad credit bonding programs that can get your bond approved and issued with the same fast and easy service."
       ]
     },
     {

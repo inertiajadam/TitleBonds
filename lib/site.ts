@@ -12,7 +12,7 @@ export const site = {
   shortName: "TitleBonds.us",
   url: "https://titlebonds.us",
   description:
-    "Replace a lost, stolen, damaged or defective vehicle title with a certificate of title bond. Rates from 1.5%, no credit check under $30,000, most bonds issued the same day.",
+    "Replace a lost, stolen, damaged or defective vehicle title with a certificate of title bond. Rates from 1.5%, no credit check under $50,000, instant issue in every state we write.",
   phone: "(800) 737-4880",
   phoneHref: "tel:+18007374880",
   email: "info@a1suretybonds.com",

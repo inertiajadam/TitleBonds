@@ -28,8 +28,8 @@ bonded title and register the vehicle.
 ## Key facts
 
 - Bond premium: typically 1.5% of the required bond amount, with a $100 minimum.
-- Credit check: not required for bonds under $30,000.
-- Issuance: most bonds are issued the same day; many are delivered by email in minutes.
+- Credit check: not required for bonds under $50,000.
+- Issuance: instant issue in every state we write, up to $50,000. Most bonds are issued the same day and many are delivered by email in minutes.
 - Bond term: most states set a 3-year term. Connecticut and Wisconsin are 5 years; Utah is 7.
 - Bond amount: set by the state, most commonly 1.5x or 2x the vehicle's value.
 - Eligible property: cars, trucks, semi-trucks, RVs, motorcycles, mobile homes, boats, ATVs, trailers and aircraft.

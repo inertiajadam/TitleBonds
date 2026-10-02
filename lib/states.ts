@@ -15,7 +15,7 @@ export type StateFaq = {
 };
 
 export type StateRates = {
-  /** Dollar ceiling below which no credit check is run, e.g. "$30,000". */
+  /** Dollar ceiling below which no credit check is run, e.g. "$50,000". */
   noCreditCheckUpTo?: string;
   minPremium?: string;
   rate?: string;

@@ -13,7 +13,7 @@
     {"type": "h2", "text": "Step 2: buy the bond"},
     {"type": "p", "text": "To issue the bond we need very little:"},
     {"type": "ul", "items": ["Your name and address", "The year, make and model of the vehicle", "The VIN or serial number", "The bond amount your state requires"]},
-    {"type": "p", "text": "The premium is typically 1.5% of the bond amount with a $100 minimum, and bonds under $30,000 do not require a credit check. Once it is issued you receive the original bond documents to sign."},
+    {"type": "p", "text": "The premium is typically 1.5% of the bond amount with a $100 minimum, and bonds under $50,000 do not require a credit check. Once it is issued you receive the original bond documents to sign."},
     {"type": "h2", "text": "Step 3: file with the state"},
     {"type": "p", "text": "Sign the original documents and submit them to your motor vehicle agency, which you can reach through the [state motor vehicle directory](https://www.usa.gov/state-motor-vehicle-services), with whatever else they require. Expect that list to include some of the following, though only your state's page is authoritative:"},
     {"type": "ul", "items": ["The state's bonded title or ownership application form", "A bill of sale, or whatever evidence of ownership you hold", "A VIN inspection, where the state requires one", "An odometer disclosure for newer vehicles", "Proof that no title exists in the state's records, sometimes called a title search or record check"]},

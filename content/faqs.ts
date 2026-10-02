@@ -25,7 +25,7 @@ export const homepageFaqs: StateFaq[] = [
   },
   {
     q: "Do I need a credit check to get a title bond?",
-    a: ["Title bonds under $30,000 do not require a credit check."],
+    a: ["Title bonds under $50,000 do not require a credit check, in every state we write."],
   },
   {
     q: "How do I get a title bond?",

@@ -5,15 +5,16 @@
   "agency": "Iowa Department of Transportation",
   "statute": "Iowa Code Chapter 321 Section 24",
   "seoTitle": "Iowa Bonded Title: Cost & Requirements",
-  "metaDescription": "A bonded title in Iowa costs $100 or 1.5% of the bond amount. Bond amount: 1.5x the current value of the vehicle. No credit check under $25,000.",
+  "metaDescription": "A bonded title in Iowa costs $100 or 1.5% of the bond amount. Bond amount: 1.5x the current value of the vehicle. No credit check under $50,000.",
   "image": "trailer-marina",
   "intro": [
     "Don't overpay, apply today and get your title bond in 3 simple steps. Have questions? Contact us and talk to a title bond expert today."
   ],
   "rates": {
-    "noCreditCheckUpTo": "$25,000",
+    "noCreditCheckUpTo": "$50,000",
     "minPremium": "$100",
     "rate": "1.5%",
+    "instantIssueUpTo": "$50,000",
     "amountRequired": "1.5x the current value of the vehicle"
   },
   "faqs": [
@@ -95,7 +96,7 @@
     {
       "q": "Is a credit check required for the Iowa Lost Title Bond?",
       "a": [
-        "We do not conduct a credit check for bonds that are less than $25,000. At limits over $25,000, we will review your standing to determine the qualification and rates for the bond."
+        "We do not conduct a credit check for bonds that are less than $50,000. At limits over $50,000, we will review your standing to determine the qualification and rates for the bond."
       ]
     },
     {

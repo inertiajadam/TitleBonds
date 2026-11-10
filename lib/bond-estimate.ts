@@ -6,11 +6,22 @@ export type { BondEstimate, BondRule };
 /**
  * Estimating the bond amount and premium from a vehicle's value.
  *
- * PROVISIONAL. Every number here is derived from what the state pages already
- * publish, not from the surety's rating engine. Once the bond platform is
- * connected these figures come from it and this module becomes a fallback for
- * the pre-quote screen, or goes away. Until then the wording around any figure
- * this produces has to keep saying estimate, because that is all it is.
+ * The multipliers were derived from what the state pages publish, and have
+ * since been checked against the carrier's own rate sheet (CapSpecialty,
+ * August 2025, supplied by the agency). Thirty of the thirty-two agree with
+ * its "Bond Amount Required" column exactly, including Georgia's $5,000 floor
+ * and the two states it also gives no formula for: Alabama, which it records
+ * as a table, and New York, which it records as set by the DMV.
+ *
+ * Montana and Nevada are the exceptions, and not because they disagree: that
+ * column is blank for both, so their multipliers rest on the state pages alone
+ * and nothing has confirmed them. They are the two to fix first if a figure
+ * ever turns out to be wrong.
+ *
+ * Still labelled an estimate on screen, and the wording has to stay that way.
+ * The rate sheet settles how the bond amount is calculated; it does not make
+ * this the surety's rating engine, and the amount is not final until the
+ * vehicle's value is confirmed.
  *
  * Two rules matter more than the arithmetic:
  *
